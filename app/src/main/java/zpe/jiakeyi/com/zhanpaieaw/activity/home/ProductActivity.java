@@ -88,16 +88,18 @@ public class ProductActivity extends BaseActivity {
                         Gson gson = new Gson();
                         prodictBean prodictBean = gson.fromJson(response, prodictBean.class);
                         zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
-                        String detailedImg = info.getDetailedImg();
-                        Glide.with(me).load(detailedImg).apply(new RequestOptions().error(R.mipmap.product_img_details)).into(tp_pd);
-                        cp_titler.setText(info.getPname());
-                        gs_name.setText(info.getFirmName());
-                        dq_tv.setText(info.getAreaB() + "   " + info.getAreaC());
-                        cslx_tv.setText(info.getFirmType() + "");
-                        pp_tv.setText(info.getBrandName());
-                        xh_tv.setText(info.getVersion());
-                        yyly_id.setText(info.getField());
-                        id = info.getId();
+                        if (info != null) {
+                            String detailedImg = info.getDetailedImg();
+                            Glide.with(me).load(detailedImg).apply(new RequestOptions().error(R.mipmap.product_img_details)).into(tp_pd);
+                            cp_titler.setText(info.getPname());
+                            gs_name.setText(info.getFirmName());
+                            dq_tv.setText(info.getAreaB() + "   " + info.getAreaC());
+                            cslx_tv.setText(info.getFirmType() + "");
+                            pp_tv.setText(info.getBrandName());
+                            xh_tv.setText(info.getVersion());
+                            yyly_id.setText(info.getField());
+                            id = info.getId();
+                        }
                     }
                 });
         web_product.loadUrl("http://m.baidu.com/?cip=117.136.54.19&amp;baiduid=B02FA207E9F6316421974343BBAC55C0&amp;from=844b&amp;vit=fps?from=844b&amp;vit=fps&amp;index=&amp;ssid=0&amp;bd_page_type=1&amp;logid=7938441944509756072&pu=sz%401321_480&t_noscript=jump");

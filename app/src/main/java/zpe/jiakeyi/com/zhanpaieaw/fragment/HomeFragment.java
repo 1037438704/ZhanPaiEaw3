@@ -56,8 +56,9 @@ import zpe.jiakeyi.com.zhanpaieaw.view.ObservableScrollView;
  */
 @Layout(R.layout.fragment_home)
 @DarkStatusBarTheme(true)           //开启顶部状态栏图标、文字暗色模式
-@DarkNavigationBarTheme(true)       //开启底部导航栏按钮暗色模式
-@NavigationBarBackgroundColor(a = 255,r = 255,g = 255,b = 255)      //设置底部导航栏背景颜色（a = 0,r = 0,g = 0,b = 0可透明）
+@DarkNavigationBarTheme(false)       //开启底部导航栏按钮暗色模式
+@NavigationBarBackgroundColor(a = 100, r = 100, g = 100, b = 100)
+//设置底部导航栏背景颜色（a = 0,r = 0,g = 0,b = 0可透明）
 public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private ObservableScrollView home_obs_scroll;
     private AutoLinearLayout auto_sousuo;
@@ -78,7 +79,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private RecyclerView Recycler_home_new;
     private TextView more_tj;
     private RecyclerView Recycler_home_recommend;
-    private AutoLinearLayout seek_layout,home_auto_ll_title;
+    private AutoLinearLayout seek_layout, home_auto_ll_title;
 
     private static List<HomeBean.DataBean.Adv1Bean> list;
     private static List<HomeBean.DataBean.ProductListBean> recommend;
@@ -163,8 +164,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         });
                         List<String> info = new ArrayList<>();
                         List<HomeBean.DataBean.Adv2Bean> adv2 = homeBean.getData().getAdv2();
-                        for (int i = 0; i < adv2.size(); i++) {
-                            info.add(adv2.get(i).getContent());
+//                        for (int i = 0; i < adv2.size(); i++) {
+//                            info.add(adv2.get(i).getContent());
+//                        }
+                        for (int i = 0; i < 10; i++) {
+                            info.add("现在试试所所所所所所所所所所所所试试");
                         }
                         marqueeView2.startWithList(info);
                         RecyclerHomeNew.setLayoutManager(new GridLayoutManager(getActivity(), 3, OrientationHelper.VERTICAL, false));
@@ -177,8 +181,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                             @Override
                             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                                 toast("你点击了第" + position + "条");
-                                jump(ExhibitionActivity.class);
-                                ExhibitionActivity.IntentOne(list.get(position).getId());
+                                jump(ProductActivity.class);
+
                             }
                         });
 
@@ -187,8 +191,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                                 toast("你点击了第" + position + "条");
                                 //跳转到商品详情界面
-                                jump(ProductActivity.class);
-
+                                jump(ExhibitionActivity.class);
+                                ExhibitionActivity.IntentOne(list.get(position).getId());
 
                             }
                         });

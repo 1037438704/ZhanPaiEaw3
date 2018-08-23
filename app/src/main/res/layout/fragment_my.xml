@@ -8,7 +8,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/my_ll_login_ture"
         android:layout_width="match_parent"
-        android:layout_height="220px"
+        android:layout_height="270px"
         android:background="@color/myblue"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -18,13 +18,16 @@
             android:layout_height="112px"
             android:layout_gravity="center"
             android:layout_marginLeft="34px"
+            android:layout_marginTop="35px"
             android:src="@mipmap/my_img_person" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="24px"
+            android:layout_marginTop="35px"
             android:gravity="center_vertical"
+
             android:orientation="vertical">
 
             <TextView
@@ -61,10 +64,11 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10px"
             android:layout_marginRight="24px"
+            android:layout_marginTop="35px"
             android:src="@mipmap/my_icon_open" />
     </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -79,8 +83,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_mark" />
 
@@ -124,8 +128,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_collection" />
 
@@ -169,8 +173,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_data" />
 
@@ -214,8 +218,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_buy" />
 
@@ -252,8 +256,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_setup" />
 
@@ -304,8 +308,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_share" />
 
@@ -349,8 +353,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="44px"
+                android:layout_height="44px"
                 android:layout_marginLeft="24px"
                 android:src="@mipmap/my_icon_help" />
 
@@ -385,6 +389,6 @@
                 android:background="#f7f7f7" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
 </com.zhy.autolayout.AutoLinearLayout>

@@ -23,6 +23,7 @@ import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
+import zpe.jiakeyi.com.zhanpaieaw.activity.my.PasswordActivity;
 import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
@@ -38,6 +39,7 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 @DarkStatusBarTheme(true) //开启顶部状态栏图标、文字暗色模式
 public class LoginActivity extends BaseActivity {
     private TextView login_text_verification;
+    private TextView fgt_password;
     private TextView text_register;
     private ImageView image_return;
     private ImageView image_logo;
@@ -54,6 +56,7 @@ public class LoginActivity extends BaseActivity {
         user_numb = findViewById(R.id.user_numb);
         password_logi = findViewById(R.id.password_logi);
         login_but = findViewById(R.id.login_but);
+        fgt_password = findViewById(R.id.fgt_password);
         text_register = findViewById(R.id.text_register);
         password_logi_see = findViewById(R.id.password_logi_see);
     }
@@ -82,6 +85,12 @@ public class LoginActivity extends BaseActivity {
             public void onClick(View v) {
                 jump(RegisterActivity.class);
                 finish();
+            }
+        });
+        fgt_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(PasswordActivity.class);
             }
         });
         //验证码登录

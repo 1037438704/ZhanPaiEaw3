@@ -26,7 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="城市选择器" />
+            android:text="城市选择器"
+            android:textColor="#333333"
+            android:textSize="32px" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -38,19 +40,21 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rtll_rv_sheng"
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#F2F2F2" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rtll_rv_shi"
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30px" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rtll_rv_qu"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_marginLeft="30px" />
     </com.zhy.autolayout.AutoLinearLayout>
 
     <com.zhy.autolayout.AutoLinearLayout

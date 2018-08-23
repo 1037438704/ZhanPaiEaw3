@@ -28,31 +28,33 @@
             android:layout_centerInParent="true"
             android:text="修改绑定手机"
             android:textColor="#333333"
-            android:textSize="32px" />
+            android:textSize="32px"
+            android:textStyle="bold" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100px"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="100px"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:text="原手机号"
                 android:textColor="#333333"
-                android:textSize="24px" />
+                android:textSize="28px" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,25 +67,25 @@
                 android:text="11111111111"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="13sp" />
+                android:textSize="28px" />
         </com.zhy.autolayout.AutoLinearLayout>
 
         <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100px"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="100px"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:text="新手机号"
                 android:textColor="#333333"
-                android:textSize="24px" />
+                android:textSize="28px" />
 
             <EditText
                 android:id="@+id/user_name"
@@ -97,14 +99,14 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="13sp" />
+                android:textSize="28px" />
         </com.zhy.autolayout.AutoLinearLayout>
 
         <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100px"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -115,11 +117,12 @@
                 android:layout_margin="10dp"
                 android:text="验证码"
                 android:textColor="#333333"
-                android:textSize="24px" />
+                android:textSize="28px" />
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
                 android:layout_weight="1"
                 android:background="@null"
                 android:drawablePadding="8dp"
@@ -129,7 +132,7 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="13sp" />
+                android:textSize="28px" />
 
             <TextView
                 android:id="@+id/fvd_code"
@@ -138,13 +141,17 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:text="获取验证码" />
+                android:text="获取验证码"
+                android:textSize="28px" />
         </com.zhy.autolayout.AutoLinearLayout>
 
+        <include layout="@layout/bg_view_1" />
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="672px"
+            android:layout_height="88px"
             android:layout_margin="20dp"
+            android:layout_marginTop="20px"
             android:background="@drawable/shape_bottom"
             android:gravity="center"
             android:padding="10dp"

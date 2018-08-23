@@ -146,7 +146,7 @@ public class RegisterActivity extends BaseActivity {
                 if (register_phone_number.getText().toString() != null) {
                     boolean chinaPhoneLegal = isChinaPhoneLegal(register_phone_number.getText().toString());
                     if (chinaPhoneLegal) {
-                        verificationTime = (VerificationTime) new VerificationTime(60000, 1000, register_find_code).start();
+                        verificationTime = (VerificationTime) new VerificationTime(60000, 1000, register_find_code,R.color.myg , R.color.myblue).start();
                         OkHttpUtils.post().url(RequestUtlis.getCode)
                                 .addHeader("loginType", "1")
                                 .addParams("iphone", register_phone_number.getText().toString())

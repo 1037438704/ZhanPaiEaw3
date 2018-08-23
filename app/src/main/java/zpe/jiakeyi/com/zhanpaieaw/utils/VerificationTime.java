@@ -49,7 +49,7 @@ public class VerificationTime extends CountDownTimer {
 
         if (one != 0) {
 
-            textView.setBackgroundResource(one);
+            textView.setTextColor(one);
 
         }
 
@@ -67,7 +67,7 @@ public class VerificationTime extends CountDownTimer {
 
         if (tow != 0) {
 
-            textView.setBackgroundResource(tow);
+            textView.setTextColor(tow);
 
         }
 

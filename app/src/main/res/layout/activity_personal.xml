@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                     xmlns:app="http://schemas.android.com/apk/res-auto"
-                                     xmlns:tools="http://schemas.android.com/tools"
-                                     android:layout_width="match_parent"
-                                     android:layout_height="match_parent"
-                                     android:fitsSystemWindows="true"
-                                     android:orientation="vertical"
-                                     tools:context="zpe.jiakeyi.com.zhanpaieaw.activity.my.PersonalActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="zpe.jiakeyi.com.zhanpaieaw.activity.my.PersonalActivity">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="32px"
             android:layout_centerVertical="true"
             android:layout_marginLeft="24px"
-            android:src="@mipmap/home_icon_back"/>
+            android:src="@mipmap/home_icon_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +27,8 @@
             android:layout_centerInParent="true"
             android:text="个人信息"
             android:textColor="#333333"
-            android:textSize="32px"/>
+            android:textSize="32px"
+            android:textStyle="bold" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -37,7 +38,7 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <include layout="@layout/bg_view_1"/>
+        <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/image_setting"
@@ -54,27 +55,27 @@
                 android:gravity="center"
                 android:text="头像"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="112px"
                 android:layout_height="112px"
-                android:src="@mipmap/my_img_person"/>
+                android:src="@mipmap/my_img_person" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_1"/>
+        <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/personal_user_name"
@@ -89,12 +90,12 @@
                 android:layout_margin="10dp"
                 android:text="用户名"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,18 +103,18 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:text="嘉科仪器"
-                android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textColor="#999999"
+                android:textSize="28px" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_1"/>
+        <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/sex_setting"
@@ -128,12 +129,12 @@
                 android:layout_margin="10dp"
                 android:text="性别"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,18 +142,18 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:text="保密"
-                android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textColor="#999999"
+                android:textSize="28px" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_1"/>
+        <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/phone_setting"
@@ -167,12 +168,12 @@
                 android:layout_margin="10dp"
                 android:text="手机号"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/phone_set_tv"
@@ -180,20 +181,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:text="11111111111"
-                android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textColor="#999999"
+                android:textSize="28px" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_1"/>
+        <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/personal_alter_pas"
@@ -208,22 +208,22 @@
                 android:layout_margin="10dp"
                 android:text="修改密码"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_10"/>
+        <include layout="@layout/bg_view_10" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/wencht_setting"
@@ -238,12 +238,12 @@
                 android:layout_margin="10dp"
                 android:text="微信"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/is_checked_wx"
@@ -252,18 +252,18 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:text="已绑定"
-                android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textColor="#999999"
+                android:textSize="28px" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_1"/>
+        <include layout="@layout/bg_view_1" />
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
@@ -277,12 +277,12 @@
                 android:layout_margin="10dp"
                 android:text="QQ"
                 android:textColor="#333333"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/is_check_qq"
@@ -292,15 +292,19 @@
                 android:layout_marginLeft="10dp"
                 android:text="未绑定"
                 android:textColor="#f92300"
-                android:textSize="32px"/>
+                android:textSize="28px" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="18px"
-                android:src="@mipmap/my_icon_open"/>
+                android:src="@mipmap/my_icon_open" />
         </com.zhy.autolayout.AutoLinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EDEDED" />
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

@@ -39,7 +39,6 @@
 
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tab_news"
-                    app:tabSelectedTextColor="#0077ff"
                     android:layout_width="match_parent"
                     android:layout_height="90px"
                     app:tabIndicatorColor="#0077ff"
@@ -47,6 +46,7 @@
                     app:tabPaddingEnd="-1px"
                     app:tabPaddingStart="-1px"
                     app:tabPaddingTop="-1px"
+                    app:tabSelectedTextColor="#0077ff"
                     app:tabTextAppearance="@style/TabLayoutTextStyle"
                     app:tabTextColor="#333333" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="88px"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="146px"
+                android:layout_marginBottom="196px"
                 android:layout_marginRight="24px"
                 android:src="@mipmap/buy_icon_fabu" />
         </com.zhy.autolayout.AutoRelativeLayout>

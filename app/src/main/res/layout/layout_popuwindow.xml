@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_bottom"
+        android:background="@drawable/shape_bottom_xj"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/text_camera"
             style="@style/activity_layout_popupwindow"
             android:text="相机"
-            android:textSize="28px"/>
+            android:textSize="28px" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#7b7a7a"
-            />
+            android:background="#7b7a7a" />
 
         <TextView
             android:id="@+id/text_photo"
             style="@style/activity_layout_popupwindow"
             android:text="相册"
-            android:textSize="28px"/>
-    </LinearLayout>
+            android:textSize="28px" />
+    </com.zhy.autolayout.AutoLinearLayout>
 
     <TextView
         android:id="@+id/text_finish"
         style="@style/activity_layout_popupwindow"
         android:layout_margin="10dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/shape_bottom"
+        android:background="@drawable/shape_bottom_xj"
         android:text="取消"
-        android:textSize="28px"/>
-</LinearLayout>
+        android:textSize="28px" />
+</com.zhy.autolayout.AutoLinearLayout>

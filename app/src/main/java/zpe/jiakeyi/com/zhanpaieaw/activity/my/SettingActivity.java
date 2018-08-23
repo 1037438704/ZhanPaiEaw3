@@ -54,7 +54,7 @@ public class SettingActivity extends BaseActivity {
         record_auto1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                jump(ManagementActivity.class);
             }
         });
         record_auto2.setOnClickListener(new View.OnClickListener() {

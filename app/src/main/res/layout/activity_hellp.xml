@@ -23,7 +23,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/hellp_atll_booth1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88px"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -32,7 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="3D展馆打不开" />
+            android:text="3D展馆打不开"
+            android:textColor="#333333" />
 
         <View
             android:layout_width="0dp"
@@ -49,7 +50,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/hellp_atll_booth2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88px"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -58,7 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="如何修改密码" />
+            android:text="如何修改密码"
+            android:textColor="#333333" />
 
         <View
             android:layout_width="0dp"
@@ -75,7 +77,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/hellp_atll_booth3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88px"
 
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -85,7 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="购买套餐后如何开发票" />
+            android:text="购买套餐后如何开发票"
+            android:textColor="#333333" />
 
         <View
             android:layout_width="0dp"
@@ -102,7 +105,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/hellp_atll_booth4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88px"
 
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -112,7 +115,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="如何开通展位" />
+            android:text="如何开通展位"
+            android:textColor="#333333" />
 
         <View
             android:layout_width="0dp"
@@ -129,7 +133,7 @@
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/hellp_atll_booth5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88px"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -138,7 +142,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="如何更快找到需要的产品" />
+            android:text="如何更快找到需要的产品"
+            android:textColor="#333333" />
 
         <View
             android:layout_width="0dp"

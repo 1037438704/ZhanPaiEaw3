@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24px"
                 android:text="输入关键字"
-                android:textSize="24px" />
+                android:textSize="28px" />
         </com.zhy.autolayout.AutoLinearLayout>
 
         <ImageView

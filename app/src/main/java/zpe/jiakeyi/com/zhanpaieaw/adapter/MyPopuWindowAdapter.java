@@ -38,7 +38,7 @@ public class MyPopuWindowAdapter extends BaseQuickAdapter<ShowTypeBean, BaseView
         TextView textView = helper.itemView.findViewById(R.id.item_tv_duigou);
         if (item.judge == true) {
             textView.setVisibility(View.VISIBLE);
-            item_tv_name.setTextColor(R.color.myblue);
+            item_tv_name.setTextColor(R.color.bule);
         } else {
             textView.setVisibility(View.GONE);
             item_tv_name.setTextColor(Color.BLACK);

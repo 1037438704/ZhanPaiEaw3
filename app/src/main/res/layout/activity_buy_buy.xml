@@ -25,18 +25,25 @@
             android:id="@+id/tablayout_xiaoxi1"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             app:tabIndicatorColor="#0077ff"
             app:tabPaddingBottom="-1px"
             app:tabPaddingEnd="-1px"
             app:tabPaddingStart="-1px"
             app:tabPaddingTop="-1px"
-            app:tabTextAppearance="@style/TabLayoutTextStyle"
             app:tabSelectedTextColor="#333333"
-            app:tabTextColor="#333333"
 
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextColor="#333333"
             tools:ignore="MissingPrefix" />
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#EDEDED" />
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager1"

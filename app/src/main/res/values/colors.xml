@@ -7,10 +7,11 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="bg_color">#F6F6F6</color>
-    <color name="bule">#3b8dff</color>
+    <color name="bule">#0077FF</color>
     <color name="TextColor">#999999</color>
     <color name="BackgroundColor">#f2f2f2</color>
-    <color name="myblue">#0077ff</color>
+    <color name="myblue">#0077FF</color>
     <color name="transparent_30_percent">#4C000000</color>
     <color name="red">#FF0000</color>
+    <color name="myg">#999999</color>
 </resources>

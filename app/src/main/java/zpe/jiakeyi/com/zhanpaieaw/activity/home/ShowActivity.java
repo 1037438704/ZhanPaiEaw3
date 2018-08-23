@@ -25,10 +25,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.flexbox.FlexboxLayout;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.kongzue.baseframework.util.OnResponseListener;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -36,13 +34,6 @@ import com.zhy.autolayout.AutoLinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import chihane.jdaddressselector.AddressSelector;
-import chihane.jdaddressselector.BottomDialog;
-import chihane.jdaddressselector.OnAddressSelectedListener;
-import chihane.jdaddressselector.model.City;
-import chihane.jdaddressselector.model.County;
-import chihane.jdaddressselector.model.Province;
-import chihane.jdaddressselector.model.Street;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.buy.CitySelectionActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyPopuWindowAdapter;
@@ -50,8 +41,6 @@ import zpe.jiakeyi.com.zhanpaieaw.adapter.ShowRecyclerAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.bean.CityBean;
 import zpe.jiakeyi.com.zhanpaieaw.bean.ShowTypeBean;
 import zpe.jiakeyi.com.zhanpaieaw.bean.TextBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.HttpUtlis;
-import zpe.jiakeyi.com.zhanpaieaw.view.DividerGridItemDecoration;
 
 /**
  * 创建人： 郭健福
@@ -97,6 +86,7 @@ public class ShowActivity extends BaseActivity {
     private AutoLinearLayout jyms_show;
     private AutoLinearLayout classify_title;
     private AutoLinearLayout seek_title_layout;
+    private TextView seek_content_tv;
 
     @Override
     public void initViews() {
@@ -138,12 +128,7 @@ public class ShowActivity extends BaseActivity {
                 finish();
             }
         });
-        search_title.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jump(SeekActivity.class);
-            }
-        });
+        search_title.setVisibility(View.GONE);
         strings.add(new TextBean().setTitle("1"));
         strings.add(new TextBean().setTitle("1"));
         strings.add(new TextBean().setTitle("1"));
