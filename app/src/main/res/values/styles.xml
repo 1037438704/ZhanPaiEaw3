@@ -30,4 +30,8 @@
         <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
     </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/size_01</item>
+    </style>
 </resources>

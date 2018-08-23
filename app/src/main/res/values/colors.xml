@@ -11,4 +11,6 @@
     <color name="TextColor">#999999</color>
     <color name="BackgroundColor">#f2f2f2</color>
     <color name="myblue">#0077ff</color>
+    <color name="transparent_30_percent">#4C000000</color>
+    <color name="red">#FF0000</color>
 </resources>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context="zpe.jiakeyi.com.zhanpaieaw.activity.my.UserNameActivity">
+                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                     xmlns:tools="http://schemas.android.com/tools"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent"
+                                     android:background="@color/black"
+                                     android:fitsSystemWindows="true"
+                                     android:orientation="vertical"
+                                     tools:context="zpe.jiakeyi.com.zhanpaieaw.activity.my.UserNameActivity">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="32px"
-            android:src="@mipmap/home_icon_back" />
+            android:src="@mipmap/home_icon_back"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
             android:layout_centerInParent="true"
             android:text="个人信息"
             android:textColor="#333333"
-            android:textSize="32px" />
+            android:textSize="32px"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_marginRight="10dp"
             android:text="确定"
             android:textColor="#333333"
-            android:textSize="24px" />
+            android:textSize="32px"/>
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -47,7 +47,7 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <include layout="@layout/bg_view_1" />
+        <include layout="@layout/bg_view_1"/>
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
@@ -61,22 +61,24 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@null"
-                android:hint="嘉科仪器" />
+                android:text="嘉科仪器"
+                android:textColor="#333333"
+                android:textSize="28px"/>
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:src="@mipmap/my_icon_del" />
+                android:src="@mipmap/my_icon_del"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <include layout="@layout/bg_view_1" />
+        <include layout="@layout/bg_view_1"/>
 
         <EditText
             android:id="@+id/user_name"
@@ -90,6 +92,6 @@
             android:padding="12dp"
             android:textColor="@color/black"
             android:textColorHint="@color/seekColorText"
-            android:textSize="13sp" />
+            android:textSize="13sp"/>
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="zpe.jiakeyi.com.zhanpaieaw.activity.home.ProductActivity">
+                                       xmlns:app="http://schemas.android.com/apk/res-auto"
+                                       xmlns:tools="http://schemas.android.com/tools"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="match_parent"
+                                       android:fitsSystemWindows="true"
+                                       tools:context="zpe.jiakeyi.com.zhanpaieaw.activity.home.ProductActivity">
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -24,18 +24,18 @@
                 android:layout_width="60px"
                 android:layout_height="60px"
                 android:layout_marginLeft="24px"
-                android:src="@mipmap/product_icon_back" />
+                android:src="@mipmap/product_icon_back"/>
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
 
             <ImageView
                 android:id="@+id/share_pd"
                 android:layout_width="60px"
                 android:layout_height="60px"
-                android:src="@mipmap/product_icon_share" />
+                android:src="@mipmap/product_icon_share"/>
 
             <ImageView
                 android:id="@+id/sc_pd"
@@ -43,7 +43,7 @@
                 android:layout_height="60px"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="24px"
-                android:src="@mipmap/product_icon_collection" />
+                android:src="@mipmap/product_icon_collection"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
         <ScrollView
@@ -72,8 +72,20 @@
                             android:id="@+id/tp_pd"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/product_img_details" />
+                            android:src="@mipmap/product_img_details"/>
 
+                        <TextView
+                            android:layout_width="80px"
+                            android:layout_height="42px"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="10px"
+                            android:layout_marginRight="20px"
+                            android:background="@drawable/public_rectangle_24"
+                            android:gravity="center"
+                            android:text="1/4"
+                            android:textColor="@color/white"
+                            android:textSize="24px"/>
                     </com.zhy.autolayout.AutoRelativeLayout>
 
                     <TextView
@@ -85,7 +97,7 @@
                         android:text="WIGGENS DIGTOR 22 台式离心机 实验室离心机"
                         android:textColor="#333333"
                         android:textSize="32px"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/gs_name"
@@ -96,12 +108,12 @@
                         android:layout_marginTop="32px"
                         android:text="北京桑羿实验室仪器研究所"
                         android:textColor="#666666"
-                        android:textSize="28px" />
+                        android:textSize="28px"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20px"
-                        android:background="#f2f2f2" />
+                        android:background="#f2f2f2"/>
 
                     <com.zhy.autolayout.AutoLinearLayout
                         android:layout_width="match_parent"
@@ -121,7 +133,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="地区"
                                 android:textColor="@color/black"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
 
                             <TextView
                                 android:id="@+id/dq_tv"
@@ -129,13 +141,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="78dp"
                                 android:text="北京"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
                         </com.zhy.autolayout.AutoLinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="3px"
-                            android:background="#f2f2f2" />
+                            android:background="#f2f2f2"/>
                     </com.zhy.autolayout.AutoLinearLayout>
 
 
@@ -156,7 +168,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="厂商类型"
                                 android:textColor="@color/black"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
 
                             <TextView
                                 android:id="@+id/cslx_tv"
@@ -164,13 +176,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="50dp"
                                 android:text="北京"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
                         </com.zhy.autolayout.AutoLinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="3px"
-                            android:background="#f2f2f2" />
+                            android:background="#f2f2f2"/>
                     </com.zhy.autolayout.AutoLinearLayout>
 
                     <com.zhy.autolayout.AutoLinearLayout
@@ -190,7 +202,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="品牌"
                                 android:textColor="@color/black"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
 
                             <TextView
                                 android:id="@+id/pp_tv"
@@ -198,13 +210,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="78dp"
                                 android:text="北京"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
                         </com.zhy.autolayout.AutoLinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="3px"
-                            android:background="#f2f2f2" />
+                            android:background="#f2f2f2"/>
                     </com.zhy.autolayout.AutoLinearLayout>
 
                     <com.zhy.autolayout.AutoLinearLayout
@@ -224,7 +236,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="型号"
                                 android:textColor="@color/black"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
 
                             <TextView
                                 android:id="@+id/xh_tv"
@@ -232,19 +244,19 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="78dp"
                                 android:text="北京"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
                         </com.zhy.autolayout.AutoLinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="3px"
-                            android:background="#f2f2f2" />
+                            android:background="#f2f2f2"/>
                     </com.zhy.autolayout.AutoLinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20px"
-                        android:background="#f2f2f2" />
+                        android:background="#f2f2f2"/>
 
                     <com.zhy.autolayout.AutoLinearLayout
                         android:layout_width="match_parent"
@@ -263,7 +275,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="应用领域"
                                 android:textColor="@color/black"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
 
                             <TextView
                                 android:id="@+id/yyly_id"
@@ -271,19 +283,19 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="50dp"
                                 android:text="北京"
-                                android:textSize="28px" />
+                                android:textSize="28px"/>
                         </com.zhy.autolayout.AutoLinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="3px"
-                            android:background="#f2f2f2" />
+                            android:background="#f2f2f2"/>
                     </com.zhy.autolayout.AutoLinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20px"
-                        android:background="#f2f2f2" />
+                        android:background="#f2f2f2"/>
 
 
                 </com.zhy.autolayout.AutoLinearLayout>
@@ -321,10 +333,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:drawableLeft="@mipmap/product_icon_phone"
+                    android:drawablePadding="10px"
                     android:gravity="center"
                     android:text="打电话"
-                    android:drawablePadding="10px"
-                    android:textSize="28px" />
+                    android:textColor="#333333"
+                    android:textSize="28px"/>
             </com.zhy.autolayout.AutoLinearLayout>
 
             <com.zhy.autolayout.AutoLinearLayout
@@ -339,12 +352,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawablePadding="10px"
                     android:drawableLeft="@mipmap/product_icon_news"
+                    android:drawablePadding="10px"
                     android:gravity="center"
                     android:text="发消息"
                     android:textColor="#f7f7f7"
-                    android:textSize="28px" />
+                    android:textSize="28px"/>
             </com.zhy.autolayout.AutoLinearLayout>
         </com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoLinearLayout>
@@ -357,5 +370,5 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="146px"
         android:layout_marginRight="24px"
-        android:src="@mipmap/product_icon_top" />
+        android:src="@mipmap/product_icon_top"/>
 </com.zhy.autolayout.AutoRelativeLayout>

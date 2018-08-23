@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context=".activity.buy.ReleaseForAty">
+                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                     xmlns:tools="http://schemas.android.com/tools"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent"
+                                     android:fitsSystemWindows="true"
+                                     android:orientation="vertical"
+                                     tools:context=".activity.buy.ReleaseForAty">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32px"
             android:layout_marginTop="32px"
-            android:src="@mipmap/home_icon_back" />
+            android:src="@mipmap/home_icon_back"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_centerInParent="true"
             android:text="发布求购"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="15dp"/>
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -48,7 +48,7 @@
             android:padding="12dp"
             android:textColor="@color/black"
             android:textColorHint="@color/seekColorText"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                     android:drawablePadding="10dp"
                     android:padding="12dp"
                     android:text="天津  西青"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"/>
 
                 <ImageView
                     android:id="@+id/release_imag_camera"
@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:padding="12dp"
-                    android:src="@mipmap/buy_icon_img" />
+                    android:src="@mipmap/buy_icon_img"/>
             </com.zhy.autolayout.AutoRelativeLayout>
         </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -110,7 +110,7 @@
                 android:drawablePadding="10dp"
                 android:padding="12dp"
                 android:text="分类"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/fenlei_tv"
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="仪器耗材"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="24px"
                 android:layout_marginTop="32px"
-                android:src="@mipmap/buy_icon_open" />
+                android:src="@mipmap/buy_icon_open"/>
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
@@ -137,12 +137,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
                 android:drawablePadding="10dp"
-                android:padding="12dp"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="12dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
                 android:text="手机"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
 
             <EditText
                 android:id="@+id/et_phone"
@@ -152,10 +156,12 @@
                 android:layout_marginTop="1dp"
                 android:background="@color/white"
                 android:drawablePadding="8dp"
+                android:gravity="left|center_vertical"
                 android:hint="输入手机号"
                 android:lines="1"
                 android:maxLength="11"
-                android:padding="12dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
                 android:textSize="15sp"
@@ -172,28 +178,30 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
-                android:drawablePadding="10dp"
-                android:padding="12dp"
-                android:text=" QQ "
-                android:textSize="15sp" />
+                android:gravity="left|center_vertical"
+                android:paddingBottom="12dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:text="QQ "
+                android:textSize="15sp"/>
 
             <EditText
                 android:id="@+id/et_qq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="1dp"
                 android:background="@color/white"
                 android:drawablePadding="8dp"
+                android:gravity="left|center_vertical"
                 android:hint="输入QQ号"
                 android:lines="1"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
@@ -204,27 +212,30 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:padding="12dp"
+                android:layout_marginLeft="2dp"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="12dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
                 android:text="微信"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
 
             <EditText
                 android:id="@+id/et_weixin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="1dp"
                 android:background="@color/white"
                 android:drawablePadding="8dp"
+                android:gravity="left|center_vertical"
                 android:hint="输入微信"
                 android:lines="1"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="15sp" />
+                android:textSize="15sp"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
         <TextView
@@ -236,6 +247,6 @@
             android:gravity="center"
             android:text="发   布"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

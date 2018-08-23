@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
@@ -30,7 +31,7 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
  */
 @Layout(R.layout.fragment_my)
 public class MyFragment extends BaseFragment {
-    private AutoLinearLayout my_ll_login;
+//    private AutoLinearLayout my_ll_login;
     private AutoLinearLayout my_ll_collect;
     private AutoLinearLayout my_atll_hellp;
     private AutoLinearLayout record_auto;
@@ -43,7 +44,7 @@ public class MyFragment extends BaseFragment {
     @Override
     public void initViews() {
 
-        my_ll_login = findViewById(R.id.my_ll_login);
+//        my_ll_login = findViewById(R.id.my_ll_login);
         my_ll_collect = findViewById(R.id.my_ll_collect);
         my_atll_hellp = findViewById(R.id.my_atll_hellp);
         record_auto = findViewById(R.id.record_auto);
@@ -64,11 +65,11 @@ public class MyFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         if (RequestUtlis.Token != null) {
-            my_ll_login_ture.setVisibility(View.VISIBLE);
-            my_ll_login.setVisibility(View.GONE);
+//            my_ll_login_ture.setVisibility(View.VISIBLE);
+//            my_ll_login.setVisibility(View.GONE);
         } else {
-            my_ll_login.setVisibility(View.VISIBLE);
-            my_ll_login_ture.setVisibility(View.GONE);
+//            my_ll_login.setVisibility(View.VISIBLE);
+//            my_ll_login_ture.setVisibility(View.GONE);
         }
     }
 
@@ -85,14 +86,14 @@ public class MyFragment extends BaseFragment {
                 }
             }
         });
-        //跳转到登录界面
-        my_ll_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jump(LoginActivity.class);
-
-            }
-        });
+//        //跳转到登录界面
+//        my_ll_login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                jump(LoginActivity.class);
+//
+//            }
+//        });
         //收藏界面
         my_ll_collect.setOnClickListener(new View.OnClickListener() {
             @Override

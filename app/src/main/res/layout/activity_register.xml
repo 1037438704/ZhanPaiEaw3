@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+                                     xmlns:tools="http://schemas.android.com/tools"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent"
+                                     android:fitsSystemWindows="true"
+                                     android:orientation="vertical">
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_marginBottom="32px"
             android:layout_marginLeft="32px"
             android:layout_marginTop="32px"
-            android:src="@mipmap/home_icon_back" />
+            android:src="@mipmap/home_icon_back"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,9 +28,9 @@
             android:layout_marginLeft="260px"
             android:gravity="center"
             android:text="注册"
-            android:textColor="#666666"
-            android:textSize="32px"
-            android:textStyle="bold" />
+            android:textColor="#333333"
+            android:textSize="28px"
+            android:textStyle="bold"/>
     </com.zhy.autolayout.AutoLinearLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -50,7 +50,7 @@
                 android:id="@+id/image_logo"
                 android:layout_width="220px"
                 android:layout_height="50px"
-                android:src="@mipmap/login_icon_logo" />
+                android:src="@mipmap/login_icon_logo"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
@@ -73,7 +73,7 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="13sp" />
+                android:textSize="28px"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -96,13 +96,13 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="13sp" />
+                android:textSize="28px"/>
 
             <CheckBox
                 android:id="@+id/register_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/password_check" />
+                android:button="@drawable/password_check"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
@@ -122,14 +122,15 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
-                android:textSize="13sp" />
+                android:textSize="28px"/>
 
             <TextView
                 android:id="@+id/register_find_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="获取验证码" />
+                android:text="获取验证码"
+                android:textSize="28px"/>
         </com.zhy.autolayout.AutoLinearLayout>
 
 
@@ -142,7 +143,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:text="密码由6-16个字符组成,区分大小写" />
+                android:text="密码由6-16个字符组成,区分大小写"
+                android:textSize="24px"/>
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <TextView
@@ -154,12 +156,12 @@
             android:gravity="center"
             android:text="注册"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="28px"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"/>
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"

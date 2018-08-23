@@ -26,7 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="修改绑定手机" />
+            android:text="修改绑定手机"
+            android:textColor="#333333"
+            android:textSize="32px" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -37,12 +39,14 @@
 
         <include layout="@layout/bg_view_1" />
 
-        <com.zhy.autolayout.AutoRelativeLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100px"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
@@ -53,19 +57,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="80dp"
-                android:text="11111111111" />
-        </com.zhy.autolayout.AutoRelativeLayout>
+                android:background="@null"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="11"
+                android:padding="12dp"
+                android:text="11111111111"
+                android:textColor="@color/black"
+                android:textColorHint="@color/seekColorText"
+                android:textSize="13sp" />
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <include layout="@layout/bg_view_1" />
 
-        <com.zhy.autolayout.AutoRelativeLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100px"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
@@ -77,9 +89,7 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
                 android:background="@null"
-                android:drawablePadding="8dp"
                 android:hint="输入手机号"
                 android:inputType="number"
                 android:lines="1"
@@ -88,16 +98,18 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
                 android:textSize="13sp" />
-        </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <include layout="@layout/bg_view_1" />
 
-        <com.zhy.autolayout.AutoRelativeLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100px"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
@@ -106,15 +118,14 @@
                 android:textSize="24px" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_weight="1"
                 android:background="@null"
                 android:drawablePadding="8dp"
                 android:hint="输入验证码"
                 android:inputType="number"
                 android:lines="1"
-                android:maxLength="11"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/seekColorText"
@@ -128,7 +139,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:text="获取验证码" />
-        </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <TextView
             android:layout_width="match_parent"

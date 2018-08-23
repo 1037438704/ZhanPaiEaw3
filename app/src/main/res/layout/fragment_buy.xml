@@ -26,15 +26,6 @@
                 android:textColor="#333333"
                 android:textSize="32px"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/title_seek"
-                android:layout_width="38px"
-                android:layout_height="38px"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="24px"
-                android:src="@mipmap/product_icon_search" />
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -48,17 +39,21 @@
 
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tab_news"
+                    app:tabSelectedTextColor="#0077ff"
                     android:layout_width="match_parent"
                     android:layout_height="90px"
                     app:tabIndicatorColor="#0077ff"
-                    app:tabSelectedTextColor="#0077ff"
+                    app:tabPaddingBottom="-1px"
+                    app:tabPaddingEnd="-1px"
+                    app:tabPaddingStart="-1px"
+                    app:tabPaddingTop="-1px"
+                    app:tabTextAppearance="@style/TabLayoutTextStyle"
                     app:tabTextColor="#333333" />
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/vpa_news"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
+                    android:layout_height="match_parent" />
             </com.zhy.autolayout.AutoLinearLayout>
 
             <ImageView

@@ -64,8 +64,7 @@
                             android:layout_marginLeft="24px"
                             android:layout_marginTop="16px"
                             android:text="输入关键字"
-                            android:textColor="#999999"
-                            android:textSize="28px" />
+                            android:textSize="24px" />
                     </com.zhy.autolayout.AutoLinearLayout>
 
                 </com.zhy.autolayout.AutoLinearLayout>

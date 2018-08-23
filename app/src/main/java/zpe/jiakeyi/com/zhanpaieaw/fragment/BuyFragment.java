@@ -31,7 +31,7 @@ import zpe.jiakeyi.com.zhanpaieaw.fragment.buy.BuyAddFragment;
 public class BuyFragment extends BaseFragment {
     private ImageView title_back;
     private TextView title_name;
-    private ImageView title_seek;
+//    private ImageView title_seek;
     private TabLayout tab_news;
     private ViewPager vpa_news;
     private MyPagerAdapter myPagerAdapter;
@@ -46,7 +46,7 @@ public class BuyFragment extends BaseFragment {
         at_ll_title = findViewById(R.id.at_ll_title);
         title_back = findViewById(R.id.title_back);
         title_name = findViewById(R.id.title_name);
-        title_seek = findViewById(R.id.title_seek);
+//        title_seek = findViewById(R.id.title_seek);
         tab_news = findViewById(R.id.tab_news);
         vpa_news = findViewById(R.id.vpa_news);
         img_issue = findViewById(R.id.img_issue);
@@ -80,12 +80,12 @@ public class BuyFragment extends BaseFragment {
 
     @Override
     public void setEvents() {
-        title_seek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jump(SeekActivity.class);
-            }
-        });
+//        title_seek.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                jump(SeekActivity.class);
+//            }
+//        });
         //跳转到发布界面
         img_issue.setOnClickListener(new View.OnClickListener() {
             @Override

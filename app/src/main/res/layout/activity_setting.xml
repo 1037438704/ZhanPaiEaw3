@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="设置"
-            android:textSize="34px" />
+            android:textColor="#333333"
+            android:textSize="32px" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -39,12 +40,14 @@
         android:orientation="horizontal">
 
         <TextView
+            android:textSize="28px"
+            android:textColor="#333333"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24px"
             android:drawablePadding="30px"
             android:text="消息提醒"
-            android:textSize="24px" />
+             />
 
         <View
             android:layout_width="0dp"
@@ -67,13 +70,14 @@
         android:orientation="horizontal">
 
         <TextView
+            android:textSize="28px"
+            android:textColor="#333333"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24px"
             android:drawablePadding="30px"
             android:text="清理缓存"
-            android:textColor="#333333"
-            android:textSize="28px" />
+            />
 
         <View
             android:layout_width="0dp"
