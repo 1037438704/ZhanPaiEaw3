@@ -189,7 +189,7 @@
                     android:layout_width="118px"
                     android:layout_height="30px"
                     android:layout_marginLeft="24px"
-                    android:src="@mipmap/kuaibao" />
+                    android:src="@mipmap/home_kuaibao" />
 
                 <com.sunfusheng.marqueeview.MarqueeView
                     android:id="@+id/marqueeView2"

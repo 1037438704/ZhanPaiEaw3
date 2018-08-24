@@ -1,14 +1,11 @@
 package zpe.jiakeyi.com.zhanpaieaw.fragment.message;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
+
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
 
@@ -25,7 +22,6 @@ public class UserFragment extends BaseFragment {
 
 
     public void initViews() {
-
     }
 
     @Override

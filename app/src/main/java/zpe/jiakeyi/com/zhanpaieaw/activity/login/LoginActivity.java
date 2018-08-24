@@ -1,5 +1,8 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.login;
 
+import com.easemob.EMCallBack;
+import com.easemob.chat.EMChatManager;
+import com.easemob.chat.EMGroupManager;
 import com.google.gson.Gson;
 
 import android.text.InputType;
@@ -129,6 +132,28 @@ public class LoginActivity extends BaseActivity {
                                     RequestUtlis.ID = loginBeanCode.getData().getUserInfo().getId();
                                     Log.i("token", "onResponse: " + RequestUtlis.Token);
                                     Log.i("id", "onResponse: " + RequestUtlis.ID);
+                                    EMChatManager.getInstance().login(loginBeanCode.getData().getUserInfo().getId(), password_logi.getText().toString(), new EMCallBack() {//回调
+                                        @Override
+                                        public void onSuccess() {
+                                            runOnUiThread(new Runnable() {
+                                                public void run() {
+                                                    EMGroupManager.getInstance().loadAllGroups();
+                                                    EMChatManager.getInstance().loadAllConversations();
+                                                    Log.d("main", "登录聊天服务器成功！");
+                                                }
+                                            });
+                                        }
+
+                                        @Override
+                                        public void onProgress(int progress, String status) {
+
+                                        }
+
+                                        @Override
+                                        public void onError(int code, String message) {
+                                            Log.d("main", "登录聊天服务器失败！");
+                                        }
+                                    });
                                     Toast.makeText(me, "登录成功", Toast.LENGTH_SHORT).show();
                                     finish();
                                 } else {

@@ -2,6 +2,7 @@ package zpe.jiakeyi.com.zhanpaieaw.activity.login;
 
 
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -48,7 +49,6 @@ public class RegisterActivity extends BaseActivity {
     private ImageView image_logo;
     private EditText register_phone_number;
     private EditText register_password;
-    private CheckBox register_checkbox;
     private EditText register_code;
     private TextView register_find_code;
     private TextView register_button;
@@ -60,7 +60,6 @@ public class RegisterActivity extends BaseActivity {
         image_logo = findViewById(R.id.image_logo);
         register_phone_number = findViewById(R.id.register_phone_number);
         register_password = findViewById(R.id.register_password);
-        register_checkbox = findViewById(R.id.register_checkbox);
         register_code = findViewById(R.id.register_code);
         register_find_code = findViewById(R.id.register_find_code);
         register_button = findViewById(R.id.register_button);
@@ -74,68 +73,10 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     public void setEvents() {
-        register_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    register_password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                } else {
-                    register_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                }
-            }
-
-        });
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (register_phone_number.getText().toString() != null) {
-                    boolean chinaPhoneLegal = isChinaPhoneLegal(register_phone_number.getText().toString());
-                    if (chinaPhoneLegal) {
-                        String s = HttpUtlis.RegisterData_Code(register_code.getText().toString());
-                        if (register_password.getText().toString() != null) {
-                            if (register_password.getText().toString().length() < 6) {
-                                Toast.makeText(me, "密码格式有误", Toast.LENGTH_SHORT).show();
-                            } else {
-                                if (register_code != null) OkHttpUtils.post()
-                                        .url(RequestUtlis.RegisterUser)
-                                        .addHeader("loginType", "1")
-                                        .addParams("phoneNum", register_phone_number.getText().toString())
-                                        .addParams("password", register_password.getText().toString())
-                                        .addParams("code", register_code.getText().toString())
-                                        .build().execute(new StringCallback() {
-                                            @Override
-                                            public void onError(Request request, Exception e) {
-                                                Log.i("失败", "onError: " + e);
-                                                Toast.makeText(me, "注册失败", Toast.LENGTH_SHORT).show();
-                                            }
-
-                                            @Override
-                                            public void onResponse(String response) {
-                                                Gson gson = new Gson();
-                                                loginBean loginBean = gson.fromJson(response, loginBean.class);
-                                                Log.i("注册软件", "onResponse: " + response);
-                                                int code = loginBean.getCode();
-                                                if (HttpUtlis.code == "1") {
-                                                    Toast.makeText(me, "注册成功", Toast.LENGTH_SHORT).show();
-                                                    jump(LoginActivity.class);
-                                                } else {
-                                                    Toast.makeText(me, loginBean.getMsg(), Toast.LENGTH_SHORT).show();
-                                                }
-                                            }
-                                        });
-                                else {
-                                    Toast.makeText(me, "验证码不能为空", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        } else {
-                            Toast.makeText(me, "请输入密码", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(me, "请输入正确的手机号", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(me, "手机号不能为空", Toast.LENGTH_SHORT).show();
-                }
+                submit();
             }
         });
         register_find_code.setOnClickListener(new View.OnClickListener()
@@ -143,10 +84,11 @@ public class RegisterActivity extends BaseActivity {
         {
             @Override
             public void onClick(View v) {
-                if (register_phone_number.getText().toString() != null) {
+                if (register_phone_number.getText().toString()
+                        != null) {
                     boolean chinaPhoneLegal = isChinaPhoneLegal(register_phone_number.getText().toString());
                     if (chinaPhoneLegal) {
-                        verificationTime = (VerificationTime) new VerificationTime(60000, 1000, register_find_code,R.color.myg , R.color.myblue).start();
+                        verificationTime = (VerificationTime) new VerificationTime(60000, 1000, register_find_code, R.color.myg, R.color.myblue).start();
                         OkHttpUtils.post().url(RequestUtlis.getCode)
                                 .addHeader("loginType", "1")
                                 .addParams("iphone", register_phone_number.getText().toString())
@@ -177,6 +119,20 @@ public class RegisterActivity extends BaseActivity {
         });
     }
 
+    private void submit() {
+        // validate
+        String number = register_phone_number.getText().toString().trim();
+        if (TextUtils.isEmpty(number)) {
+            Toast.makeText(this, "请输入手机号", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String password = register_code.getText().toString().trim();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+    }
 
     public static boolean isChinaPhoneLegal(String str)
             throws PatternSyntaxException {

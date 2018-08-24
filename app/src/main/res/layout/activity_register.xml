@@ -33,6 +33,8 @@
             android:textStyle="bold" />
     </com.zhy.autolayout.AutoLinearLayout>
 
+    <include layout="@layout/bg_view_1" />
+
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -66,7 +68,7 @@
                 android:layout_height="100px"
                 android:background="@null"
                 android:drawablePadding="8dp"
-                android:hint="用户名/手机号"
+                android:hint="请输入手机号"
                 android:inputType="number"
                 android:lines="1"
                 android:maxLength="11"
@@ -81,34 +83,6 @@
             android:layout_width="600px"
             android:layout_height="1px"
             android:background="#f2f2f2" />
-
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="600px"
-            android:layout_height="100px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/register_password"
-                android:layout_width="570px"
-                android:layout_height="100px"
-                android:background="@null"
-                android:drawablePadding="8dp"
-                android:hint="输入密码"
-                android:inputType="textPassword"
-                android:lines="1"
-                android:maxLength="11"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/seekColorText"
-                android:textSize="28px" />
-
-            <CheckBox
-                android:id="@+id/register_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@drawable/password_check" />
-        </com.zhy.autolayout.AutoLinearLayout>
 
         <TextView
             android:layout_width="600px"
@@ -172,7 +146,7 @@
             android:layout_marginTop="20px"
             android:background="@drawable/shape_bottom"
             android:gravity="center"
-            android:text="注册"
+            android:text="下一步"
             android:textColor="@color/white"
             android:textSize="28px" />
 

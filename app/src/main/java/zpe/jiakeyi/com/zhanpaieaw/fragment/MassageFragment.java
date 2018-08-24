@@ -16,6 +16,7 @@ import java.util.List;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectFragmentAdapter;
+import zpe.jiakeyi.com.zhanpaieaw.fragment.message.FriendFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.SystemFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.UserFragment;
 
@@ -51,8 +52,10 @@ public class MassageFragment extends BaseFragment {
         auto_ll.setY(me.getStatusBarHeight());
         lists.add("互动消息");
         lists.add("系统信息");
+        lists.add("我的好友");
         data.add(new UserFragment());
         data.add(new SystemFragment());
+        data.add(new FriendFragment());
         MyCollectFragmentAdapter myAdaptre = new MyCollectFragmentAdapter(getChildFragmentManager(), data, lists);
         viewpager.setAdapter(myAdaptre);
         viewpager.setCurrentItem(0);

@@ -13,7 +13,7 @@ import com.unity3d.player.UnityPlayerActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.activity.MainActivity;
+import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 
 /**
  * 创建人： Nine tails fox
