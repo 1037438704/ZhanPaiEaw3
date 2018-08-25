@@ -41,7 +41,7 @@ dependencies {
     compile 'com.xhb:xbanner:1.2.9'
     //跑马灯
     compile 'com.sunfusheng:marqueeview:1.3.3'
-    implementation 'com.android.support:design:27.1.1'
+//    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     //流式布局
     implementation 'com.google.android:flexbox:1.0.0'
@@ -64,7 +64,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.2.4'
     implementation files('libs/unity-classes.jar')
     //环信
-    compile 'com.google.android.gms:play-services-gcm:9.4.0'
+//    compile 'com.google.android.gms:play-services-gcm:9.4.0'
     implementation project(':easeui')
     compile 'com.hyphenate:hyphenate-sdk-lite:3.3.0';
 }
