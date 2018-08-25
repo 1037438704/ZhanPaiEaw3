@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseFragment;
@@ -158,7 +157,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                             @Override
                             public void loadBanner(XBanner banner, Object model, View view, int position) {
 //                Glide.with(getActivity()).load(images.get(position)).error(R.mipmap.banner).into((ImageView) view);
-                                Glide.with(getActivity()).load(images.get(position)).apply(new RequestOptions().error(R.mipmap.banner)).into((ImageView) view);
+                                Glide.with(getActivity()).load(images.get(position)).error(R.mipmap.banner).into((ImageView) view);
                             }
 
                         });

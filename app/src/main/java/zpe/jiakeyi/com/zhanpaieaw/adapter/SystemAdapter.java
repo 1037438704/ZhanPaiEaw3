@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -30,7 +29,7 @@ public class SystemAdapter extends BaseQuickAdapter<SystemMassageBean.DataBean.L
         TextView viewById1 = helper.itemView.findViewById(R.id.item_massage_riqi);
         TextView viewById2 = helper.itemView.findViewById(R.id.item_massage_title);
         TextView viewById3 = helper.itemView.findViewById(R.id.item_massage_context);
-        Glide.with(mContext).load(item.getImgUrl()).apply(new RequestOptions().error(R.mipmap.img_7)).into((ImageView) viewById);
+        Glide.with(mContext).load(item.getImgUrl()).error(R.mipmap.img_7).into((ImageView) viewById);
         viewById1.setText(item.getCreateTime());
         viewById2.setText(item.getTitle());
         viewById3.setText(item.getContent());

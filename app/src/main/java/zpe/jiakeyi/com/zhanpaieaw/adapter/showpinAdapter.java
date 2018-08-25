@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -32,7 +31,7 @@ public class showpinAdapter extends BaseQuickAdapter<ShowBean.DataBean.ListBean,
         TextView viewById4 = helper.itemView.findViewById(R.id.tv_show_recycle_item_region);
         TextView viewById5 = helper.itemView.findViewById(R.id.tv_show_recycle_look);
         if (item != null) {
-            Glide.with(mContext).load(item.getImgUrl()).apply(new RequestOptions().error(R.mipmap.product_img_list)).into((ImageView) viewById1);
+            Glide.with(mContext).load(item.getImgUrl()).error(R.mipmap.product_img_list).into((ImageView) viewById1);
             viewById2.setText(item.getPname());
             viewById3.setText(item.getAreaA() + "");
             viewById4.setText(item.getAreaB() + "");

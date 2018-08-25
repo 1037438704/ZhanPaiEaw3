@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -63,7 +62,7 @@ public class GoodsRecyclerViewAdapter_Second extends RecyclerView.Adapter<GoodsR
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.itemView.setTag(position);
         holder.tv_recycler_goods_two.setText(list.get(position).getTypeName());
-        Glide.with(mContext).load(list.get(position).getImg()).apply(new RequestOptions().error(R.mipmap.product_img_clean_1)).into(holder.img_recycler_goods_two);
+        Glide.with(mContext).load(list.get(position).getImg()).error(R.mipmap.product_img_clean_1).into(holder.img_recycler_goods_two);
     }
 
     @Override

@@ -22,14 +22,10 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.kongzue.baseframework.util.OnResponseListener;
 import com.squareup.okhttp.Request;
@@ -328,7 +324,7 @@ public class ReleaseForAty extends BaseActivity {
         if (bitmap != null) {
             imageView.setImageBitmap(bitmap);
         } else {
-            Glide.with(this).load(string).apply(new RequestOptions().circleCrop()).into(imageView);
+//            Glide.with(this).load(string).error(new RequestOptions().circleCrop()).into(imageView);
         }
         ll.addView(imageView);
         TextView textView = new TextView(me);

@@ -9,7 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -90,7 +89,7 @@ public class ProductActivity extends BaseActivity {
                         zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
                         if (info != null) {
                             String detailedImg = info.getDetailedImg();
-                            Glide.with(me).load(detailedImg).apply(new RequestOptions().error(R.mipmap.product_img_details)).into(tp_pd);
+                            Glide.with(me).load(detailedImg).error(R.mipmap.product_img_details).into(tp_pd);
                             cp_titler.setText(info.getPname());
                             gs_name.setText(info.getFirmName());
                             dq_tv.setText(info.getAreaB() + "   " + info.getAreaC());

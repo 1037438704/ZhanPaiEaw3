@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -40,7 +39,7 @@ public class HomeRecyclerViewAdapter_recommend extends BaseQuickAdapter<HomeBean
     protected void convert(BaseViewHolder helper, HomeBean.DataBean.ProductListBean item) {
         TextView text_home_recycler_new_recommend = helper.itemView.findViewById(R.id.text_home_recycler_new_recommend);
         ImageView img_home_recycler_recommend = helper.itemView.findViewById(R.id.img_home_recycler_recommend);
-        Glide.with(mContext).load(item.getUrl()).apply(new RequestOptions().error(R.mipmap.img_7)).into((ImageView) img_home_recycler_recommend);
+        Glide.with(mContext).load(item.getUrl()).error(R.mipmap.img_7).into((ImageView) img_home_recycler_recommend);
         text_home_recycler_new_recommend.setText(item.getPname());
         Toast.makeText(mContext, item.getPname(), Toast.LENGTH_SHORT).show();
 

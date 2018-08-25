@@ -5,7 +5,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -33,7 +32,7 @@ public class HomeRecyclerViewAdapter_new extends BaseQuickAdapter<HomeBean.DataB
     protected void convert(BaseViewHolder helper, HomeBean.DataBean.StandListBean item) {
         TextView text_home_recycler_new = helper.itemView.findViewById(R.id.text_home_recycler_new);
         ImageView img_home_recycler_new = helper.itemView.findViewById(R.id.img_home_recycler_new);
-        Glide.with(mContext).load(item.getStandCover()).apply(new RequestOptions().error(R.mipmap.img_7)).into((ImageView) img_home_recycler_new);
+        Glide.with(mContext).load(item.getStandCover()).error(R.mipmap.img_7).into((ImageView) img_home_recycler_new);
         text_home_recycler_new.setText(item.getStandName());
 
 
