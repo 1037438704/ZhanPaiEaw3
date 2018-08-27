@@ -50,30 +50,29 @@ public class SystemFragment extends BaseFragment {
         MassageManager.setOrientation(LinearLayoutManager.VERTICAL);
         system_massage.setLayoutManager(MassageManager);
         if (RequestUtlis.ID != null) {
-            OkHttpUtils.post().url(RequestUtlis.sAty)
-                    .addHeader("loginType", "1")
-                    .addParams("userId", RequestUtlis.ID)
-                    .build()
-                    .execute(new StringCallback() {
-                        @Override
-                        public void onError(Request request, Exception e) {
-                        }
-
-                        @Override
-                        public void onResponse(String response) {
-                            Gson gson = new Gson();
-                            SystemMassageBean systemMassageBean = gson.fromJson(response, SystemMassageBean.class);
-                            List<SystemMassageBean.DataBean.ListBean> list = systemMassageBean.getData().getList();
-                            SystemAdapter systemAdapter = new SystemAdapter(R.layout.system_massage_item, list);
-                            system_massage.setAdapter(systemAdapter);
-                        }
-                    });
-
-        } else {
-            jump(LoginActivity.class);
-            Toast.makeText(me, "请先登录", Toast.LENGTH_SHORT).show();
+            getData();
         }
+    }
 
+    public void getData() {
+        OkHttpUtils.post().url(RequestUtlis.sAty)
+                .addHeader("loginType", "1")
+                .addParams("userId", RequestUtlis.ID)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Request request, Exception e) {
+                    }
+
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        SystemMassageBean systemMassageBean = gson.fromJson(response, SystemMassageBean.class);
+                        List<SystemMassageBean.DataBean.ListBean> list = systemMassageBean.getData().getList();
+                        SystemAdapter systemAdapter = new SystemAdapter(R.layout.system_massage_item, list);
+                        system_massage.setAdapter(systemAdapter);
+                    }
+                });
 
     }
 

@@ -30,11 +30,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <!-- 设置环信应用的AppKey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
             android:value="1126180821253788#zhanpaieaw" />
-        <!-- 声明SDK所需的service SDK核心功能-->
+        <!-- 声明SDK所需的service SDK核心功能 -->
         <service
             android:name="com.hyphenate.chat.EMChatService"
             android:exported="true" />
@@ -46,6 +47,7 @@
         <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
             <!-- 可选filter -->
@@ -132,7 +134,9 @@
         <activity android:name=".activity.home.SeekShowActivity" />
         <activity android:name=".activity.my.SexSettingActivity" />
         <activity android:name=".activity.my.BrowsingHistoryActivity" />
-        <activity android:name=".activity.login.RegisterActivity2"></activity>
+        <activity android:name=".activity.login.RegisterActivity2" />
+        <activity android:name=".activity.massage.ChatActivity"></activity>
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
     </application>
 
 </manifest>

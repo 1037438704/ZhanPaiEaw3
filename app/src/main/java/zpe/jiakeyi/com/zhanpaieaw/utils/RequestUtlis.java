@@ -7,7 +7,7 @@ package zpe.jiakeyi.com.zhanpaieaw.utils;
  * 功能描述:网络接口
  */
 public class RequestUtlis {
-    //    public final static String HttpUrl = "http://192.168.1.181";
+    //        public final static String HttpUrl = "http://192.168.1.181";
     public final static String HttpUrl = "http://39.107.254.193:8080/zp";
     //    public static String Token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNDQwODYxOCwic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNDQxMjIxOH0.A1uYnuQZtBXaCC4Zpe4JGESF3DJMtRAxfBNVyBb90Ac";
     public static String Token = null;

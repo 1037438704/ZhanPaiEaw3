@@ -1,8 +1,5 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.login;
 
-import com.easemob.EMCallBack;
-import com.easemob.chat.EMChatManager;
-import com.easemob.chat.EMGroupManager;
 import com.google.gson.Gson;
 
 import android.text.InputType;
@@ -15,16 +12,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.PasswordActivity;
 import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
@@ -132,13 +130,13 @@ public class LoginActivity extends BaseActivity {
                                     RequestUtlis.ID = loginBeanCode.getData().getUserInfo().getId();
                                     Log.i("token", "onResponse: " + RequestUtlis.Token);
                                     Log.i("id", "onResponse: " + RequestUtlis.ID);
-                                    EMChatManager.getInstance().login(loginBeanCode.getData().getUserInfo().getId(), password_logi.getText().toString(), new EMCallBack() {//回调
+                                    EMClient.getInstance().login(loginBeanCode.getData().getUserInfo().getId(), password_logi.getText().toString(), new EMCallBack() {//回调
                                         @Override
                                         public void onSuccess() {
                                             runOnUiThread(new Runnable() {
                                                 public void run() {
-                                                    EMGroupManager.getInstance().loadAllGroups();
-                                                    EMChatManager.getInstance().loadAllConversations();
+                                                    EMClient.getInstance().groupManager().loadAllGroups();
+                                                    EMClient.getInstance().chatManager().loadAllConversations();
                                                     Log.d("main", "登录聊天服务器成功！");
                                                 }
                                             });
@@ -156,6 +154,7 @@ public class LoginActivity extends BaseActivity {
                                     });
                                     Toast.makeText(me, "登录成功", Toast.LENGTH_SHORT).show();
                                     finish();
+                                    jump(MainActivity.class);
                                 } else {
                                     Toast.makeText(me, loginBeanCode.getMsg(), Toast.LENGTH_SHORT).show();
                                 }

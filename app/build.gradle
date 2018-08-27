@@ -66,5 +66,5 @@ dependencies {
     //环信
 //    compile 'com.google.android.gms:play-services-gcm:9.4.0'
     implementation project(':easeui')
-    compile 'com.hyphenate:hyphenate-sdk-lite:3.3.0';
+//    compile 'com.hyphenate:hyphenate-sdk-lite:3.3.0';
 }
