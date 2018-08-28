@@ -7,12 +7,12 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.bean.BuyListAllBean;
 import zpe.jiakeyi.com.zhanpaieaw.bean.PersonBean;
@@ -46,17 +46,19 @@ public class BuyAddFgtAdapter extends BaseQuickAdapter<BuyListAllBean.DataBean.L
                 .build()
                 .execute(new StringCallback() {
                     @Override
-                    public void onError(Request request, Exception e) {
+                    public void onError(Call call, Exception e, int id) {
 
                     }
 
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response, int id) {
                         Gson gson = new Gson();
                         PersonBean personBean = gson.fromJson(response, PersonBean.class);
 //                        String viaUrl = personBean.getData().getUser().getViaUrl();
 //                        Glide.with(mContext).load(viaUrl).apply(new RequestOptions().error(R.mipmap.buy_img_person)).into(imageView);
+
                     }
+
                 });
         tv_title.setText(item.getTitle());
         tv_name.setText(item.getContent());

@@ -14,12 +14,12 @@ import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.net.IDN;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.RegisterActivity;
@@ -50,7 +50,7 @@ public class ProductActivity extends BaseActivity {
     private TextView yyly_id;
     private ImageView rt_top;
     private ScrollView sc_id;
-    public static String id;
+    public static String mid;
 
     @Override
     public void initViews() {
@@ -79,11 +79,12 @@ public class ProductActivity extends BaseActivity {
                 .build()
                 .execute(new StringCallback() {
                     @Override
-                    public void onError(Request request, Exception e) {
+                    public void onError(Call call, Exception e, int id) {
+
                     }
 
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response, int id) {
                         Gson gson = new Gson();
                         prodictBean prodictBean = gson.fromJson(response, prodictBean.class);
                         zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
@@ -97,8 +98,9 @@ public class ProductActivity extends BaseActivity {
                             pp_tv.setText(info.getBrandName());
                             xh_tv.setText(info.getVersion());
                             yyly_id.setText(info.getField());
-                            id = info.getId();
+                            mid = info.getId();
                         }
+
                     }
                 });
         web_product.loadUrl("http://m.baidu.com/?cip=117.136.54.19&amp;baiduid=B02FA207E9F6316421974343BBAC55C0&amp;from=844b&amp;vit=fps?from=844b&amp;vit=fps&amp;index=&amp;ssid=0&amp;bd_page_type=1&amp;logid=7938441944509756072&pu=sz%401321_480&t_noscript=jump");
@@ -120,17 +122,20 @@ public class ProductActivity extends BaseActivity {
                     OkHttpUtils.post().url(RequestUtlis.ifCP)
                             .addHeader("loginType", "1")
                             .addParams("userId", RequestUtlis.ID)
-                            .addParams("productId", id)
+                            .addParams("productId", mid)
                             .build()
                             .execute(new StringCallback() {
                                 @Override
-                                public void onError(Request request, Exception e) {
+                                public void onError(Call call, Exception e, int id) {
+
                                 }
 
                                 @Override
-                                public void onResponse(String response) {
+                                public void onResponse(String response, int id) {
                                     Toast.makeText(me, "" + response, Toast.LENGTH_SHORT).show();
+
                                 }
+
                             });
                 } else if (RequestUtlis.Token == null) {
                     jump(LoginActivity.class);

@@ -90,6 +90,7 @@ public class RequestUtlis {
      */
     //图片上传
     public final static String singleUploadImg = HttpUrl + "/upload/singleUploadImg";
+    public final static String singleUploadFile = HttpUrl + "/upload/singleUploadFile";
     /**
      * 收藏模块
      * firm-product-controller : 仪器管理G

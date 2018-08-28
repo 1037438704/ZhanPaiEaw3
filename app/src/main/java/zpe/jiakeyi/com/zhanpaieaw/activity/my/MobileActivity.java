@@ -9,10 +9,10 @@ import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 
 /**
@@ -39,14 +39,15 @@ public class MobileActivity extends BaseActivity {
     public void requestData() {
         OkHttpUtils.post().url("").build().execute(new StringCallback() {
             @Override
-            public void onError(Request request, Exception e) {
+            public void onError(Call call, Exception e, int id) {
 
             }
 
             @Override
-            public void onResponse(String response) {
+            public void onResponse(String response, int id) {
 
             }
+
         });
 
     }

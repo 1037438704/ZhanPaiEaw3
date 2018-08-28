@@ -1,23 +1,17 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.login;
 
 
-import android.text.InputType;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -25,9 +19,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.loginBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.HttpUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.utils.VerificationTime;
 
@@ -95,13 +88,15 @@ public class RegisterActivity extends BaseActivity {
                                 .build()
                                 .execute(new StringCallback() {
                                     @Override
-                                    public void onError(Request request, Exception e) {
+                                    public void onError(Call call, Exception e, int id) {
+
                                     }
 
                                     @Override
-                                    public void onResponse(String response) {
+                                    public void onResponse(String response, int id) {
 
                                     }
+
                                 });
                     } else {
                         Toast.makeText(me, "请输入正确的手机号", Toast.LENGTH_SHORT).show();

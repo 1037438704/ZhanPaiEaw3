@@ -13,12 +13,12 @@ import android.widget.Toast;
 
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.SystemAdapter;
@@ -61,17 +61,19 @@ public class SystemFragment extends BaseFragment {
                 .build()
                 .execute(new StringCallback() {
                     @Override
-                    public void onError(Request request, Exception e) {
+                    public void onError(Call call, Exception e, int id) {
+
                     }
 
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response, int id) {
                         Gson gson = new Gson();
                         SystemMassageBean systemMassageBean = gson.fromJson(response, SystemMassageBean.class);
                         List<SystemMassageBean.DataBean.ListBean> list = systemMassageBean.getData().getList();
                         SystemAdapter systemAdapter = new SystemAdapter(R.layout.system_massage_item, list);
                         system_massage.setAdapter(systemAdapter);
                     }
+
                 });
 
     }

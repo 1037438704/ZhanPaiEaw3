@@ -1,12 +1,18 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.my;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +27,18 @@ import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.zhy.autolayout.AutoLinearLayout;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Random;
+import java.util.UUID;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
+import zpe.jiakeyi.com.zhanpaieaw.utils.RealPathFromUriUtils;
+import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
 import static android.media.MediaRecorder.VideoSource.CAMERA;
 
@@ -115,6 +129,7 @@ public class PersonalActivity extends BaseActivity {
         image_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                requestAllPower();
                 window.showAtLocation(v, Gravity.BOTTOM, 0, 0);
                 lightoff();
             }
@@ -182,17 +197,68 @@ public class PersonalActivity extends BaseActivity {
         getWindow().setAttributes(lp);
     }
 
+    public void requestAllPower() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            }
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        final Bitmap bitmap;
 
         if (requestCode == CAMERA && resultCode == RESULT_OK && data != null) {
             // 拍照
             Bundle bundle = data.getExtras();
-            log(data);
+            Log.i("img", "onActivityResult: " + bundle.get("data"));
             // 获取相机返回的数据，并转换为图片格式
-            Bitmap bitmap = (Bitmap) bundle.get("data");
+            bitmap = (Bitmap) bundle.get("data");
 //            toastUtlis(bitmap, null);
+            final String dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ZhanPai/MyImage/";
+            //获取内部存储状态
+            String state = Environment.getExternalStorageState();
+            //如果状态不是mounted，无法读写
+            if (!state.equals(Environment.MEDIA_MOUNTED)) {
+                return;
+            }
+            //通过UUID生成字符串文件名
+            final String fileName1 = UUID.randomUUID().toString();
+            //通过Random()类生成数组命名
+            Random random = new Random();
+            String fileName2 = String.valueOf(random.nextInt(Integer.MAX_VALUE));
+            new Thread() {
+                @Override
+                public void run() {
+                    super.run();
+                    try {
+                        File file1 = new File(dir);
+                        File file = new File(dir + fileName1 + ".png");
+                        if (!file1.exists()) {
+
+                            file1.mkdirs();//创建目录
+                        }
+                        FileOutputStream out = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        out.flush();
+                        out.close();
+                        Uri uri = Uri.fromFile(file);
+                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
+                        Log.i("图片地址", "onActivityResult: " + file.getPath());
+                        ImgPost(file);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
 
             // TODO 图片从这里拿
 //            Glide.with(this).load(bitmap).apply(new RequestOptions().circleCrop()).into(imagView);
@@ -201,9 +267,35 @@ public class PersonalActivity extends BaseActivity {
             /**
              * 调用图库
              */
-            Uri selectedImage = data.getData();
+            String realPathFromUri = RealPathFromUriUtils.getRealPathFromUri(this, data.getData());
+            File file = new File(realPathFromUri);
+            ImgPost(file);
             // TODO 图片从这里拿
 //            Glide.with(this).load(selectedImage).apply(new RequestOptions().circleCrop()).into(imagView);
+        }
+
+    }
+
+    private void ImgPost(File file) {
+        File myfile = new File(file.getParent());
+        if (myfile.exists()) {
+            OkHttpUtils
+                    .post()
+                    .url(RequestUtlis.singleUploadImg)
+                    .addFile("file", file.getName(), file)
+                    .build()
+                    .execute(new StringCallback() {
+                        @Override
+                        public void onError(Call call, Exception e, int id) {
+                            Log.e("上传失败", "onError: " + e);
+                        }
+
+                        @Override
+                        public void onResponse(String response, int id) {
+                            Log.e("上传成功", "onResponse: " + response);
+
+                        }
+                    });
         }
     }
 }

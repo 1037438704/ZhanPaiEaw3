@@ -12,12 +12,12 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.buy.ParticularsActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.BuyAddFgtAdapter;
@@ -59,12 +59,12 @@ public class BuyAddFragment extends BaseFragment {
                     .build()
                     .execute(new StringCallback() {
                         @Override
-                        public void onError(Request request, Exception e) {
+                        public void onError(Call call, Exception e, int id) {
 
                         }
 
                         @Override
-                        public void onResponse(String response) {
+                        public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             BuyListAllBean buyListAllBean = gson.fromJson(response, BuyListAllBean.class);
                             list = buyListAllBean.getData().getList();
@@ -77,18 +77,19 @@ public class BuyAddFragment extends BaseFragment {
                                 }
                             });
                         }
+
                     });
         } else {
             OkHttpUtils.post().url(RequestUtlis.SATY).addParams("typea", count - 1 + "")
                     .build()
                     .execute(new StringCallback() {
                         @Override
-                        public void onError(Request request, Exception e) {
+                        public void onError(Call call, Exception e, int id) {
 
                         }
 
                         @Override
-                        public void onResponse(String response) {
+                        public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             BuyListAllBean buyListAllBean = gson.fromJson(response, BuyListAllBean.class);
                             list = buyListAllBean.getData().getList();
@@ -101,6 +102,7 @@ public class BuyAddFragment extends BaseFragment {
                                 }
                             });
                         }
+
                     });
         }
 

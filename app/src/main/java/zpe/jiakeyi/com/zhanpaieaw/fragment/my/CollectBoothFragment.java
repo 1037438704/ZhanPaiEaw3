@@ -17,12 +17,12 @@ import android.widget.Toast;
 
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.showpinAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.unslovedAdapter;
@@ -64,15 +64,16 @@ public class CollectBoothFragment extends BaseFragment {
                     .build()
                     .execute(new StringCallback() {
                         @Override
-                        public void onError(Request request, Exception e) {
+                        public void onError(Call call, Exception e, int id) {
+
                         }
 
                         @Override
-                        public void onResponse(String response) {
+                        public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             solveBean solveBean = gson.fromJson(response, solveBean.class);
-
                         }
+
                     });
         } else if (count == 1) {
             LinearLayoutManager MassageManager = new LinearLayoutManager(me);
@@ -87,17 +88,19 @@ public class CollectBoothFragment extends BaseFragment {
                     .build()
                     .execute(new StringCallback() {
                         @Override
-                        public void onError(Request request, Exception e) {
+                        public void onError(Call call, Exception e, int id) {
+
                         }
 
                         @Override
-                        public void onResponse(String response) {
+                        public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             unsolvedBean unsolvedBean = gson.fromJson(response, unsolvedBean.class);
                             List<zpe.jiakeyi.com.zhanpaieaw.bean.unsolvedBean.DataBean.ListBeanX.ListBean> list = unsolvedBean.getData().getList().getList();
                             unslovedAdapter unslovedAdapter = new unslovedAdapter(R.layout.item_jiejue_adapter2, list);
                             recy_collect_fm.setAdapter(unslovedAdapter);
                         }
+
                     });
         }
 //        lists.add("未解决");

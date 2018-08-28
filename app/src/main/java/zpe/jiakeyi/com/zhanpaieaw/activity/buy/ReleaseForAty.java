@@ -1,13 +1,18 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.buy;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,14 +26,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.kongzue.baseframework.util.OnResponseListener;
-import com.squareup.okhttp.Request;
 import com.zhy.autolayout.AutoRelativeLayout;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -39,10 +46,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.ReleaseAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.bean.CityBean;
+import zpe.jiakeyi.com.zhanpaieaw.bean.ImgPostBean;
+import zpe.jiakeyi.com.zhanpaieaw.utils.RealPathFromUriUtils;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.utils.ToastUtlis;
 
@@ -68,7 +80,10 @@ public class ReleaseForAty extends BaseActivity {
     private View contentView;
     private PopupWindow window;
     private LinearLayout ll;
-    private ImageView release_imag_camera;
+    private ImageView Image_4;
+    private ImageView Image_1;
+    private ImageView Image_2;
+    private ImageView Image_3;
     private AutoRelativeLayout release_rl_classify;
     private View view;
     private RecyclerView dialog_recyclerView;
@@ -104,7 +119,7 @@ public class ReleaseForAty extends BaseActivity {
         et_qq = findViewById(R.id.et_qq);
         et_weixin = findViewById(R.id.et_weixin);
         rf_tv_fabu = findViewById(R.id.rf_tv_fabu);
-        release_imag_camera = findViewById(R.id.release_imag_camera);
+        Image_4 = findViewById(R.id.Image_4);
         release_rl_classify = findViewById(R.id.release_rl_classify);
         back_aty = findViewById(R.id.back_aty);
         // 用于PopupWindow的View
@@ -161,14 +176,15 @@ public class ReleaseForAty extends BaseActivity {
                 .build()
                 .execute(new StringCallback() {
                     @Override
-                    public void onError(Request request, Exception e) {
+                    public void onError(Call call, Exception e, int id) {
 
                     }
 
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response, int id) {
 
                     }
+
                 });
     }
 
@@ -195,9 +211,10 @@ public class ReleaseForAty extends BaseActivity {
             }
         });
         //调用相机
-        release_imag_camera.setOnClickListener(new View.OnClickListener() {
+        Image_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                requestAllPower();
                 window.showAtLocation(v, Gravity.BOTTOM, 0, 0);
                 lightoff();
             }
@@ -295,15 +312,51 @@ public class ReleaseForAty extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        final Bitmap bitmap;
 
         if (requestCode == CAMERA && resultCode == RESULT_OK && data != null) {
             // 拍照
             Bundle bundle = data.getExtras();
-            log(data);
+            Log.i("img", "onActivityResult: " + bundle.get("data"));
             // 获取相机返回的数据，并转换为图片格式
-            Bitmap bitmap = (Bitmap) bundle.get("data");
-            ImgPost(null, bitmap);
+            bitmap = (Bitmap) bundle.get("data");
 //            toastUtlis(bitmap, null);
+            final String dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ZhanPai/MyImage/";
+            //获取内部存储状态
+            String state = Environment.getExternalStorageState();
+            //如果状态不是mounted，无法读写
+            if (!state.equals(Environment.MEDIA_MOUNTED)) {
+                return;
+            }
+            //通过UUID生成字符串文件名
+            final String fileName1 = UUID.randomUUID().toString();
+            //通过Random()类生成数组命名
+            Random random = new Random();
+            String fileName2 = String.valueOf(random.nextInt(Integer.MAX_VALUE));
+            new Thread() {
+                @Override
+                public void run() {
+                    super.run();
+                    try {
+                        File file1 = new File(dir);
+                        File file = new File(dir + fileName1 + ".png");
+                        if (!file1.exists()) {
+
+                            file1.mkdirs();//创建目录
+                        }
+                        FileOutputStream out = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        out.flush();
+                        out.close();
+                        Uri uri = Uri.fromFile(file);
+                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
+                        Log.i("图片地址", "onActivityResult: " + file.getPath());
+                        ImgPost(file);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
 
             // TODO 图片从这里拿
 //            Glide.with(this).load(bitmap).apply(new RequestOptions().circleCrop()).into(imagView);
@@ -312,12 +365,29 @@ public class ReleaseForAty extends BaseActivity {
             /**
              * 调用图库
              */
-            Uri selectedImage = data.getData();
-            ImgPost(new File(selectedImage + ""), null);
+            String realPathFromUri = RealPathFromUriUtils.getRealPathFromUri(this, data.getData());
+            File file = new File(realPathFromUri);
+            ImgPost(file);
             // TODO 图片从这里拿
 //            Glide.with(this).load(selectedImage).apply(new RequestOptions().circleCrop()).into(imagView);
         }
+
     }
+
+    public void requestAllPower() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            }
+        }
+    }
+
 
     private void toastUtlis(Bitmap bitmap, Uri string) {
         ImageView imageView = new ImageView(me);
@@ -338,51 +408,32 @@ public class ReleaseForAty extends BaseActivity {
         dialog.show();
     }
 
-    private void ImgPost(@Nullable File file, @Nullable Bitmap bitmap) {
-        imagename = imagename++;
-        if (file == null) {
-            file = new File("/mnt/sdcard/zhanpai/" + imagename + "01.png");//将要保存图片的路径
-            OkHttpUtils.post()
+    private void ImgPost(File file) {
+        File myfile = new File(file.getParent());
+        if (myfile.exists()) {
+            OkHttpUtils
+                    .post()
                     .url(RequestUtlis.singleUploadImg)
-                    .addFile("file", imagename + "01.png", file)
+                    .addFile("file", file.getName(), file)
                     .build()
                     .execute(new StringCallback() {
                         @Override
-                        public void onError(Request request, Exception e) {
-                            log(e + "");
+                        public void onError(Call call, Exception e, int id) {
+                            Log.e("上传失败", "onError: " + e);
                         }
 
                         @Override
-                        public void onResponse(String response) {
-                            Log.i("图片上传", "onResponse: " + response);
+                        public void onResponse(String response, int id) {
+                            Log.e("上传成功", "onResponse: " + response);
+                            Gson gson = new Gson();
+                            ImgPostBean imgPostBean = gson.fromJson(response, ImgPostBean.class);
+                            if (imgPostBean.getCode() == 1) {
+
+                            } else {
+                                Toast.makeText(me, "" + imgPostBean.getMsg(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
-        } else {
-            OkHttpUtils.post()
-                    .url(RequestUtlis.singleUploadImg)
-                    .addFile("file", imagename + "01.png", file)
-                    .build()
-                    .execute(new StringCallback() {
-                        @Override
-                        public void onError(Request request, Exception e) {
-                            log(e + "");
-                        }
-
-                        @Override
-                        public void onResponse(String response) {
-                            Log.i("图片上传", "onResponse: " + response);
-                        }
-                    });
-
         }
-        try {
-            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bos);
-            bos.flush();
-            bos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 }

@@ -16,13 +16,13 @@ import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.squareup.okhttp.Request;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.SeekShowAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.bean.SeekShowBean;
@@ -61,12 +61,12 @@ public class SeekShowActivity extends BaseActivity {
                     .build()
                     .execute(new StringCallback() {
                         @Override
-                        public void onError(Request request, Exception e) {
-                            log(e);
+                        public void onError(Call call, Exception e, int id) {
+
                         }
 
                         @Override
-                        public void onResponse(String response) {
+                        public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             SeekShowBean seekShowBean = gson.fromJson(response, SeekShowBean.class);
                             List<SeekShowBean.DataBean.ListBean> list = seekShowBean.getData().getList();
@@ -79,8 +79,8 @@ public class SeekShowActivity extends BaseActivity {
                                     jump(ProductActivity.class);
                                 }
                             });
-
                         }
+
                     });
         }
 

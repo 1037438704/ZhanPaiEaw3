@@ -23,7 +23,6 @@ import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.squareup.okhttp.Request;
 import com.stx.xhb.xbanner.XBanner;
 import com.sunfusheng.marqueeview.MarqueeView;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -33,6 +32,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.exhibition.ExhibitionActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.home.CategoryActivity;
@@ -131,12 +131,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 .build()
                 .execute(new StringCallback() {
                     @Override
-                    public void onError(Request request, Exception e) {
+                    public void onError(Call call, Exception e, int id) {
 
                     }
 
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response, int id) {
                         Gson gson = new Gson();
                         HomeBean homeBean = gson.fromJson(response, HomeBean.class);
                         list = homeBean.getData().getAdv1();
@@ -195,17 +195,20 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
                             }
                         });
+
                     }
+
+
                 });
         OkHttpUtils.post().url("http://192.168.1.180/ot/loadType")
                 .addParams("", "").build().execute(new StringCallback() {
             @Override
-            public void onError(Request request, Exception e) {
+            public void onError(Call call, Exception e, int id) {
 
             }
 
             @Override
-            public void onResponse(String response) {
+            public void onResponse(String response, int id) {
 
             }
         });

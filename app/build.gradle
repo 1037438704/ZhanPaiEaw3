@@ -56,7 +56,7 @@ dependencies {
     //对话框
     implementation 'com.kongzue.dialog:dialog:2.2.9'
     //网络请求
-    implementation 'com.zhy:okhttputils:2.0.0'
+    compile 'com.zhy:okhttputils:2.6.2'
     //xrecycler
     compile 'com.jcodecraeer:xrecyclerview:1.5.9'
     //城市选择器

@@ -11,24 +11,19 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.CategoryListAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.YiQiBean;
 import zpe.jiakeyi.com.zhanpaieaw.bean.sysBean;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.home.GoodsFragment;
-import zpe.jiakeyi.com.zhanpaieaw.utils.HttpUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.view.MainViewPager;
 
@@ -101,12 +96,12 @@ public class CategoryActivity extends com.kongzue.baseframework.BaseActivity imp
                 .build()
                 .execute(new StringCallback() {
                     @Override
-                    public void onError(Request request, Exception e) {
+                    public void onError(Call call, Exception e, int id) {
 
                     }
 
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response, int id) {
                         log(response);
                         Gson gson = new Gson();
                         sysBean bean = gson.fromJson(response, sysBean.class);
@@ -118,6 +113,7 @@ public class CategoryActivity extends com.kongzue.baseframework.BaseActivity imp
                         shopAdapter = new ShopAdapter(getSupportFragmentManager());
                         viewpager_category.setAdapter(shopAdapter);
                     }
+
                 });
     }
 
