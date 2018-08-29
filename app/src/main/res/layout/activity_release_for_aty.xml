@@ -103,6 +103,13 @@
                     android:visibility="gone" />
 
                 <ImageView
+                    android:id="@+id/Image_5"
+                    android:layout_width="144px"
+                    android:layout_height="144px"
+                    android:layout_marginLeft="10px"
+                    android:visibility="gone" />
+
+                <ImageView
                     android:id="@+id/Image_4"
                     android:layout_width="144px"
                     android:layout_height="144px"

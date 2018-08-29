@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -58,6 +59,7 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RealPathFromUriUtils;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.utils.ToastUtlis;
 
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static android.media.MediaRecorder.VideoSource.CAMERA;
 
 /**
@@ -84,6 +86,7 @@ public class ReleaseForAty extends BaseActivity {
     private ImageView Image_1;
     private ImageView Image_2;
     private ImageView Image_3;
+    private ImageView Image_5;
     private AutoRelativeLayout release_rl_classify;
     private View view;
     private RecyclerView dialog_recyclerView;
@@ -104,9 +107,12 @@ public class ReleaseForAty extends BaseActivity {
     private List<String> imgs;
     private AlertDialog dialog;
     private ReleaseAdapter releaseAdapter;
+    private static List<File> files;
+    private static String ImageString;
 
     @Override
     public void initViews() {
+        files = new ArrayList<>();
         auto_tv_ch = findViewById(R.id.auto_tv_ch);
         list = new ArrayList<>();
         view = LayoutInflater.from(me).inflate(R.layout.dialog_my_classify, null);
@@ -120,6 +126,10 @@ public class ReleaseForAty extends BaseActivity {
         et_weixin = findViewById(R.id.et_weixin);
         rf_tv_fabu = findViewById(R.id.rf_tv_fabu);
         Image_4 = findViewById(R.id.Image_4);
+        Image_1 = findViewById(R.id.Image_1);
+        Image_2 = findViewById(R.id.Image_2);
+        Image_3 = findViewById(R.id.Image_3);
+        Image_5 = findViewById(R.id.Image_5);
         release_rl_classify = findViewById(R.id.release_rl_classify);
         back_aty = findViewById(R.id.back_aty);
         // 用于PopupWindow的View
@@ -177,12 +187,12 @@ public class ReleaseForAty extends BaseActivity {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-
+                        Log.i("发布失败", "onError: " + e);
                     }
 
                     @Override
                     public void onResponse(String response, int id) {
-
+                        Log.i("发布???", "onResponse: " + response);
                     }
 
                 });
@@ -230,16 +240,14 @@ public class ReleaseForAty extends BaseActivity {
         rf_tv_fabu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toast("发布按钮");
+                PostImage();
             }
         });
         //调用相机
         text_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                windowCamera();
-                window.dismiss();
-                lighton();
+                getCamera();
             }
         });
         //调用相册
@@ -261,7 +269,7 @@ public class ReleaseForAty extends BaseActivity {
         releaseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                toast(list.get(position));
+                fenlei_tv.setText(items[position]);
                 dialog.dismiss();
             }
         });
@@ -271,6 +279,39 @@ public class ReleaseForAty extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    private void addFile(File file) {
+        files.add(file);
+        ImageSetImage();
+    }
+
+    private void ImageSetImage() {
+        switch (files.size()) {
+            case 1:
+                Image_1.setVisibility(View.VISIBLE);
+                Log.i("地址?", "ImageSetImage: " + files.get(0).getPath());
+                Image_1.setImageBitmap(BitmapFactory.decodeFile(files.get(0).getPath()));
+                break;
+            case 2:
+                Image_2.setVisibility(View.VISIBLE);
+                Image_2.setImageBitmap(BitmapFactory.decodeFile(files.get(1).getPath()));
+                break;
+            case 3:
+                Image_3.setVisibility(View.VISIBLE);
+                Image_3.setImageBitmap(BitmapFactory.decodeFile(files.get(2).getPath()));
+                break;
+            case 4:
+                Image_5.setVisibility(View.VISIBLE);
+                Image_4.setVisibility(View.GONE);
+                Image_5.setImageBitmap(BitmapFactory.decodeFile(files.get(3).getPath()));
+                break;
+
+        }
+    }
+
+    private void Delit(File file) {
+
     }
 
     @Override
@@ -351,7 +392,9 @@ public class ReleaseForAty extends BaseActivity {
                         Uri uri = Uri.fromFile(file);
                         sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
                         Log.i("图片地址", "onActivityResult: " + file.getPath());
-                        ImgPost(file);
+                        if (file.exists()) {
+                            addFile(file);
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -367,7 +410,7 @@ public class ReleaseForAty extends BaseActivity {
              */
             String realPathFromUri = RealPathFromUriUtils.getRealPathFromUri(this, data.getData());
             File file = new File(realPathFromUri);
-            ImgPost(file);
+            addFile(file);
             // TODO 图片从这里拿
 //            Glide.with(this).load(selectedImage).apply(new RequestOptions().circleCrop()).into(imagView);
         }
@@ -377,7 +420,7 @@ public class ReleaseForAty extends BaseActivity {
     public void requestAllPower() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
+                != PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             } else {
@@ -408,6 +451,12 @@ public class ReleaseForAty extends BaseActivity {
         dialog.show();
     }
 
+    private void PostImage() {
+        for (int i = 0; i < files.size(); i++) {
+            ImgPost(files.get(i));
+        }
+    }
+
     private void ImgPost(File file) {
         File myfile = new File(file.getParent());
         if (myfile.exists()) {
@@ -428,12 +477,54 @@ public class ReleaseForAty extends BaseActivity {
                             Gson gson = new Gson();
                             ImgPostBean imgPostBean = gson.fromJson(response, ImgPostBean.class);
                             if (imgPostBean.getCode() == 1) {
-
+                                Log.i("图片地址", "PostImage: " + ImageString);
+                                ImageAdd(imgPostBean.getData().getImgUrl());
                             } else {
                                 Toast.makeText(me, "" + imgPostBean.getMsg(), Toast.LENGTH_SHORT).show();
                             }
                         }
+
+                        private void ImageAdd(String string) {
+                        }
                     });
+        }
+
+    }
+
+    public void getCamera() {
+        //判断是否已经赋予权限
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA)
+                != PERMISSION_GRANTED) {
+            //如果应用之前请求过此权限但用户拒绝了请求，此方法将返回 true。
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.CAMERA)) {//这里可以写个对话框之类的项向用户解释为什么要申请权限，并在对话框的确认键后续再次申请权限
+            } else {
+                //申请权限，字符串数组内是一个或多个要申请的权限，1是申请权限结果的返回参数，在onRequestPermissionsResult可以得知申请结果
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.CAMERA,}, 1);
+            }
+        } else {
+            windowCamera();
+            window.dismiss();
+            lighton();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 1) {
+            for (int i = 0; i < permissions.length; i++) {
+                if (grantResults[i] == PERMISSION_GRANTED) {
+                    windowCamera();
+                    window.dismiss();
+                    lighton();
+                } else {
+                    Toast.makeText(this, "" + "权限" + permissions[i] + "申请失败", Toast.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 }

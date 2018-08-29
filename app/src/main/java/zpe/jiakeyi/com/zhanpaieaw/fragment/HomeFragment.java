@@ -3,6 +3,7 @@ package zpe.jiakeyi.com.zhanpaieaw.fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -45,6 +46,7 @@ import zpe.jiakeyi.com.zhanpaieaw.adapter.HomeRecyclerViewAdapter_recommend;
 import zpe.jiakeyi.com.zhanpaieaw.bean.HomeBean;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.view.ObservableScrollView;
+import zpe.jiakeyi.com.zhanpaieaw.view.RecyclerScrollView;
 
 /**
  * 创建人： 郭健福
@@ -59,7 +61,7 @@ import zpe.jiakeyi.com.zhanpaieaw.view.ObservableScrollView;
 @NavigationBarBackgroundColor(a = 100, r = 100, g = 100, b = 100)
 //设置底部导航栏背景颜色（a = 0,r = 0,g = 0,b = 0可透明）
 public class HomeFragment extends BaseFragment implements View.OnClickListener {
-    private ObservableScrollView home_obs_scroll;
+    private RecyclerScrollView home_obs_scroll;
     private AutoLinearLayout auto_sousuo;
     private XBanner xbanner;
     private ImageView homeSao;
