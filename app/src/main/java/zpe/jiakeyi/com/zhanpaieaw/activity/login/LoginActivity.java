@@ -18,6 +18,7 @@ import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
+import com.kongzue.baseframework.util.Preferences;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -154,6 +155,7 @@ public class LoginActivity extends BaseActivity {
                                         }
                                     });
                                     Toast.makeText(me, "登录成功", Toast.LENGTH_SHORT).show();
+                                    Preferences.getInstance().set(me, "UseUser", "UseUser", response);
                                     finish();
                                     jump(MainActivity.class);
                                 } else {

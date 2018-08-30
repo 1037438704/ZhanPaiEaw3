@@ -136,6 +136,7 @@
         <activity android:name=".activity.my.BrowsingHistoryActivity" />
         <activity android:name=".activity.login.RegisterActivity2" />
         <activity android:name=".activity.massage.ChatActivity"></activity>
+        <activity android:name="com.hyphenate.easeui.ui.AddContactActivity" />
         <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
     </application>
 

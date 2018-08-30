@@ -485,6 +485,7 @@ public class ReleaseForAty extends BaseActivity {
                         }
 
                         private void ImageAdd(String string) {
+
                         }
                     });
         }

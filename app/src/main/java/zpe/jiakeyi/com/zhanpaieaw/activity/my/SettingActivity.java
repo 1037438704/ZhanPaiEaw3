@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hyphenate.chat.EMChatManager;
+import com.hyphenate.chat.EMClient;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -81,6 +82,7 @@ public class SettingActivity extends BaseActivity {
             public void onClick(View v) {
                 RequestUtlis.Token = null;
                 RequestUtlis.ID = null;
+                EMClient.getInstance().logout(true);
                 //此方法为同步方法
                 finish();
                 Toast.makeText(me, "您已退出登录", Toast.LENGTH_SHORT).show();
