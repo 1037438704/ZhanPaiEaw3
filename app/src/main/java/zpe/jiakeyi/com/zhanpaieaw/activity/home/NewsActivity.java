@@ -81,6 +81,12 @@ public class NewsActivity extends BaseActivity {
 
     @Override
     public void setEvents() {
+        title_seek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(SeekActivity.class);
+            }
+        });
         title_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

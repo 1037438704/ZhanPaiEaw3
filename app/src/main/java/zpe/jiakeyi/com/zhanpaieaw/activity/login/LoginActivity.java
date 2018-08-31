@@ -155,7 +155,7 @@ public class LoginActivity extends BaseActivity {
                                         }
                                     });
                                     Toast.makeText(me, "登录成功", Toast.LENGTH_SHORT).show();
-                                    Preferences.getInstance().set(me, "UseUser", "UseUser", response);
+//                                    Preferences.getInstance().set(me, "UseUser", "UseUser", response);
                                     finish();
                                     jump(MainActivity.class);
                                 } else {

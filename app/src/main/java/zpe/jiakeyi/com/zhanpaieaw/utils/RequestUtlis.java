@@ -7,8 +7,12 @@ package zpe.jiakeyi.com.zhanpaieaw.utils;
  * 功能描述:网络接口
  */
 public class RequestUtlis {
-    //        public final static String HttpUrl = "http://192.168.1.181";
-    public final static String HttpUrl = "http://39.107.254.193:8080/zp";
+    //锋哥
+    public final static String HttpUrl = "http://192.168.1.111";
+    //龙哥
+    //    public final static String HttpUrl = "http://192.168.1.182";
+    //线上
+//    public final static String HttpUrl = "http://39.107.254.193:8080/zp";
     //    public static String Token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNDQwODYxOCwic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNDQxMjIxOH0.A1uYnuQZtBXaCC4Zpe4JGESF3DJMtRAxfBNVyBb90Ac";
     public static String Token = null;
 
@@ -60,6 +64,8 @@ public class RequestUtlis {
      */
     //获取人员信息
     public final static String SS = HttpUrl + "/st/sS";
+    //验证验证码
+    public final static String verifyVCode = HttpUrl + "/st/verifyVCode";
     /**
      * 首页模块
      * mobile-controller : 移动端部分接口G

@@ -1,5 +1,6 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.exhibition;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
+import zpe.jiakeyi.com.zhanpaieaw.activity.home.SeekActivity;
 
 /**
  * 创建人： Nine tails fox
@@ -26,6 +28,7 @@ import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 public class ExhibitionActivity extends UnityPlayerActivity {
 
     private AutoLinearLayout scan;
+    public static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +37,9 @@ public class ExhibitionActivity extends UnityPlayerActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置全屏
         initView();
+        mContext = this;
         UnityPlayer.UnitySendMessage("OtherPlatFormsObj", "GetUserID", "c714cf2c528f40d5b4108a3ca52b21db");
-        UnityPlayer.UnitySendMessage("OtherPlatFormsObj", "GetAllShellSchemLoadMode", "天平");
+        UnityPlayer.UnitySendMessage("OtherPlatFormsObj", "GetAllShellSchemLoadMode", "");
 
     }
 
@@ -56,12 +60,25 @@ public class ExhibitionActivity extends UnityPlayerActivity {
         scan.addView(view);
     }
 
+    private void Chat() {
+
+    }
 
     @Override
     protected void onStop() {
         super.onStop();
         mUnityPlayer.quit();
         finish();
+    }
+
+    public static void Search() {
+        getSeek();
+    }
+
+    public static void getSeek() {
+        Intent intent = new Intent();
+        intent.setClass(mContext, SeekActivity.class);
+        mContext.startActivity(intent);
     }
 
     public static void ConnectError() {

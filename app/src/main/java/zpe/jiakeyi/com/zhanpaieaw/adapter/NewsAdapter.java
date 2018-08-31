@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -34,6 +35,7 @@ public class NewsAdapter extends BaseQuickAdapter<NewsListBean.DataBean.ListBean
         TextView look_news_tv = helper.itemView.findViewById(R.id.look_news_tv);
         TextView time_news_tv = helper.itemView.findViewById(R.id.time_news_tv);
         AutoLinearLayout news_layout = helper.itemView.findViewById(R.id.news_layout);
+        Glide.with(mContext).load(item.getCoverImg()).error(R.mipmap.banner).into((ImageView) img_news);
         helper.addOnClickListener(R.id.news_layout);
         title_news.setText(item.getIntro());
         look_news_tv.setText(item.getPageView() + "人浏览");

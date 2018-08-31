@@ -109,9 +109,11 @@ public class ReleaseForAty extends BaseActivity {
     private ReleaseAdapter releaseAdapter;
     private static List<File> files;
     private static String ImageString;
+    private static List<String> stringList;
 
     @Override
     public void initViews() {
+        stringList = new ArrayList<>();
         files = new ArrayList<>();
         auto_tv_ch = findViewById(R.id.auto_tv_ch);
         list = new ArrayList<>();
@@ -457,7 +459,7 @@ public class ReleaseForAty extends BaseActivity {
         }
     }
 
-    private void ImgPost(File file) {
+    private void ImgPost(final File file) {
         File myfile = new File(file.getParent());
         if (myfile.exists()) {
             OkHttpUtils
@@ -469,6 +471,7 @@ public class ReleaseForAty extends BaseActivity {
                         @Override
                         public void onError(Call call, Exception e, int id) {
                             Log.e("上传失败", "onError: " + e);
+                            ImgPost(file);
                         }
 
                         @Override
@@ -485,7 +488,7 @@ public class ReleaseForAty extends BaseActivity {
                         }
 
                         private void ImageAdd(String string) {
-
+                            stringList.add(string);
                         }
                     });
         }

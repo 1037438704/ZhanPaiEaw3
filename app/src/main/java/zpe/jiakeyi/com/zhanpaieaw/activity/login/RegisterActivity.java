@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
@@ -21,6 +22,7 @@ import java.util.regex.PatternSyntaxException;
 
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
+import zpe.jiakeyi.com.zhanpaieaw.bean.CodeBean;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.utils.VerificationTime;
 
@@ -70,6 +72,30 @@ public class RegisterActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 submit();
+                OkHttpUtils.post().url(RequestUtlis.verifyVCode)
+                        .addHeader("loginType", "1")
+                        .addParams("code", register_code.getText().toString())
+                        .addParams("phoneNum", register_phone_number.getText().toString())
+                        .build()
+                        .execute(new StringCallback() {
+                            @Override
+                            public void onError(Call call, Exception e, int id) {
+
+                            }
+
+                            @Override
+                            public void onResponse(String response, int id) {
+                                Gson gson = new Gson();
+                                CodeBean codeBean = gson.fromJson(response, CodeBean.class);
+                                if (codeBean.getCode() == 1) {
+                                    Toast.makeText(me, "" + codeBean.getMsg(), Toast.LENGTH_SHORT).show();
+                                    jump(RegisterActivity2.class, new JumpParameter().put("phone", register_phone_number.getText().toString()
+                                    ).put("code", register_code.getText().toString()));
+                                } else {
+                                    Toast.makeText(me, "" + codeBean.getMsg(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
         register_find_code.setOnClickListener(new View.OnClickListener()
