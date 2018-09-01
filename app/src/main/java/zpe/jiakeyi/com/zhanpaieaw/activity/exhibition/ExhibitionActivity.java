@@ -9,6 +9,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.EaseConstant;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -16,6 +19,9 @@ import com.zhy.autolayout.AutoLinearLayout;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.home.SeekActivity;
+import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
+import zpe.jiakeyi.com.zhanpaieaw.activity.massage.ChatActivity;
+import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
 /**
  * 创建人： Nine tails fox
@@ -51,7 +57,6 @@ public class ExhibitionActivity extends UnityPlayerActivity {
     public static void IntentOne(String id) {
         UnityPlayer.UnitySendMessage("OtherPlatFormsObj", "GetUserID", "c714cf2c528f40d5b4108a3ca52b21db");
         UnityPlayer.UnitySendMessage("OtherPlatFormsObj", "GetOneShellSchemLoadMode", id);
-
     }
 
     private void initView() {
@@ -61,7 +66,6 @@ public class ExhibitionActivity extends UnityPlayerActivity {
     }
 
     private void Chat() {
-
     }
 
     @Override
@@ -92,6 +96,11 @@ public class ExhibitionActivity extends UnityPlayerActivity {
     public static void BrochureDownLoad(final String path) {
 
         Log.i("U3D", "BrochureDownLoad: " + path);
+
+    }
+
+    public static void Chat(String value) {
+            mContext.startActivity(new Intent(mContext, ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, value));
 
     }
 

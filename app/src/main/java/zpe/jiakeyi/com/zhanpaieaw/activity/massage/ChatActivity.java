@@ -6,16 +6,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.baidu.platform.comapi.map.C;
+import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseChatFragment;
 import com.hyphenate.util.EasyUtils;
 
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.R;
+import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
+import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
 public class ChatActivity extends AppCompatActivity {
     public static ChatActivity activityInstance;
     private EaseChatFragment chatFragment;
     String toChatUsername;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (RequestUtlis.ID == null) {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +46,14 @@ public class ChatActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         activityInstance = null;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (RequestUtlis.ID == null) {
+            finish();
+        }
     }
 
     @Override

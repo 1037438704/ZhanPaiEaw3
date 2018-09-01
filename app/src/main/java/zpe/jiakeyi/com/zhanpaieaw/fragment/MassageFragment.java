@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.easeui.EaseConstant;
@@ -23,6 +24,8 @@ import com.hyphenate.exceptions.HyphenateException;
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.zhy.autolayout.AutoLinearLayout;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,12 +33,14 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.massage.ChatActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectFragmentAdapter;
+import zpe.jiakeyi.com.zhanpaieaw.bean.HuanXinUsers;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.FriendFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.SystemFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.UserFragment;
@@ -58,6 +63,8 @@ public class MassageFragment extends BaseFragment {
     private EaseConversationListFragment easeConversationListFragment;
     private EaseContactListFragment contactListFragment;
     private List<String> usernames;
+    private static List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList;
+    private static Map<String, EaseUser> contacts;
 
     public MassageFragment() {
     }
@@ -113,13 +120,31 @@ public class MassageFragment extends BaseFragment {
     }
 
     private Map<String, EaseUser> getContacts() {
-        Map<String, EaseUser> contacts = new HashMap<String, EaseUser>();
-        Log.e("easeuitest", "getContacts: " + usernames.size());
-        for (int i = 0; i <= usernames.size() - 1; i++) {
-            EaseUser user = new EaseUser(usernames.get(i));
-            contacts.put(usernames.get(i), user);
-        }
-        Log.e("easeuitest", "getContacts: " + contacts);
+        final Gson gson = new Gson();
+        String s = gson.toJson(usernames);
+        OkHttpUtils.post().url(RequestUtlis.getImUserInfo)
+                .addHeader("ACCESS_TOKEN", RequestUtlis.Token)
+                .addParams("userList", s)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        contacts = new HashMap<String, EaseUser>();
+                        HuanXinUsers huanXinUsers = gson.fromJson(response, HuanXinUsers.class);
+                        userInfoList = huanXinUsers.getData().getUserInfoList();
+                        for (int i = 0; i <= userInfoList.size() - 1; i++) {
+                            EaseUser user = new EaseUser(userInfoList.get(i).getUserName());
+                            contacts.put(userInfoList.get(i).getNickName(), user);
+                        }
+                        Log.i("contacts", "onResponse: " + contacts);
+                    }
+                });
+        Log.i("json", "getContacts: " + s);
         return contacts;
     }
 

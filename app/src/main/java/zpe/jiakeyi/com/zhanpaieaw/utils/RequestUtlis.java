@@ -40,6 +40,8 @@ public class RequestUtlis {
     public final static String IA = HttpUrl + "/as/iA";
     //根据分类查找求购信息
     public final static String SATY = HttpUrl + "/as/sAty";
+    //环信列表页
+    public final static String getImUserInfo = HttpUrl + "/huanxin/getImUserInfo";
     //查询已解决与未解决
     public final static String SASO = HttpUrl + "/as/sAso";
     //查询我的求购信息
