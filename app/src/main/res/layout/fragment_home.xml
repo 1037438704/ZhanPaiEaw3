@@ -203,7 +203,7 @@
                     app:mvInterval="3000"
                     app:mvSingleLine="true"
                     app:mvTextColor="#000000"
-                    app:mvTextSize="18sp" />
+                    app:mvTextSize="12sp" />
 
                 <TextView
                     android:layout_width="2px"

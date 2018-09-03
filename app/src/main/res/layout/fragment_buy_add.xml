@@ -12,7 +12,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="288px"
+            android:layout_height="wrap_content"
             android:src="@mipmap/buy_banner" />
 
         <android.support.v7.widget.RecyclerView
@@ -23,7 +23,7 @@
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120px"></com.zhy.autolayout.AutoLinearLayout>
+            android:layout_height="150px"></com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

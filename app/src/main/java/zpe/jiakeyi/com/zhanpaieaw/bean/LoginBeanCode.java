@@ -8,7 +8,7 @@ public class LoginBeanCode {
     /**
      * code : 1
      * msg : success
-     * data : {"userInfo":{"id":"0d4fbd3293854028b9529af5b51319d8","account":"18810379038","password":"978ea5f3d021b235ab6757fce835ae1d","username":"李四","nickname":null,"viaUrl":null,"sex":null,"loginState":null,"postId":0,"postName":null,"messageId":null,"iphone":"18810379038","qq":null,"mail":null,"wechat":null,"wechatQr":null,"firmId":null,"status":null,"delFlag":0,"createTime":"2018-08-13 00:00:00.0"},"ACCESS_TOKEN":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNDMzNDU3NSwic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNDMzODE3NX0.lcjxxLG9c9VgfNFCidebExJ9fLghKSApEjaoh6GzDmU"}
+     * data : {"userInfo":{"id":"c714cf2c528f40d5b4108a3ca52b21db","account":"tianma","password":"e10adc3949ba59abbe56e057f20f883e","username":"天马恒基","nickname":"tianma","viaUrl":"https://jkytest.oss-cn-beijing.aliyuncs.com/img/153198096951057437.png","sex":true,"loginState":null,"postId":1,"postName":null,"messageId":null,"iphone":"17633369350","qq":"12345678901111","mail":"12345678901111","wechat":"1212121212","wechatQr":null,"firmId":"1","status":null,"delFlag":0,"createTime":"2018-08-03 17:06:45.0"},"ACCESS_TOKEN":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ0aWFubWEiLCJpYXQiOjE1MzU5NDM0NTUsInN1YiI6ImpreS5hZG1pbi51c2VyIiwiaXNzIjoid3d3LmpreS5jb20iLCJleHAiOjE1MzU5Nzk0NTV9.C5_MLnPdSUbI4Vw1Scqe6uxQWaMWLdNq4Sc6BU0Obdc","imUserInfo":{"id":"c714cf2c528f40d5b4108a3ca52b21db","userName":"tianma","password":"123456","nickName":"天马昵称我给改了6不6","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}}
      */
 
     private int code;
@@ -41,12 +41,14 @@ public class LoginBeanCode {
 
     public static class DataBean {
         /**
-         * userInfo : {"id":"0d4fbd3293854028b9529af5b51319d8","account":"18810379038","password":"978ea5f3d021b235ab6757fce835ae1d","username":"李四","nickname":null,"viaUrl":null,"sex":null,"loginState":null,"postId":0,"postName":null,"messageId":null,"iphone":"18810379038","qq":null,"mail":null,"wechat":null,"wechatQr":null,"firmId":null,"status":null,"delFlag":0,"createTime":"2018-08-13 00:00:00.0"}
-         * ACCESS_TOKEN : eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNDMzNDU3NSwic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNDMzODE3NX0.lcjxxLG9c9VgfNFCidebExJ9fLghKSApEjaoh6GzDmU
+         * userInfo : {"id":"c714cf2c528f40d5b4108a3ca52b21db","account":"tianma","password":"e10adc3949ba59abbe56e057f20f883e","username":"天马恒基","nickname":"tianma","viaUrl":"https://jkytest.oss-cn-beijing.aliyuncs.com/img/153198096951057437.png","sex":true,"loginState":null,"postId":1,"postName":null,"messageId":null,"iphone":"17633369350","qq":"12345678901111","mail":"12345678901111","wechat":"1212121212","wechatQr":null,"firmId":"1","status":null,"delFlag":0,"createTime":"2018-08-03 17:06:45.0"}
+         * ACCESS_TOKEN : eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ0aWFubWEiLCJpYXQiOjE1MzU5NDM0NTUsInN1YiI6ImpreS5hZG1pbi51c2VyIiwiaXNzIjoid3d3LmpreS5jb20iLCJleHAiOjE1MzU5Nzk0NTV9.C5_MLnPdSUbI4Vw1Scqe6uxQWaMWLdNq4Sc6BU0Obdc
+         * imUserInfo : {"id":"c714cf2c528f40d5b4108a3ca52b21db","userName":"tianma","password":"123456","nickName":"天马昵称我给改了6不6","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}
          */
 
         private UserInfoBean userInfo;
         private String ACCESS_TOKEN;
+        private ImUserInfoBean imUserInfo;
 
         public UserInfoBean getUserInfo() {
             return userInfo;
@@ -64,47 +66,55 @@ public class LoginBeanCode {
             this.ACCESS_TOKEN = ACCESS_TOKEN;
         }
 
+        public ImUserInfoBean getImUserInfo() {
+            return imUserInfo;
+        }
+
+        public void setImUserInfo(ImUserInfoBean imUserInfo) {
+            this.imUserInfo = imUserInfo;
+        }
+
         public static class UserInfoBean {
             /**
-             * id : 0d4fbd3293854028b9529af5b51319d8
-             * account : 18810379038
-             * password : 978ea5f3d021b235ab6757fce835ae1d
-             * username : 李四
-             * nickname : null
-             * viaUrl : null
-             * sex : null
+             * id : c714cf2c528f40d5b4108a3ca52b21db
+             * account : tianma
+             * password : e10adc3949ba59abbe56e057f20f883e
+             * username : 天马恒基
+             * nickname : tianma
+             * viaUrl : https://jkytest.oss-cn-beijing.aliyuncs.com/img/153198096951057437.png
+             * sex : true
              * loginState : null
-             * postId : 0
+             * postId : 1
              * postName : null
              * messageId : null
-             * iphone : 18810379038
-             * qq : null
-             * mail : null
-             * wechat : null
+             * iphone : 17633369350
+             * qq : 12345678901111
+             * mail : 12345678901111
+             * wechat : 1212121212
              * wechatQr : null
-             * firmId : null
+             * firmId : 1
              * status : null
              * delFlag : 0
-             * createTime : 2018-08-13 00:00:00.0
+             * createTime : 2018-08-03 17:06:45.0
              */
 
             private String id;
             private String account;
             private String password;
             private String username;
-            private Object nickname;
-            private Object viaUrl;
-            private Object sex;
+            private String nickname;
+            private String viaUrl;
+            private boolean sex;
             private Object loginState;
             private int postId;
             private Object postName;
             private Object messageId;
             private String iphone;
-            private Object qq;
-            private Object mail;
-            private Object wechat;
+            private String qq;
+            private String mail;
+            private String wechat;
             private Object wechatQr;
-            private Object firmId;
+            private String firmId;
             private Object status;
             private int delFlag;
             private String createTime;
@@ -141,27 +151,27 @@ public class LoginBeanCode {
                 this.username = username;
             }
 
-            public Object getNickname() {
+            public String getNickname() {
                 return nickname;
             }
 
-            public void setNickname(Object nickname) {
+            public void setNickname(String nickname) {
                 this.nickname = nickname;
             }
 
-            public Object getViaUrl() {
+            public String getViaUrl() {
                 return viaUrl;
             }
 
-            public void setViaUrl(Object viaUrl) {
+            public void setViaUrl(String viaUrl) {
                 this.viaUrl = viaUrl;
             }
 
-            public Object getSex() {
+            public boolean isSex() {
                 return sex;
             }
 
-            public void setSex(Object sex) {
+            public void setSex(boolean sex) {
                 this.sex = sex;
             }
 
@@ -205,27 +215,27 @@ public class LoginBeanCode {
                 this.iphone = iphone;
             }
 
-            public Object getQq() {
+            public String getQq() {
                 return qq;
             }
 
-            public void setQq(Object qq) {
+            public void setQq(String qq) {
                 this.qq = qq;
             }
 
-            public Object getMail() {
+            public String getMail() {
                 return mail;
             }
 
-            public void setMail(Object mail) {
+            public void setMail(String mail) {
                 this.mail = mail;
             }
 
-            public Object getWechat() {
+            public String getWechat() {
                 return wechat;
             }
 
-            public void setWechat(Object wechat) {
+            public void setWechat(String wechat) {
                 this.wechat = wechat;
             }
 
@@ -237,11 +247,11 @@ public class LoginBeanCode {
                 this.wechatQr = wechatQr;
             }
 
-            public Object getFirmId() {
+            public String getFirmId() {
                 return firmId;
             }
 
-            public void setFirmId(Object firmId) {
+            public void setFirmId(String firmId) {
                 this.firmId = firmId;
             }
 
@@ -266,6 +276,92 @@ public class LoginBeanCode {
             }
 
             public void setCreateTime(String createTime) {
+                this.createTime = createTime;
+            }
+        }
+
+        public static class ImUserInfoBean {
+            /**
+             * id : c714cf2c528f40d5b4108a3ca52b21db
+             * userName : tianma
+             * password : 123456
+             * nickName : 天马昵称我给改了6不6
+             * icon : https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg
+             * imType : null
+             * imStatus : null
+             * createTime : null
+             */
+
+            private String id;
+            private String userName;
+            private String password;
+            private String nickName;
+            private String icon;
+            private Object imType;
+            private Object imStatus;
+            private Object createTime;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getUserName() {
+                return userName;
+            }
+
+            public void setUserName(String userName) {
+                this.userName = userName;
+            }
+
+            public String getPassword() {
+                return password;
+            }
+
+            public void setPassword(String password) {
+                this.password = password;
+            }
+
+            public String getNickName() {
+                return nickName;
+            }
+
+            public void setNickName(String nickName) {
+                this.nickName = nickName;
+            }
+
+            public String getIcon() {
+                return icon;
+            }
+
+            public void setIcon(String icon) {
+                this.icon = icon;
+            }
+
+            public Object getImType() {
+                return imType;
+            }
+
+            public void setImType(Object imType) {
+                this.imType = imType;
+            }
+
+            public Object getImStatus() {
+                return imStatus;
+            }
+
+            public void setImStatus(Object imStatus) {
+                this.imStatus = imStatus;
+            }
+
+            public Object getCreateTime() {
+                return createTime;
+            }
+
+            public void setCreateTime(Object createTime) {
                 this.createTime = createTime;
             }
         }

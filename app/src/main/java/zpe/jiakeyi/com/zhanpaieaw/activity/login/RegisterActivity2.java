@@ -79,7 +79,6 @@ public class RegisterActivity2 extends BaseAty {
 
     @Override
     public void setEvents() {
-
     }
 
     private void submit() {

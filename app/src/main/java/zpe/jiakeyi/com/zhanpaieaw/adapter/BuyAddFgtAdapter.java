@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
@@ -25,44 +26,23 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
  * @date 2018/7/25
  */
 
-public class BuyAddFgtAdapter extends BaseQuickAdapter<BuyListAllBean.DataBean.ListBean, BaseViewHolder> {
+public class BuyAddFgtAdapter extends BaseQuickAdapter<BuyListAllBean.DataBean.ListBeanX.ListBean, BaseViewHolder> {
 
-    public BuyAddFgtAdapter(int layoutResId, @Nullable List<BuyListAllBean.DataBean.ListBean> data) {
+    public BuyAddFgtAdapter(int layoutResId, @Nullable List<BuyListAllBean.DataBean.ListBeanX.ListBean> data) {
         super(layoutResId, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, BuyListAllBean.DataBean.ListBean item) {
+    protected void convert(BaseViewHolder helper, BuyListAllBean.DataBean.ListBeanX.ListBean item) {
         final ImageView imageView = helper.itemView.findViewById(R.id.img_buy_item);
         TextView tv_title = helper.itemView.findViewById(R.id.tv_buy_title);
         TextView tv_name = helper.itemView.findViewById(R.id.tv_buy_name);
         TextView tv_time = helper.itemView.findViewById(R.id.tv_time_buy);
         TextView tv_address = helper.itemView.findViewById(R.id.tv_buy_address);
-        OkHttpUtils.
-                post()
-                .url(RequestUtlis.SS)
-                .addHeader("ACCESS_TOKEN", "" + 1)
-                .addParams("", "")
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        Gson gson = new Gson();
-                        PersonBean personBean = gson.fromJson(response, PersonBean.class);
-//                        String viaUrl = personBean.getData().getUser().getViaUrl();
-//                        Glide.with(mContext).load(viaUrl).apply(new RequestOptions().error(R.mipmap.buy_img_person)).into(imageView);
-
-                    }
-
-                });
         tv_title.setText(item.getTitle());
-        tv_name.setText(item.getContent());
+        tv_name.setText(item.getUserName());
         tv_time.setText(item.getCreateTime());
         tv_address.setText(item.getAddressB() + "  " + item.getAddressC());
+        Glide.with(mContext).load(item.getUserViaImg()).error(R.mipmap.buy_img_person).into(imageView);
     }
 }

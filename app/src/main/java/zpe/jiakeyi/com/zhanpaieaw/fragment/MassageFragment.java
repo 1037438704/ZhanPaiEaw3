@@ -1,6 +1,9 @@
 package zpe.jiakeyi.com.zhanpaieaw.fragment;
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +15,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.hyphenate.EMContactListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.easeui.EaseConstant;
@@ -64,7 +68,6 @@ public class MassageFragment extends BaseFragment {
     private EaseContactListFragment contactListFragment;
     private List<String> usernames;
     private static List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList;
-    private static Map<String, EaseUser> contacts;
 
     public MassageFragment() {
     }
@@ -119,32 +122,13 @@ public class MassageFragment extends BaseFragment {
         tablayout_xiaoxi.setupWithViewPager(viewpager);//把tablayout和viewpage绑定在一起
     }
 
-    private Map<String, EaseUser> getContacts() {
-        final Gson gson = new Gson();
-        String s = gson.toJson(usernames);
-        OkHttpUtils.post().url(RequestUtlis.getImUserInfo)
-                .addHeader("ACCESS_TOKEN", RequestUtlis.Token)
-                .addParams("userList", s)
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        contacts = new HashMap<String, EaseUser>();
-                        HuanXinUsers huanXinUsers = gson.fromJson(response, HuanXinUsers.class);
-                        userInfoList = huanXinUsers.getData().getUserInfoList();
-                        for (int i = 0; i <= userInfoList.size() - 1; i++) {
-                            EaseUser user = new EaseUser(userInfoList.get(i).getUserName());
-                            contacts.put(userInfoList.get(i).getNickName(), user);
-                        }
-                        Log.i("contacts", "onResponse: " + contacts);
-                    }
-                });
-        Log.i("json", "getContacts: " + s);
+    private Map<String, EaseUser> getContacts(List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList) {
+        Map<String, EaseUser> contacts = new HashMap<>();
+        for (int i = 0; i <= userInfoList.size() - 1; i++) {
+            EaseUser user = new EaseUser(userInfoList.get(i).getUserName());
+            contacts.put(userInfoList.get(i).getNickName(), user);
+        }
+        Log.i("json", "getContacts: " + contacts);
         return contacts;
     }
 
@@ -160,8 +144,26 @@ public class MassageFragment extends BaseFragment {
             try {
                 usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
                 Log.d("usernames", "initDatas: " + usernames);
-                Map<String, EaseUser> contacts = getContacts();
-                contactListFragment.setContactsMap(contacts);
+                final Gson gson = new Gson();
+                String s = gson.toJson(usernames);
+                OkHttpUtils.post().url(RequestUtlis.getImUserInfo)
+                        .addHeader("ACCESS_TOKEN", RequestUtlis.Token)
+                        .addParams("userList", s)
+                        .build()
+                        .execute(new StringCallback() {
+                            @Override
+                            public void onError(Call call, Exception e, int id) {
+                                Log.e("错误", "onError: " + e);
+                            }
+
+                            @Override
+                            public void onResponse(String response, int id) {
+                                HuanXinUsers huanXinUsers = gson.fromJson(response, HuanXinUsers.class);
+                                userInfoList = huanXinUsers.getData().getUserInfoList();
+                                Map<String, EaseUser> contacts = getContacts(userInfoList);
+                                contactListFragment.setContactsMap(contacts);
+                            }
+                        });
             } catch (HyphenateException e) {
                 e.printStackTrace();
                 Log.d("usernames", "initDatas: " + e);
@@ -176,6 +178,78 @@ public class MassageFragment extends BaseFragment {
             public void onListItemClicked(EMConversation conversation) {
                 Toast.makeText(me, "" + conversation.conversationId(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getActivity(), ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.conversationId()));
+            }
+        });
+        EMClient.getInstance().contactManager().setContactListener(new EMContactListener() {
+
+            public void onContactAgreed(String username) {
+                Toast.makeText(me, username + "同意了您的好友请求", Toast.LENGTH_SHORT).show();
+                //好友请求被同意
+            }
+
+            public void onContactRefused(String username) {
+                //好友请求被拒绝
+                Toast.makeText(me, username + "拒绝了您的好友请求!", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onContactInvited(final String username, String reason) {
+                //收到好友邀请
+                AlertDialog.Builder builder = new AlertDialog.Builder(me);
+                //    设置Title的图标
+                builder.setIcon(R.drawable.ic_launcher);
+                //    设置Title的内容
+                builder.setTitle("好友请求");
+                //    设置Content来显示一个信息
+                builder.setMessage(username + "请求添加您为好友");
+                //    设置一个PositiveButton
+                builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            EMClient.getInstance().contactManager().acceptInvitation(username);
+                            contactListFragment.refresh();
+
+                        } catch (HyphenateException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                //    设置一个NegativeButton
+                builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            EMClient.getInstance().contactManager().declineInvitation(username);
+                        } catch (HyphenateException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                //    显示出该对话框
+                builder.show();
+            }
+
+            @Override
+            public void onFriendRequestAccepted(String s) {
+
+            }
+
+            @Override
+            public void onFriendRequestDeclined(String s) {
+
+            }
+
+            @Override
+            public void onContactDeleted(String username) {
+                //被删除时回调此方法
+            }
+
+
+            @Override
+            public void onContactAdded(String username) {
+                //增加了联系人时回调此方法
             }
         });
     }

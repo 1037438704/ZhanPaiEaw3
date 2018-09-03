@@ -35,7 +35,7 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 public class BuyAddFragment extends BaseFragment {
     private int count;
     private RecyclerView recyclerView;
-    private List<BuyListAllBean.DataBean.ListBean> list;
+    private List<BuyListAllBean.DataBean.ListBeanX.ListBean> list;
     private static BuyAddFgtAdapter buyAddFgtAdapter;
     private String title;
 
@@ -65,10 +65,11 @@ public class BuyAddFragment extends BaseFragment {
 
                         @Override
                         public void onResponse(String response, int id) {
+                            Log.i("问题?", "onResponse: " + response);
                             Gson gson = new Gson();
                             BuyListAllBean buyListAllBean = gson.fromJson(response, BuyListAllBean.class);
-                            list = buyListAllBean.getData().getList();
-                            buyAddFgtAdapter = new BuyAddFgtAdapter(R.layout.item_buy_add_fgt, list);
+                            list = buyListAllBean.getData().getList().getList();
+                            buyAddFgtAdapter = new BuyAddFgtAdapter(R.layout.item_buy_add_fgt, BuyAddFragment.this.list);
                             recyclerView.setAdapter(buyAddFgtAdapter);
                             buyAddFgtAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                                 @Override
@@ -91,8 +92,9 @@ public class BuyAddFragment extends BaseFragment {
                         @Override
                         public void onResponse(String response, int id) {
                             Gson gson = new Gson();
+                            Log.i("问题?", "onResponse: " + response);
                             BuyListAllBean buyListAllBean = gson.fromJson(response, BuyListAllBean.class);
-                            list = buyListAllBean.getData().getList();
+                            list = buyListAllBean.getData().getList().getList();
                             buyAddFgtAdapter = new BuyAddFgtAdapter(R.layout.item_buy_add_fgt, list);
                             recyclerView.setAdapter(buyAddFgtAdapter);
                             buyAddFgtAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {

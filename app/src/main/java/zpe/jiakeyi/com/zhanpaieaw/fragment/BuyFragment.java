@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.buy.ReleaseForAty;
 import zpe.jiakeyi.com.zhanpaieaw.activity.home.SeekActivity;
+import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectFragmentAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyPagerAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.buy.BuyAddFragment;
 
@@ -31,7 +32,7 @@ import zpe.jiakeyi.com.zhanpaieaw.fragment.buy.BuyAddFragment;
 public class BuyFragment extends BaseFragment {
     private ImageView title_back;
     private TextView title_name;
-//    private ImageView title_seek;
+    //    private ImageView title_seek;
     private TabLayout tab_news;
     private ViewPager vpa_news;
     private MyPagerAdapter myPagerAdapter;
@@ -63,17 +64,22 @@ public class BuyFragment extends BaseFragment {
         titles.add("实验仪器");
         titles.add("服务");
         titles.add("家具");
-        titles.add("仪器与耗材");
+        titles.add("仪器耗材");
         datas.add(new BuyAddFragment(0, titles.get(0)));
         datas.add(new BuyAddFragment(1, titles.get(1)));
         datas.add(new BuyAddFragment(2, titles.get(2)));
         datas.add(new BuyAddFragment(3, titles.get(3)));
         datas.add(new BuyAddFragment(4, titles.get(4)));
-        myPagerAdapter.setData(datas);
-        myPagerAdapter.setTitles(titles);
+        MyCollectFragmentAdapter myAdaptre = new MyCollectFragmentAdapter(getChildFragmentManager(), datas, titles);
         // 将适配器设置进ViewPager
-        vpa_news.setAdapter(myPagerAdapter);
-        // 将ViewPager与TabLayout相关联
+        vpa_news.setAdapter(myAdaptre);
+        vpa_news.setCurrentItem(0);
+
+        tab_news.addTab(tab_news.newTab().setText(titles.get(0)));
+        tab_news.addTab(tab_news.newTab().setText(titles.get(1)));
+        tab_news.addTab(tab_news.newTab().setText(titles.get(2)));
+        tab_news.addTab(tab_news.newTab().setText(titles.get(3)));
+        tab_news.addTab(tab_news.newTab().setText(titles.get(4)));
         tab_news.setupWithViewPager(vpa_news);
     }
 

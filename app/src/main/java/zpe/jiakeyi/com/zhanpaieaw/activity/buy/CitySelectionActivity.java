@@ -28,7 +28,7 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 /**
  * @author Gjianfu
  * @date 2018/8/16
- * 功能描述:
+ * 功能描述:城市选择器
  */
 
 @Layout(R.layout.activity_city_selection)
