@@ -154,22 +154,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
                         // 为XBanner绑定数据
                         xbanner.setData(images, null);
-// XBanner适配数据
+                        // XBanner适配数据
                         xbanner.setmAdapter(new XBanner.XBannerAdapter() {
                             @Override
                             public void loadBanner(XBanner banner, Object model, View view, int position) {
-//                Glide.with(getActivity()).load(images.get(position)).error(R.mipmap.banner).into((ImageView) view);
                                 Glide.with(getActivity()).load(images.get(position)).error(R.mipmap.banner).into((ImageView) view);
                             }
 
                         });
                         List<String> info = new ArrayList<>();
                         List<HomeBean.DataBean.Adv2Bean> adv2 = homeBean.getData().getAdv2();
-//                        for (int i = 0; i < adv2.size(); i++) {
-//                            info.add(adv2.get(i).getContent());
-//                        }
-                        for (int i = 0; i < 10; i++) {
-                            info.add("现在试试所所所所所所所所所所所所试试");
+                        for (int i = 0; i < adv2.size(); i++) {
+                            if (adv2.get(i).getContent().length() >= 12) {
+                                String substring = adv2.get(i).getContent().substring(0, 14);
+                                substring = substring + "...";
+                                info.add(substring);
+                            } else {
+                                info.add(adv2.get(i).getContent());
+                            }
                         }
                         marqueeView2.startWithList(info);
                         RecyclerHomeNew.setLayoutManager(new GridLayoutManager(getActivity(), 3, OrientationHelper.VERTICAL, false));
@@ -182,7 +184,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                             @Override
                             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                                 toast("你点击了第" + position + "条");
-                                jump(ProductActivity.class);
+                                jump(ProductActivity.class, new JumpParameter().put("id", recommend.get(position).getId() + ""));
 
                             }
                         });
@@ -193,7 +195,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                                 toast("你点击了第" + position + "条");
                                 //跳转到商品详情界面
                                 jump(ExhibitionActivity.class);
-                                ExhibitionActivity.IntentOne(list.get(position).getId());
+                                ExhibitionActivity.IntentOne(list.get(position).getId() + "");
 
                             }
                         });

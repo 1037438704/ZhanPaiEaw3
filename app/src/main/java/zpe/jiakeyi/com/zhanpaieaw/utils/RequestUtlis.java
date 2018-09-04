@@ -1,6 +1,8 @@
 package zpe.jiakeyi.com.zhanpaieaw.utils;
 
 
+import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
+
 /**
  * @author Gjianfu
  * @date 2018/7/31
@@ -19,7 +21,7 @@ public class RequestUtlis {
     //    public static String ID = "0d4fbd3293854028b9529af5b51319d8";
     public static String ID = null;
     public static String UserPhone = null;
-
+    public static LoginBeanCode loginBeanCode = null;
     /**
      * 广告模块
      * adv-controller : 广告管理G

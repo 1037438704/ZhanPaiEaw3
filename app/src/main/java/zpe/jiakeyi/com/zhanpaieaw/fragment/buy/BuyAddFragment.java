@@ -65,7 +65,6 @@ public class BuyAddFragment extends BaseFragment {
 
                         @Override
                         public void onResponse(String response, int id) {
-                            Log.i("问题?", "onResponse: " + response);
                             Gson gson = new Gson();
                             BuyListAllBean buyListAllBean = gson.fromJson(response, BuyListAllBean.class);
                             list = buyListAllBean.getData().getList().getList();

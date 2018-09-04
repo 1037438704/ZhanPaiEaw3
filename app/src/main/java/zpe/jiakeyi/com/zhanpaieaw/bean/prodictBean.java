@@ -1,15 +1,18 @@
 package zpe.jiakeyi.com.zhanpaieaw.bean;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/8/15.
  */
 
 public class prodictBean {
 
+
     /**
      * code : 1
      * msg : success
-     * data : {"info":{"id":"100","firmId":"1","firmName":"天马恒基","firmAddress":"生产商地址","firmType":1,"brandId":"1","brandName":"天马牌","pname":"大混子天平1","version":"UA-001","field":"实验室","introduce":"<p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2;\">\r\n    <span style=\"line-height: 25.2px; font-size: 14px;\"><strong style=\"line-height: 25.2px;\"><span style=\"text-decoration:underline;\"><span style=\"line-height: 25.2px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: 宋体;\">【技术参数】<\/span><\/span><\/span><\/span><\/strong><\/span>\r\n<\/p>\r\n<p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2;\">\r\n    &nbsp;\r\n<\/p>\r\n<table style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2; width: 568px;\">\r\n    <tbody style=\"line-height: 21.6px;\">\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px; height: 39px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-width: 1pt; border-color: windowtext; width: 225px; vertical-align: top;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型号<\/span><\/span><\/span>\r\n                <\/p>\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-indent: 22.5pt;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">技术参数<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: windowtext windowtext windowtext rgb(236, 233, 216); width: 343px; border-top-width: 1pt; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><strong style=\"line-height: 25.2px;\"><span style=\"line-height: 25.2px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">PHSJ-6L<\/span><\/span><\/span><\/strong><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">仪器级别<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.001<span style=\"line-height: 25.2px; font-family: 宋体;\">级<\/span><\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">测量参数<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<span style=\"line-height: 25.2px; font-family: 宋体;\">值、<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">（<\/span><span style=\"line-height: 25.2px; font-family: calibri;\">ORP<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）、温度值<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td rowspan=\"3\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">测量范围<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: windowtext windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-top-width: 1pt; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">-2.000<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">～<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">20.000<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">-2000.00<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">～<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">2000.00<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">温度<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">-5.0<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">～<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">130.0<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: 宋体;\">℃<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td rowspan=\"3\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">分辨率<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.001pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.01mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">温度<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.1<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">℃<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td rowspan=\"3\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">基本误差<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">±0.002pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">±0.03%FS<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">温度<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">±0.1<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">℃<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">稳定性<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">±0.002pH±1<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">个字）<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">/3h<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">电源<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">电源适配器<\/span><\/span><\/span>\r\n                <\/p>\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">（输入：<span style=\"line-height: 25.2px;\">100-240V AC<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">，<\/span><\/span><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">1.35A<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">；输出：<\/span><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">24V DC<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">，<\/span><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">3A<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">尺寸（<span style=\"line-height: 25.2px;\">mm<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">），重量（<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">kg<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">280×280×130<span style=\"line-height: 25.2px; font-family: 宋体;\">，<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">2.5<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n    <\/tbody>\r\n<\/table>\r\n<p>\r\n    <br/>\r\n<\/p>","introduceImg":"http://39.107.248.52/ossfs/img/153207040337310226.png","trait":"精度高","detailed":"","detailedImg":"http://39.107.248.52/ossfs/img/153207042897532698.png","configuration":"铁架子 铜盘子 液晶屏","one":"一级分类","two":"二级分类","three":"三级分类","four":"","oneId":"1","twoId":"2","threeId":"3","fourId":"","sample":"样本","thumbnail":"https://dahunzi.oss-cn-beijing.aliyuncs.com/tp.jpg","imgUrl":"https://dahunzi.oss-cn-beijing.aliyuncs.com/tp.jpg","modelUrl":"","status":1,"modelStatus":null,"exStatus":1,"standId":"3d0c644c0a8347628a6a5be8f64f752a","delFlag":null,"clickNo":200,"collectNo":0,"createDate":"2018-07-11 15:35:02.0","areaA":"","areaB":"","areaC":"","areaAId":null,"areaBId":null,"areaCId":null,"appIntroduceUrl":"","standby":""}}
+     * data : {"phone":{"id":null,"loginId":null,"type":null,"firmName":null,"firmShort":null,"credentials":null,"license":null,"licenseUrl":null,"certificate":null,"certificateUrl":null,"legalPerson":null,"idnum":null,"identityFront":null,"identityReverse":null,"overseas":null,"linkPhone":null,"linkFixed":null,"authentication":null,"aptitudeUrl":null,"logo":null,"trades":null,"product":null,"mobilePhone":null,"telPhone":null,"web":null,"mail":null,"site":null,"wechat":null,"wechatQr":null,"qq":null,"fliers":null,"alive":null,"standNum":null,"delFlag":null,"auditStatus":null,"status":null,"clickNo":null,"collectNo":null,"updateTime":null,"createDate":null,"address":null,"areaA":null,"areaB":null,"areaC":null,"areaAId":null,"areaBId":null,"areaCId":null,"introduce":null},"firmIm":"","imgurlList":["http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg"],"collStatus":0,"info":{"id":"100","firmId":null,"firmName":"北京先驱威锋技术开发公司","firmAddress":"北京","firmType":0,"brandId":null,"brandName":"先驱威锋","pname":"抑菌圈（抗生素效价）自动测量分析仪","version":"ZY-300Ⅳ","field":"","introduce":"<p>\n    <span style=\"font-size:16px;\"><strong>主要特点：<\/strong><\/span>\n\n <span style=\"font-size:14px;\">1.可完成药典中（一、二、三、剂量、合并计算）全部生物效价测定要求。&nbsp;<br/>\n 2.中文操作界面，易学易用，软件随药典版本升级，终生维护。&nbsp;<br/>\n 3.采用CCD扫描技术及进口关键器件，质量稳定，自动化程度高，操作简便。&nbsp;<br/>\n 4.适用于各类检定菌种，数据准确，重现性好。、<br/>\n <\/span>\n<\/p>","introduceImg":"http://jkytest.oss-cn-beijing.aliyuncs.com/u3dImg/153501456957073753.png","trait":null,"detailed":"<p>\n    <span style=\"font-size:16px;\"><strong>技术参数：<\/strong><\/span>\n<\/p>\n<p style=\"margin: 5px 0px; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 16px; \">\n    \n <span style=\"font-size:14px;\">平皿测量范围 1～100mm&nbsp;<br/>\n 测量平皿直径 0～50 mm&nbsp;<br/>\n 扫描速度 2400dpi，12ms/线&nbsp;<br/>\n 六碟平皿测量时间 &amp;le;5秒，单碟测量时间&amp;le;1秒&nbsp;<br/>\n 测量 单次六碟测量，测量面积210&amp;times;297mm&nbsp;<br/>\n 分辨率 &amp;le; 0.001mm&nbsp;<br/>\n 重复测量精度 &amp;le;0.002mm&nbsp;<br/>\n 效价测量精度 &amp;le;0.3%&nbsp;<br/>\n 效价重复测量精度 &amp;le;0.3%&nbsp;<br/>\n 台间误差 &amp;le;0.2%<\/span>\n<\/p>\n<p>\n    <br/>\n<\/p>","detailedImg":"http://jkytest.oss-cn-beijing.aliyuncs.com/u3dImg/153501456958940349.png","configuration":"","one":"实验室仪器","two":"行业专用仪器","three":"药物检测专用仪器类","four":"抑菌圈（抗生素效价）测量仪","oneId":null,"twoId":null,"threeId":null,"fourId":null,"sample":null,"thumbnail":null,"imgUrl":"http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg","modelUrl":"http://www.bjxqwf.com/a/cpzx/duogongnenweishengwuzidongceliangfenxiyi/2014/0220/113.html","status":null,"modelStatus":null,"exStatus":0,"standId":null,"delFlag":0,"clickNo":1,"collectNo":0,"createDate":null,"areaA":"北京","areaB":"北京市","areaC":null,"areaAId":null,"areaBId":null,"areaCId":null,"appIntroduceUrl":null,"standby":null},"imgList":[{"id":null,"productId":null,"url":"http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg","watermark":null,"thumbnailUrl":null,"cover":null,"createDate":null}]}
      */
 
     private int code;
@@ -42,10 +45,44 @@ public class prodictBean {
 
     public static class DataBean {
         /**
-         * info : {"id":"100","firmId":"1","firmName":"天马恒基","firmAddress":"生产商地址","firmType":1,"brandId":"1","brandName":"天马牌","pname":"大混子天平1","version":"UA-001","field":"实验室","introduce":"<p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2;\">\r\n    <span style=\"line-height: 25.2px; font-size: 14px;\"><strong style=\"line-height: 25.2px;\"><span style=\"text-decoration:underline;\"><span style=\"line-height: 25.2px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: 宋体;\">【技术参数】<\/span><\/span><\/span><\/span><\/strong><\/span>\r\n<\/p>\r\n<p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2;\">\r\n    &nbsp;\r\n<\/p>\r\n<table style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2; width: 568px;\">\r\n    <tbody style=\"line-height: 21.6px;\">\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px; height: 39px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-width: 1pt; border-color: windowtext; width: 225px; vertical-align: top;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型号<\/span><\/span><\/span>\r\n                <\/p>\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-indent: 22.5pt;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">技术参数<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: windowtext windowtext windowtext rgb(236, 233, 216); width: 343px; border-top-width: 1pt; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><strong style=\"line-height: 25.2px;\"><span style=\"line-height: 25.2px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">PHSJ-6L<\/span><\/span><\/span><\/strong><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">仪器级别<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.001<span style=\"line-height: 25.2px; font-family: 宋体;\">级<\/span><\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">测量参数<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<span style=\"line-height: 25.2px; font-family: 宋体;\">值、<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">（<\/span><span style=\"line-height: 25.2px; font-family: calibri;\">ORP<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）、温度值<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td rowspan=\"3\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">测量范围<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: windowtext windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-top-width: 1pt; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">-2.000<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">～<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">20.000<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">-2000.00<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">～<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">2000.00<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">温度<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">-5.0<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">～<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">130.0<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: 宋体;\">℃<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td rowspan=\"3\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">分辨率<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.001pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.01mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">温度<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">0.1<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">℃<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td rowspan=\"3\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">基本误差<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">±0.002pH<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">mV<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">±0.03%FS<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">温度<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">±0.1<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">℃<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">稳定性<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">（<span style=\"line-height: 25.2px;\">±0.002pH±1<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">个字）<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">/3h<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">电源<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">电源适配器<\/span><\/span><\/span>\r\n                <\/p>\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">（输入：<span style=\"line-height: 25.2px;\">100-240V AC<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">，<\/span><\/span><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">1.35A<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">；输出：<\/span><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">24V DC<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">，<\/span><span style=\"line-height: 25.2px; font-family: &quot;times new roman&quot;;\">3A<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n        <tr style=\"line-height: 21.6px; padding: 0px; margin: 0px;\">\r\n            <td colspan=\"2\" style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">尺寸（<span style=\"line-height: 25.2px;\">mm<\/span><\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">），重量（<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">kg<\/span><span style=\"line-height: 25.2px; font-family: 宋体;\">）<\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n            <td style=\"line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;\">\r\n                <p style=\"line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;\">\r\n                    <span style=\"line-height: 25.2px; font-size: 14px;\"><span style=\"line-height: 25.2px; color: rgb(0, 0, 0);\"><span style=\"line-height: 25.2px; font-family: calibri;\">280×280×130<span style=\"line-height: 25.2px; font-family: 宋体;\">，<\/span><\/span><span style=\"line-height: 25.2px; font-family: calibri;\">2.5<\/span><\/span><\/span>\r\n                <\/p>\r\n            <\/td>\r\n        <\/tr>\r\n    <\/tbody>\r\n<\/table>\r\n<p>\r\n    <br/>\r\n<\/p>","introduceImg":"http://39.107.248.52/ossfs/img/153207040337310226.png","trait":"精度高","detailed":"","detailedImg":"http://39.107.248.52/ossfs/img/153207042897532698.png","configuration":"铁架子 铜盘子 液晶屏","one":"一级分类","two":"二级分类","three":"三级分类","four":"","oneId":"1","twoId":"2","threeId":"3","fourId":"","sample":"样本","thumbnail":"https://dahunzi.oss-cn-beijing.aliyuncs.com/tp.jpg","imgUrl":"https://dahunzi.oss-cn-beijing.aliyuncs.com/tp.jpg","modelUrl":"","status":1,"modelStatus":null,"exStatus":1,"standId":"3d0c644c0a8347628a6a5be8f64f752a","delFlag":null,"clickNo":200,"collectNo":0,"createDate":"2018-07-11 15:35:02.0","areaA":"","areaB":"","areaC":"","areaAId":null,"areaBId":null,"areaCId":null,"appIntroduceUrl":"","standby":""}
+         * phone : {"id":null,"loginId":null,"type":null,"firmName":null,"firmShort":null,"credentials":null,"license":null,"licenseUrl":null,"certificate":null,"certificateUrl":null,"legalPerson":null,"idnum":null,"identityFront":null,"identityReverse":null,"overseas":null,"linkPhone":null,"linkFixed":null,"authentication":null,"aptitudeUrl":null,"logo":null,"trades":null,"product":null,"mobilePhone":null,"telPhone":null,"web":null,"mail":null,"site":null,"wechat":null,"wechatQr":null,"qq":null,"fliers":null,"alive":null,"standNum":null,"delFlag":null,"auditStatus":null,"status":null,"clickNo":null,"collectNo":null,"updateTime":null,"createDate":null,"address":null,"areaA":null,"areaB":null,"areaC":null,"areaAId":null,"areaBId":null,"areaCId":null,"introduce":null}
+         * firmIm :
+         * imgurlList : ["http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg"]
+         * collStatus : 0
+         * info : {"id":"100","firmId":null,"firmName":"北京先驱威锋技术开发公司","firmAddress":"北京","firmType":0,"brandId":null,"brandName":"先驱威锋","pname":"抑菌圈（抗生素效价）自动测量分析仪","version":"ZY-300Ⅳ","field":"","introduce":"<p>\n    <span style=\"font-size:16px;\"><strong>主要特点：<\/strong><\/span>\n\n <span style=\"font-size:14px;\">1.可完成药典中（一、二、三、剂量、合并计算）全部生物效价测定要求。&nbsp;<br/>\n 2.中文操作界面，易学易用，软件随药典版本升级，终生维护。&nbsp;<br/>\n 3.采用CCD扫描技术及进口关键器件，质量稳定，自动化程度高，操作简便。&nbsp;<br/>\n 4.适用于各类检定菌种，数据准确，重现性好。、<br/>\n <\/span>\n<\/p>","introduceImg":"http://jkytest.oss-cn-beijing.aliyuncs.com/u3dImg/153501456957073753.png","trait":null,"detailed":"<p>\n    <span style=\"font-size:16px;\"><strong>技术参数：<\/strong><\/span>\n<\/p>\n<p style=\"margin: 5px 0px; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 16px; \">\n    \n <span style=\"font-size:14px;\">平皿测量范围 1～100mm&nbsp;<br/>\n 测量平皿直径 0～50 mm&nbsp;<br/>\n 扫描速度 2400dpi，12ms/线&nbsp;<br/>\n 六碟平皿测量时间 &amp;le;5秒，单碟测量时间&amp;le;1秒&nbsp;<br/>\n 测量 单次六碟测量，测量面积210&amp;times;297mm&nbsp;<br/>\n 分辨率 &amp;le; 0.001mm&nbsp;<br/>\n 重复测量精度 &amp;le;0.002mm&nbsp;<br/>\n 效价测量精度 &amp;le;0.3%&nbsp;<br/>\n 效价重复测量精度 &amp;le;0.3%&nbsp;<br/>\n 台间误差 &amp;le;0.2%<\/span>\n<\/p>\n<p>\n    <br/>\n<\/p>","detailedImg":"http://jkytest.oss-cn-beijing.aliyuncs.com/u3dImg/153501456958940349.png","configuration":"","one":"实验室仪器","two":"行业专用仪器","three":"药物检测专用仪器类","four":"抑菌圈（抗生素效价）测量仪","oneId":null,"twoId":null,"threeId":null,"fourId":null,"sample":null,"thumbnail":null,"imgUrl":"http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg","modelUrl":"http://www.bjxqwf.com/a/cpzx/duogongnenweishengwuzidongceliangfenxiyi/2014/0220/113.html","status":null,"modelStatus":null,"exStatus":0,"standId":null,"delFlag":0,"clickNo":1,"collectNo":0,"createDate":null,"areaA":"北京","areaB":"北京市","areaC":null,"areaAId":null,"areaBId":null,"areaCId":null,"appIntroduceUrl":null,"standby":null}
+         * imgList : [{"id":null,"productId":null,"url":"http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg","watermark":null,"thumbnailUrl":null,"cover":null,"createDate":null}]
          */
 
+        private PhoneBean phone;
+        private String firmIm;
+        private int collStatus;
         private InfoBean info;
+        private List<String> imgurlList;
+        private List<ImgListBean> imgList;
+
+        public PhoneBean getPhone() {
+            return phone;
+        }
+
+        public void setPhone(PhoneBean phone) {
+            this.phone = phone;
+        }
+
+        public String getFirmIm() {
+            return firmIm;
+        }
+
+        public void setFirmIm(String firmIm) {
+            this.firmIm = firmIm;
+        }
+
+        public int getCollStatus() {
+            return collStatus;
+        }
+
+        public void setCollStatus(int collStatus) {
+            this.collStatus = collStatus;
+        }
 
         public InfoBean getInfo() {
             return info;
@@ -55,280 +92,595 @@ public class prodictBean {
             this.info = info;
         }
 
-        public static class InfoBean {
+        public List<String> getImgurlList() {
+            return imgurlList;
+        }
+
+        public void setImgurlList(List<String> imgurlList) {
+            this.imgurlList = imgurlList;
+        }
+
+        public List<ImgListBean> getImgList() {
+            return imgList;
+        }
+
+        public void setImgList(List<ImgListBean> imgList) {
+            this.imgList = imgList;
+        }
+
+        public static class PhoneBean {
             /**
-             * id : 100
-             * firmId : 1
-             * firmName : 天马恒基
-             * firmAddress : 生产商地址
-             * firmType : 1
-             * brandId : 1
-             * brandName : 天马牌
-             * pname : 大混子天平1
-             * version : UA-001
-             * field : 实验室
-             * introduce : <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2;">
-             <span style="line-height: 25.2px; font-size: 14px;"><strong style="line-height: 25.2px;"><span style="text-decoration:underline;"><span style="line-height: 25.2px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: 宋体;">【技术参数】</span></span></span></span></strong></span>
-             </p>
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2;">
-             &nbsp;
-             </p>
-             <table style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); font-family: 微软雅黑; font-size: 12px; font-variant-ligatures: normal; orphans: 2; white-space: normal; widows: 2; width: 568px;">
-             <tbody style="line-height: 21.6px;">
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px; height: 39px;">
-             <td colspan="2" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-width: 1pt; border-color: windowtext; width: 225px; vertical-align: top;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型号</span></span></span>
-             </p>
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-indent: 22.5pt;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">技术参数</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: windowtext windowtext windowtext rgb(236, 233, 216); width: 343px; border-top-width: 1pt; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><strong style="line-height: 25.2px;"><span style="line-height: 25.2px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">PHSJ-6L</span></span></span></strong></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td colspan="2" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">仪器级别</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">0.001<span style="line-height: 25.2px; font-family: 宋体;">级</span></span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td colspan="2" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">测量参数</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">pH<span style="line-height: 25.2px; font-family: 宋体;">值、</span></span><span style="line-height: 25.2px; font-family: calibri;">mV</span></span><span style="line-height: 25.2px; font-family: 宋体;">（</span><span style="line-height: 25.2px; font-family: calibri;">ORP</span><span style="line-height: 25.2px; font-family: 宋体;">）、温度值</span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td rowspan="3" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">测量范围</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">pH</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: windowtext windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-top-width: 1pt; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">（<span style="line-height: 25.2px;">-2.000</span></span><span style="line-height: 25.2px; font-family: 宋体;">～</span></span><span style="line-height: 25.2px; font-family: calibri;">20.000</span><span style="line-height: 25.2px; font-family: 宋体;">）</span><span style="line-height: 25.2px; font-family: calibri;">pH</span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">mV</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">（<span style="line-height: 25.2px;">-2000.00</span></span><span style="line-height: 25.2px; font-family: 宋体;">～</span></span><span style="line-height: 25.2px; font-family: calibri;">2000.00</span><span style="line-height: 25.2px; font-family: 宋体;">）</span><span style="line-height: 25.2px; font-family: calibri;">mV</span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">温度</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">（<span style="line-height: 25.2px;">-5.0</span></span><span style="line-height: 25.2px; font-family: 宋体;">～</span></span><span style="line-height: 25.2px; font-family: calibri;">130.0</span><span style="line-height: 25.2px; font-family: 宋体;">）</span><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: 宋体;">℃</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td rowspan="3" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">分辨率</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">pH</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">0.001pH</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">mV</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">0.01mV</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">温度</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">0.1</span><span style="line-height: 25.2px; font-family: 宋体;">℃</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td rowspan="3" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 111px; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">基本误差</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">pH</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">±0.002pH</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">mV</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">±0.03%FS</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 114px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">温度</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">±0.1</span><span style="line-height: 25.2px; font-family: 宋体;">℃</span></span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td colspan="2" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">稳定性</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">（<span style="line-height: 25.2px;">±0.002pH±1</span></span><span style="line-height: 25.2px; font-family: 宋体;">个字）</span></span><span style="line-height: 25.2px; font-family: calibri;">/3h</span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td colspan="2" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">电源</span></span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: &quot;times new roman&quot;;">电源适配器</span></span></span>
-             </p>
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: &quot;times new roman&quot;;">（输入：<span style="line-height: 25.2px;">100-240V AC</span></span><span style="line-height: 25.2px; font-family: 宋体;">，</span></span><span style="line-height: 25.2px; font-family: &quot;times new roman&quot;;">1.35A</span><span style="line-height: 25.2px; font-family: 宋体;">；输出：</span><span style="line-height: 25.2px; font-family: &quot;times new roman&quot;;">24V DC</span><span style="line-height: 25.2px; font-family: 宋体;">，</span><span style="line-height: 25.2px; font-family: &quot;times new roman&quot;;">3A</span><span style="line-height: 25.2px; font-family: 宋体;">）</span></span>
-             </p>
-             </td>
-             </tr>
-             <tr style="line-height: 21.6px; padding: 0px; margin: 0px;">
-             <td colspan="2" style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext; border-left-width: 1pt; width: 225px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">尺寸（<span style="line-height: 25.2px;">mm</span></span><span style="line-height: 25.2px; font-family: 宋体;">），重量（</span></span><span style="line-height: 25.2px; font-family: calibri;">kg</span><span style="line-height: 25.2px; font-family: 宋体;">）</span></span>
-             </p>
-             </td>
-             <td style="line-height: 21.6px; padding: 0pt 5.4pt; margin: 0px; border-bottom-width: 1pt; border-color: rgb(236, 233, 216) windowtext windowtext rgb(236, 233, 216); width: 343px; vertical-align: top; border-right-width: 1pt;">
-             <p style="line-height: 21.6px; padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
-             <span style="line-height: 25.2px; font-size: 14px;"><span style="line-height: 25.2px; color: rgb(0, 0, 0);"><span style="line-height: 25.2px; font-family: calibri;">280×280×130<span style="line-height: 25.2px; font-family: 宋体;">，</span></span><span style="line-height: 25.2px; font-family: calibri;">2.5</span></span></span>
-             </p>
-             </td>
-             </tr>
-             </tbody>
-             </table>
-             <p>
-             <br/>
-             </p>
-             * introduceImg : http://39.107.248.52/ossfs/img/153207040337310226.png
-             * trait : 精度高
-             * detailed :
-             * detailedImg : http://39.107.248.52/ossfs/img/153207042897532698.png
-             * configuration : 铁架子 铜盘子 液晶屏
-             * one : 一级分类
-             * two : 二级分类
-             * three : 三级分类
-             * four :
-             * oneId : 1
-             * twoId : 2
-             * threeId : 3
-             * fourId :
-             * sample : 样本
-             * thumbnail : https://dahunzi.oss-cn-beijing.aliyuncs.com/tp.jpg
-             * imgUrl : https://dahunzi.oss-cn-beijing.aliyuncs.com/tp.jpg
-             * modelUrl :
-             * status : 1
-             * modelStatus : null
-             * exStatus : 1
-             * standId : 3d0c644c0a8347628a6a5be8f64f752a
+             * id : null
+             * loginId : null
+             * type : null
+             * firmName : null
+             * firmShort : null
+             * credentials : null
+             * license : null
+             * licenseUrl : null
+             * certificate : null
+             * certificateUrl : null
+             * legalPerson : null
+             * idnum : null
+             * identityFront : null
+             * identityReverse : null
+             * overseas : null
+             * linkPhone : null
+             * linkFixed : null
+             * authentication : null
+             * aptitudeUrl : null
+             * logo : null
+             * trades : null
+             * product : null
+             * mobilePhone : null
+             * telPhone : null
+             * web : null
+             * mail : null
+             * site : null
+             * wechat : null
+             * wechatQr : null
+             * qq : null
+             * fliers : null
+             * alive : null
+             * standNum : null
              * delFlag : null
-             * clickNo : 200
-             * collectNo : 0
-             * createDate : 2018-07-11 15:35:02.0
-             * areaA :
-             * areaB :
-             * areaC :
+             * auditStatus : null
+             * status : null
+             * clickNo : null
+             * collectNo : null
+             * updateTime : null
+             * createDate : null
+             * address : null
+             * areaA : null
+             * areaB : null
+             * areaC : null
              * areaAId : null
              * areaBId : null
              * areaCId : null
-             * appIntroduceUrl :
-             * standby :
+             * introduce : null
+             */
+
+            private Object id;
+            private Object loginId;
+            private Object type;
+            private Object firmName;
+            private Object firmShort;
+            private Object credentials;
+            private Object license;
+            private Object licenseUrl;
+            private Object certificate;
+            private Object certificateUrl;
+            private Object legalPerson;
+            private Object idnum;
+            private Object identityFront;
+            private Object identityReverse;
+            private Object overseas;
+            private Object linkPhone;
+            private Object linkFixed;
+            private Object authentication;
+            private Object aptitudeUrl;
+            private Object logo;
+            private Object trades;
+            private Object product;
+            private Object mobilePhone;
+            private Object telPhone;
+            private Object web;
+            private Object mail;
+            private Object site;
+            private Object wechat;
+            private Object wechatQr;
+            private Object qq;
+            private Object fliers;
+            private Object alive;
+            private Object standNum;
+            private Object delFlag;
+            private Object auditStatus;
+            private Object status;
+            private Object clickNo;
+            private Object collectNo;
+            private Object updateTime;
+            private Object createDate;
+            private Object address;
+            private Object areaA;
+            private Object areaB;
+            private Object areaC;
+            private Object areaAId;
+            private Object areaBId;
+            private Object areaCId;
+            private Object introduce;
+
+            public Object getId() {
+                return id;
+            }
+
+            public void setId(Object id) {
+                this.id = id;
+            }
+
+            public Object getLoginId() {
+                return loginId;
+            }
+
+            public void setLoginId(Object loginId) {
+                this.loginId = loginId;
+            }
+
+            public Object getType() {
+                return type;
+            }
+
+            public void setType(Object type) {
+                this.type = type;
+            }
+
+            public Object getFirmName() {
+                return firmName;
+            }
+
+            public void setFirmName(Object firmName) {
+                this.firmName = firmName;
+            }
+
+            public Object getFirmShort() {
+                return firmShort;
+            }
+
+            public void setFirmShort(Object firmShort) {
+                this.firmShort = firmShort;
+            }
+
+            public Object getCredentials() {
+                return credentials;
+            }
+
+            public void setCredentials(Object credentials) {
+                this.credentials = credentials;
+            }
+
+            public Object getLicense() {
+                return license;
+            }
+
+            public void setLicense(Object license) {
+                this.license = license;
+            }
+
+            public Object getLicenseUrl() {
+                return licenseUrl;
+            }
+
+            public void setLicenseUrl(Object licenseUrl) {
+                this.licenseUrl = licenseUrl;
+            }
+
+            public Object getCertificate() {
+                return certificate;
+            }
+
+            public void setCertificate(Object certificate) {
+                this.certificate = certificate;
+            }
+
+            public Object getCertificateUrl() {
+                return certificateUrl;
+            }
+
+            public void setCertificateUrl(Object certificateUrl) {
+                this.certificateUrl = certificateUrl;
+            }
+
+            public Object getLegalPerson() {
+                return legalPerson;
+            }
+
+            public void setLegalPerson(Object legalPerson) {
+                this.legalPerson = legalPerson;
+            }
+
+            public Object getIdnum() {
+                return idnum;
+            }
+
+            public void setIdnum(Object idnum) {
+                this.idnum = idnum;
+            }
+
+            public Object getIdentityFront() {
+                return identityFront;
+            }
+
+            public void setIdentityFront(Object identityFront) {
+                this.identityFront = identityFront;
+            }
+
+            public Object getIdentityReverse() {
+                return identityReverse;
+            }
+
+            public void setIdentityReverse(Object identityReverse) {
+                this.identityReverse = identityReverse;
+            }
+
+            public Object getOverseas() {
+                return overseas;
+            }
+
+            public void setOverseas(Object overseas) {
+                this.overseas = overseas;
+            }
+
+            public Object getLinkPhone() {
+                return linkPhone;
+            }
+
+            public void setLinkPhone(Object linkPhone) {
+                this.linkPhone = linkPhone;
+            }
+
+            public Object getLinkFixed() {
+                return linkFixed;
+            }
+
+            public void setLinkFixed(Object linkFixed) {
+                this.linkFixed = linkFixed;
+            }
+
+            public Object getAuthentication() {
+                return authentication;
+            }
+
+            public void setAuthentication(Object authentication) {
+                this.authentication = authentication;
+            }
+
+            public Object getAptitudeUrl() {
+                return aptitudeUrl;
+            }
+
+            public void setAptitudeUrl(Object aptitudeUrl) {
+                this.aptitudeUrl = aptitudeUrl;
+            }
+
+            public Object getLogo() {
+                return logo;
+            }
+
+            public void setLogo(Object logo) {
+                this.logo = logo;
+            }
+
+            public Object getTrades() {
+                return trades;
+            }
+
+            public void setTrades(Object trades) {
+                this.trades = trades;
+            }
+
+            public Object getProduct() {
+                return product;
+            }
+
+            public void setProduct(Object product) {
+                this.product = product;
+            }
+
+            public Object getMobilePhone() {
+                return mobilePhone;
+            }
+
+            public void setMobilePhone(Object mobilePhone) {
+                this.mobilePhone = mobilePhone;
+            }
+
+            public Object getTelPhone() {
+                return telPhone;
+            }
+
+            public void setTelPhone(Object telPhone) {
+                this.telPhone = telPhone;
+            }
+
+            public Object getWeb() {
+                return web;
+            }
+
+            public void setWeb(Object web) {
+                this.web = web;
+            }
+
+            public Object getMail() {
+                return mail;
+            }
+
+            public void setMail(Object mail) {
+                this.mail = mail;
+            }
+
+            public Object getSite() {
+                return site;
+            }
+
+            public void setSite(Object site) {
+                this.site = site;
+            }
+
+            public Object getWechat() {
+                return wechat;
+            }
+
+            public void setWechat(Object wechat) {
+                this.wechat = wechat;
+            }
+
+            public Object getWechatQr() {
+                return wechatQr;
+            }
+
+            public void setWechatQr(Object wechatQr) {
+                this.wechatQr = wechatQr;
+            }
+
+            public Object getQq() {
+                return qq;
+            }
+
+            public void setQq(Object qq) {
+                this.qq = qq;
+            }
+
+            public Object getFliers() {
+                return fliers;
+            }
+
+            public void setFliers(Object fliers) {
+                this.fliers = fliers;
+            }
+
+            public Object getAlive() {
+                return alive;
+            }
+
+            public void setAlive(Object alive) {
+                this.alive = alive;
+            }
+
+            public Object getStandNum() {
+                return standNum;
+            }
+
+            public void setStandNum(Object standNum) {
+                this.standNum = standNum;
+            }
+
+            public Object getDelFlag() {
+                return delFlag;
+            }
+
+            public void setDelFlag(Object delFlag) {
+                this.delFlag = delFlag;
+            }
+
+            public Object getAuditStatus() {
+                return auditStatus;
+            }
+
+            public void setAuditStatus(Object auditStatus) {
+                this.auditStatus = auditStatus;
+            }
+
+            public Object getStatus() {
+                return status;
+            }
+
+            public void setStatus(Object status) {
+                this.status = status;
+            }
+
+            public Object getClickNo() {
+                return clickNo;
+            }
+
+            public void setClickNo(Object clickNo) {
+                this.clickNo = clickNo;
+            }
+
+            public Object getCollectNo() {
+                return collectNo;
+            }
+
+            public void setCollectNo(Object collectNo) {
+                this.collectNo = collectNo;
+            }
+
+            public Object getUpdateTime() {
+                return updateTime;
+            }
+
+            public void setUpdateTime(Object updateTime) {
+                this.updateTime = updateTime;
+            }
+
+            public Object getCreateDate() {
+                return createDate;
+            }
+
+            public void setCreateDate(Object createDate) {
+                this.createDate = createDate;
+            }
+
+            public Object getAddress() {
+                return address;
+            }
+
+            public void setAddress(Object address) {
+                this.address = address;
+            }
+
+            public Object getAreaA() {
+                return areaA;
+            }
+
+            public void setAreaA(Object areaA) {
+                this.areaA = areaA;
+            }
+
+            public Object getAreaB() {
+                return areaB;
+            }
+
+            public void setAreaB(Object areaB) {
+                this.areaB = areaB;
+            }
+
+            public Object getAreaC() {
+                return areaC;
+            }
+
+            public void setAreaC(Object areaC) {
+                this.areaC = areaC;
+            }
+
+            public Object getAreaAId() {
+                return areaAId;
+            }
+
+            public void setAreaAId(Object areaAId) {
+                this.areaAId = areaAId;
+            }
+
+            public Object getAreaBId() {
+                return areaBId;
+            }
+
+            public void setAreaBId(Object areaBId) {
+                this.areaBId = areaBId;
+            }
+
+            public Object getAreaCId() {
+                return areaCId;
+            }
+
+            public void setAreaCId(Object areaCId) {
+                this.areaCId = areaCId;
+            }
+
+            public Object getIntroduce() {
+                return introduce;
+            }
+
+            public void setIntroduce(Object introduce) {
+                this.introduce = introduce;
+            }
+        }
+
+        public static class InfoBean {
+            /**
+             * id : 100
+             * firmId : null
+             * firmName : 北京先驱威锋技术开发公司
+             * firmAddress : 北京
+             * firmType : 0
+             * brandId : null
+             * brandName : 先驱威锋
+             * pname : 抑菌圈（抗生素效价）自动测量分析仪
+             * version : ZY-300Ⅳ
+             * field :
+             * introduce : <p>
+             <span style="font-size:16px;"><strong>主要特点：</strong></span>
+
+             <span style="font-size:14px;">1.可完成药典中（一、二、三、剂量、合并计算）全部生物效价测定要求。&nbsp;<br/>
+             2.中文操作界面，易学易用，软件随药典版本升级，终生维护。&nbsp;<br/>
+             3.采用CCD扫描技术及进口关键器件，质量稳定，自动化程度高，操作简便。&nbsp;<br/>
+             4.适用于各类检定菌种，数据准确，重现性好。、<br/>
+             </span>
+             </p>
+             * introduceImg : http://jkytest.oss-cn-beijing.aliyuncs.com/u3dImg/153501456957073753.png
+             * trait : null
+             * detailed : <p>
+             <span style="font-size:16px;"><strong>技术参数：</strong></span>
+             </p>
+             <p style="margin: 5px 0px; color: rgb(0, 0, 0); font-family: sans-serif; font-size: 16px; ">
+
+             <span style="font-size:14px;">平皿测量范围 1～100mm&nbsp;<br/>
+             测量平皿直径 0～50 mm&nbsp;<br/>
+             扫描速度 2400dpi，12ms/线&nbsp;<br/>
+             六碟平皿测量时间 &amp;le;5秒，单碟测量时间&amp;le;1秒&nbsp;<br/>
+             测量 单次六碟测量，测量面积210&amp;times;297mm&nbsp;<br/>
+             分辨率 &amp;le; 0.001mm&nbsp;<br/>
+             重复测量精度 &amp;le;0.002mm&nbsp;<br/>
+             效价测量精度 &amp;le;0.3%&nbsp;<br/>
+             效价重复测量精度 &amp;le;0.3%&nbsp;<br/>
+             台间误差 &amp;le;0.2%</span>
+             </p>
+             <p>
+             <br/>
+             </p>
+             * detailedImg : http://jkytest.oss-cn-beijing.aliyuncs.com/u3dImg/153501456958940349.png
+             * configuration :
+             * one : 实验室仪器
+             * two : 行业专用仪器
+             * three : 药物检测专用仪器类
+             * four : 抑菌圈（抗生素效价）测量仪
+             * oneId : null
+             * twoId : null
+             * threeId : null
+             * fourId : null
+             * sample : null
+             * thumbnail : null
+             * imgUrl : http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg
+             * modelUrl : http://www.bjxqwf.com/a/cpzx/duogongnenweishengwuzidongceliangfenxiyi/2014/0220/113.html
+             * status : null
+             * modelStatus : null
+             * exStatus : 0
+             * standId : null
+             * delFlag : 0
+             * clickNo : 1
+             * collectNo : 0
+             * createDate : null
+             * areaA : 北京
+             * areaB : 北京市
+             * areaC : null
+             * areaAId : null
+             * areaBId : null
+             * areaCId : null
+             * appIntroduceUrl : null
+             * standby : null
              */
 
             private String id;
-            private String firmId;
+            private Object firmId;
             private String firmName;
             private String firmAddress;
             private int firmType;
-            private String brandId;
+            private Object brandId;
             private String brandName;
             private String pname;
             private String version;
             private String field;
             private String introduce;
             private String introduceImg;
-            private String trait;
+            private Object trait;
             private String detailed;
             private String detailedImg;
             private String configuration;
@@ -336,30 +688,30 @@ public class prodictBean {
             private String two;
             private String three;
             private String four;
-            private String oneId;
-            private String twoId;
-            private String threeId;
-            private String fourId;
-            private String sample;
-            private String thumbnail;
+            private Object oneId;
+            private Object twoId;
+            private Object threeId;
+            private Object fourId;
+            private Object sample;
+            private Object thumbnail;
             private String imgUrl;
             private String modelUrl;
-            private int status;
+            private Object status;
             private Object modelStatus;
             private int exStatus;
-            private String standId;
-            private Object delFlag;
+            private Object standId;
+            private int delFlag;
             private int clickNo;
             private int collectNo;
-            private String createDate;
+            private Object createDate;
             private String areaA;
             private String areaB;
-            private String areaC;
+            private Object areaC;
             private Object areaAId;
             private Object areaBId;
             private Object areaCId;
-            private String appIntroduceUrl;
-            private String standby;
+            private Object appIntroduceUrl;
+            private Object standby;
 
             public String getId() {
                 return id;
@@ -369,11 +721,11 @@ public class prodictBean {
                 this.id = id;
             }
 
-            public String getFirmId() {
+            public Object getFirmId() {
                 return firmId;
             }
 
-            public void setFirmId(String firmId) {
+            public void setFirmId(Object firmId) {
                 this.firmId = firmId;
             }
 
@@ -401,11 +753,11 @@ public class prodictBean {
                 this.firmType = firmType;
             }
 
-            public String getBrandId() {
+            public Object getBrandId() {
                 return brandId;
             }
 
-            public void setBrandId(String brandId) {
+            public void setBrandId(Object brandId) {
                 this.brandId = brandId;
             }
 
@@ -457,11 +809,11 @@ public class prodictBean {
                 this.introduceImg = introduceImg;
             }
 
-            public String getTrait() {
+            public Object getTrait() {
                 return trait;
             }
 
-            public void setTrait(String trait) {
+            public void setTrait(Object trait) {
                 this.trait = trait;
             }
 
@@ -521,51 +873,51 @@ public class prodictBean {
                 this.four = four;
             }
 
-            public String getOneId() {
+            public Object getOneId() {
                 return oneId;
             }
 
-            public void setOneId(String oneId) {
+            public void setOneId(Object oneId) {
                 this.oneId = oneId;
             }
 
-            public String getTwoId() {
+            public Object getTwoId() {
                 return twoId;
             }
 
-            public void setTwoId(String twoId) {
+            public void setTwoId(Object twoId) {
                 this.twoId = twoId;
             }
 
-            public String getThreeId() {
+            public Object getThreeId() {
                 return threeId;
             }
 
-            public void setThreeId(String threeId) {
+            public void setThreeId(Object threeId) {
                 this.threeId = threeId;
             }
 
-            public String getFourId() {
+            public Object getFourId() {
                 return fourId;
             }
 
-            public void setFourId(String fourId) {
+            public void setFourId(Object fourId) {
                 this.fourId = fourId;
             }
 
-            public String getSample() {
+            public Object getSample() {
                 return sample;
             }
 
-            public void setSample(String sample) {
+            public void setSample(Object sample) {
                 this.sample = sample;
             }
 
-            public String getThumbnail() {
+            public Object getThumbnail() {
                 return thumbnail;
             }
 
-            public void setThumbnail(String thumbnail) {
+            public void setThumbnail(Object thumbnail) {
                 this.thumbnail = thumbnail;
             }
 
@@ -585,11 +937,11 @@ public class prodictBean {
                 this.modelUrl = modelUrl;
             }
 
-            public int getStatus() {
+            public Object getStatus() {
                 return status;
             }
 
-            public void setStatus(int status) {
+            public void setStatus(Object status) {
                 this.status = status;
             }
 
@@ -609,19 +961,19 @@ public class prodictBean {
                 this.exStatus = exStatus;
             }
 
-            public String getStandId() {
+            public Object getStandId() {
                 return standId;
             }
 
-            public void setStandId(String standId) {
+            public void setStandId(Object standId) {
                 this.standId = standId;
             }
 
-            public Object getDelFlag() {
+            public int getDelFlag() {
                 return delFlag;
             }
 
-            public void setDelFlag(Object delFlag) {
+            public void setDelFlag(int delFlag) {
                 this.delFlag = delFlag;
             }
 
@@ -641,11 +993,11 @@ public class prodictBean {
                 this.collectNo = collectNo;
             }
 
-            public String getCreateDate() {
+            public Object getCreateDate() {
                 return createDate;
             }
 
-            public void setCreateDate(String createDate) {
+            public void setCreateDate(Object createDate) {
                 this.createDate = createDate;
             }
 
@@ -665,11 +1017,11 @@ public class prodictBean {
                 this.areaB = areaB;
             }
 
-            public String getAreaC() {
+            public Object getAreaC() {
                 return areaC;
             }
 
-            public void setAreaC(String areaC) {
+            public void setAreaC(Object areaC) {
                 this.areaC = areaC;
             }
 
@@ -697,20 +1049,96 @@ public class prodictBean {
                 this.areaCId = areaCId;
             }
 
-            public String getAppIntroduceUrl() {
+            public Object getAppIntroduceUrl() {
                 return appIntroduceUrl;
             }
 
-            public void setAppIntroduceUrl(String appIntroduceUrl) {
+            public void setAppIntroduceUrl(Object appIntroduceUrl) {
                 this.appIntroduceUrl = appIntroduceUrl;
             }
 
-            public String getStandby() {
+            public Object getStandby() {
                 return standby;
             }
 
-            public void setStandby(String standby) {
+            public void setStandby(Object standby) {
                 this.standby = standby;
+            }
+        }
+
+        public static class ImgListBean {
+            /**
+             * id : null
+             * productId : null
+             * url : http://www.bjxqwf.com/uploads/170824/1-1FR409393U49.jpg
+             * watermark : null
+             * thumbnailUrl : null
+             * cover : null
+             * createDate : null
+             */
+
+            private Object id;
+            private Object productId;
+            private String url;
+            private Object watermark;
+            private Object thumbnailUrl;
+            private Object cover;
+            private Object createDate;
+
+            public Object getId() {
+                return id;
+            }
+
+            public void setId(Object id) {
+                this.id = id;
+            }
+
+            public Object getProductId() {
+                return productId;
+            }
+
+            public void setProductId(Object productId) {
+                this.productId = productId;
+            }
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            public Object getWatermark() {
+                return watermark;
+            }
+
+            public void setWatermark(Object watermark) {
+                this.watermark = watermark;
+            }
+
+            public Object getThumbnailUrl() {
+                return thumbnailUrl;
+            }
+
+            public void setThumbnailUrl(Object thumbnailUrl) {
+                this.thumbnailUrl = thumbnailUrl;
+            }
+
+            public Object getCover() {
+                return cover;
+            }
+
+            public void setCover(Object cover) {
+                this.cover = cover;
+            }
+
+            public Object getCreateDate() {
+                return createDate;
+            }
+
+            public void setCreateDate(Object createDate) {
+                this.createDate = createDate;
             }
         }
     }

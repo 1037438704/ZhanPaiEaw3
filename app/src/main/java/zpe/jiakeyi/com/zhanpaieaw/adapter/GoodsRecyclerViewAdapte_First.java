@@ -48,12 +48,13 @@ public class GoodsRecyclerViewAdapte_First extends RecyclerView.Adapter<GoodsRec
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.tvTitleGoodsFirst.setText(list.get(position).getTypeName());
-        List<sysBean.DataBean.ListBeanXX.ListBeanX.ListBean> list = this.list.get(position).getList();
+        final List<sysBean.DataBean.ListBeanXX.ListBeanX.ListBean> list = this.list.get(position).getList();
         goodsRecyclerViewAdapter_second = new GoodsRecyclerViewAdapter_Second(mContext, list);
         goodsRecyclerViewAdapter_second.setItemClickListener(new GoodsRecyclerViewAdapter_Second.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent();
+                intent.putExtra("id", list.get(position).getId() + "");
                 intent.setClass(mContext, ProductActivity.class);
                 mContext.startActivity(intent);
             }

@@ -76,13 +76,13 @@ public class CategoryListAdapter extends BaseAdapter {
             holder.titleTv.setTextColor(Color.parseColor("#333333"));
             holder.titleTv.setBackgroundColor(Color.parseColor("#ffffff"));
             holder.titleTv.getPaint().setFakeBoldText(true);
-            holder.titleTv.setTextSize(28);
+            holder.titleTv.setTextSize(14);
         } else {
             holder.tagTV.setVisibility(View.GONE);
             holder.titleTv.setTextColor(Color.parseColor("#666666"));
             holder.titleTv.setBackgroundColor(Color.parseColor("#f5f5f5"));
             holder.titleTv.getPaint().setFakeBoldText(false);
-            holder.titleTv.setTextSize(24);
+            holder.titleTv.setTextSize(12);
         }
         return convertView;
     }

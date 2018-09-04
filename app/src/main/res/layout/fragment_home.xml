@@ -23,7 +23,7 @@
                 android:layout_height="410px"
                 android:background="#132123">
 
-                <com.stx.xhb.xbanner.XBanner xmlns:app="http://schemas.android.com/apk/res-auto"
+                <com.stx.xhb.xbanner.XBanner
                     android:id="@+id/xbanner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

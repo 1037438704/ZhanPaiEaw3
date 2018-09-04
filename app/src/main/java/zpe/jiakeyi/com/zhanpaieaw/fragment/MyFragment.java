@@ -6,9 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
+import com.kongzue.baseframework.util.Preferences;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
@@ -20,6 +23,7 @@ import zpe.jiakeyi.com.zhanpaieaw.activity.my.HellpActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.MyBuyActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.PersonalActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.SettingActivity;
+import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
 import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
 /**
@@ -31,7 +35,7 @@ import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
  */
 @Layout(R.layout.fragment_my)
 public class MyFragment extends BaseFragment {
-//    private AutoLinearLayout my_ll_login;
+    //    private AutoLinearLayout my_ll_login;
     private AutoLinearLayout my_ll_collect;
     private AutoLinearLayout my_atll_hellp;
     private AutoLinearLayout record_auto;
@@ -40,12 +44,17 @@ public class MyFragment extends BaseFragment {
     private AutoLinearLayout share_auto;
     private AutoLinearLayout setting_auto;
     private AutoLinearLayout my_ll_login_ture;
+    private TextView user_name;
+    private TextView login_tv;
+    private TextView user_phone;
 
     @Override
     public void initViews() {
 
-//        my_ll_login = findViewById(R.id.my_ll_login);
         my_ll_collect = findViewById(R.id.my_ll_collect);
+        user_name = findViewById(R.id.user_name);
+        login_tv = findViewById(R.id.login_tv);
+        user_phone = findViewById(R.id.user_phone);
         my_atll_hellp = findViewById(R.id.my_atll_hellp);
         record_auto = findViewById(R.id.record_auto);
         download_auto = findViewById(R.id.download_auto);
@@ -65,11 +74,18 @@ public class MyFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         if (RequestUtlis.Token != null) {
-//            my_ll_login_ture.setVisibility(View.VISIBLE);
-//            my_ll_login.setVisibility(View.GONE);
+            String string = Preferences.getInstance().getString(me, "UseUser", "UseUser");
+            Gson gson = new Gson();
+            LoginBeanCode loginBeanCode = gson.fromJson(string, LoginBeanCode.class);
+            user_name.setText(loginBeanCode.getData().getUserInfo().getUsername());
+            user_phone.setText(loginBeanCode.getData().getUserInfo().getIphone());
+            user_name.setVisibility(View.VISIBLE);
+            user_phone.setVisibility(View.VISIBLE);
+            login_tv.setVisibility(View.GONE);
         } else {
-//            my_ll_login.setVisibility(View.VISIBLE);
-//            my_ll_login_ture.setVisibility(View.GONE);
+            user_name.setVisibility(View.GONE);
+            user_phone.setVisibility(View.GONE);
+            login_tv.setVisibility(View.VISIBLE);
         }
     }
 
@@ -86,14 +102,6 @@ public class MyFragment extends BaseFragment {
                 }
             }
         });
-//        //跳转到登录界面
-//        my_ll_login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                jump(LoginActivity.class);
-//
-//            }
-//        });
         //收藏界面
         my_ll_collect.setOnClickListener(new View.OnClickListener() {
             @Override

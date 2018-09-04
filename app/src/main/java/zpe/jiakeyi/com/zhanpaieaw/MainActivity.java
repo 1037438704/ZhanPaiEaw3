@@ -2,24 +2,31 @@ package zpe.jiakeyi.com.zhanpaieaw;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.gson.Gson;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
+import com.kongzue.baseframework.util.Preferences;
 import com.zhy.autolayout.AutoFrameLayout;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.base.BaseAty;
+import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.BuyFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.ExhibitionFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.HomeFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.MassageFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.MyFragment;
+import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
 /**
  * 创建人： 郭健福
@@ -65,6 +72,36 @@ public class MainActivity extends BaseAty implements RadioGroup.OnCheckedChangeL
 
     @Override
     public void initDatas(JumpParameter paramer) {
+        if (Preferences.getInstance().getString(me, "UseUser", "UseUser") != "") {
+            String string = Preferences.getInstance().getString(me, "UseUser", "UseUser");
+            Gson gson = new Gson();
+            LoginBeanCode loginBeanCode = gson.fromJson(string, LoginBeanCode.class);
+            RequestUtlis.Token = loginBeanCode.getData().getACCESS_TOKEN();
+            RequestUtlis.ID = loginBeanCode.getData().getUserInfo().getId();
+            Log.i("登录", "initDatas: " + loginBeanCode);
+            EMClient.getInstance().login(loginBeanCode.getData().getUserInfo().getUsername(), loginBeanCode.getData().getImUserInfo().getPassword(), new EMCallBack() {//回调
+                @Override
+                public void onSuccess() {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            EMClient.getInstance().groupManager().loadAllGroups();
+                            EMClient.getInstance().chatManager().loadAllConversations();
+                            Log.d("main", "登录聊天服务器成功！");
+                        }
+                    });
+                }
+
+                @Override
+                public void onProgress(int progress, String status) {
+
+                }
+
+                @Override
+                public void onError(int code, String message) {
+                    Log.d("main", "登录聊天服务器失败！");
+                }
+            });
+        }
 
     }
 
