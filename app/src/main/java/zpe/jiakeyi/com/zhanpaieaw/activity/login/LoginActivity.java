@@ -132,7 +132,7 @@ public class LoginActivity extends BaseActivity {
                                     RequestUtlis.ID = loginBeanCode.getData().getUserInfo().getId();
                                     Log.i("token", "onResponse: " + RequestUtlis.Token);
                                     Log.i("id", "onResponse: " + RequestUtlis.ID);
-                                    EMClient.getInstance().login(loginBeanCode.getData().getUserInfo().getUsername(), loginBeanCode.getData().getImUserInfo().getPassword(), new EMCallBack() {//回调
+                                    EMClient.getInstance().login(loginBeanCode.getData().getImUserInfo().getUserName(), loginBeanCode.getData().getImUserInfo().getPassword(), new EMCallBack() {//回调
                                         @Override
                                         public void onSuccess() {
                                             runOnUiThread(new Runnable() {
@@ -156,6 +156,7 @@ public class LoginActivity extends BaseActivity {
                                     });
                                     Toast.makeText(me, "登录成功", Toast.LENGTH_SHORT).show();
                                     Preferences.getInstance().set(me, "UseUser", "UseUser", response);
+                                    finish();
                                     jump(MainActivity.class);
                                 } else {
                                     Toast.makeText(me, loginBeanCode.getMsg(), Toast.LENGTH_SHORT).show();

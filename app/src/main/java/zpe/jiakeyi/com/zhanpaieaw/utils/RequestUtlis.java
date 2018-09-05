@@ -10,18 +10,18 @@ import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
  */
 public class RequestUtlis {
     //锋哥
-//    public final static String HttpUrl = "http://192.168.1.111";
+    public final static String HttpUrl = "http://192.168.1.250";
     //龙哥
     //    public final static String HttpUrl = "http://192.168.1.182";
     //线上
-    public final static String HttpUrl = "http://39.105.24.238:8080/zp";
+//    public final static String HttpUrl = "http://39.105.24.238:8080/zp";
     //    public static String Token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNDQwODYxOCwic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNDQxMjIxOH0.A1uYnuQZtBXaCC4Zpe4JGESF3DJMtRAxfBNVyBb90Ac";
     public static String Token = null;
 
     //    public static String ID = "0d4fbd3293854028b9529af5b51319d8";
     public static String ID = null;
+    public static String UserMassage = null;
     public static String UserPhone = null;
-    public static LoginBeanCode loginBeanCode = null;
     /**
      * 广告模块
      * adv-controller : 广告管理G
@@ -44,6 +44,8 @@ public class RequestUtlis {
     public final static String SATY = HttpUrl + "/as/sAty";
     //环信列表页
     public final static String getImUserInfo = HttpUrl + "/huanxin/getImUserInfo";
+    //环信列表页
+    public final static String getMyFriends = HttpUrl + "/huanxin/getMyFriends";
     //查询已解决与未解决
     public final static String SASO = HttpUrl + "/as/sAso";
     //查询我的求购信息

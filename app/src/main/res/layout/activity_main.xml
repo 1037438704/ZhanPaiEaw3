@@ -31,7 +31,7 @@
             android:text="首页"
             android:textColor="@drawable/checked_text_home"
             android:textColorHint="#333333"
-            android:textSize="30px" />
+            android:textSize="20px" />
 
         <RadioButton
             android:id="@+id/tab_exhibition"
@@ -46,7 +46,7 @@
             android:textColor="@drawable/checked_text_home"
             android:textColorHint="#333333"
 
-            android:textSize="30px" />
+            android:textSize="20px" />
 
         <RadioButton
             android:id="@+id/tab_massage"
@@ -61,7 +61,7 @@
             android:textColor="@drawable/checked_text_home"
             android:textColorHint="#333333"
 
-            android:textSize="30px" />
+            android:textSize="20px" />
 
         <RadioButton
             android:id="@+id/tab_buy"
@@ -76,7 +76,7 @@
             android:textColor="@drawable/checked_text_home"
             android:textColorHint="#333333"
 
-            android:textSize="30px" />
+            android:textSize="20px" />
 
         <RadioButton
             android:id="@+id/tab_persona"
@@ -90,6 +90,6 @@
             android:text="个人中心"
             android:textColor="@drawable/checked_text_home"
             android:textColorHint="#333333"
-            android:textSize="30px" />
+            android:textSize="20px" />
     </RadioGroup>
 </com.zhy.autolayout.AutoRelativeLayout>

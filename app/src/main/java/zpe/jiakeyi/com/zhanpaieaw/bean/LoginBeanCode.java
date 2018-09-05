@@ -5,10 +5,11 @@ package zpe.jiakeyi.com.zhanpaieaw.bean;
  */
 
 public class LoginBeanCode {
+
     /**
      * code : 1
      * msg : success
-     * data : {"userInfo":{"id":"c714cf2c528f40d5b4108a3ca52b21db","account":"tianma","password":"e10adc3949ba59abbe56e057f20f883e","username":"天马恒基","nickname":"tianma","viaUrl":"https://jkytest.oss-cn-beijing.aliyuncs.com/img/153198096951057437.png","sex":true,"loginState":null,"postId":1,"postName":null,"messageId":null,"iphone":"17633369350","qq":"12345678901111","mail":"12345678901111","wechat":"1212121212","wechatQr":null,"firmId":"1","status":null,"delFlag":0,"createTime":"2018-08-03 17:06:45.0"},"ACCESS_TOKEN":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ0aWFubWEiLCJpYXQiOjE1MzU5NDM0NTUsInN1YiI6ImpreS5hZG1pbi51c2VyIiwiaXNzIjoid3d3LmpreS5jb20iLCJleHAiOjE1MzU5Nzk0NTV9.C5_MLnPdSUbI4Vw1Scqe6uxQWaMWLdNq4Sc6BU0Obdc","imUserInfo":{"id":"c714cf2c528f40d5b4108a3ca52b21db","userName":"tianma","password":"123456","nickName":"天马昵称我给改了6不6","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}}
+     * data : {"userInfo":{"id":"b0c96c7f7970476b9e08c377d721ff27","account":"18810379038","password":"e10adc3949ba59abbe56e057f20f883e","username":"18810379038","nickname":null,"viaUrl":null,"sex":null,"loginState":null,"postId":0,"postName":null,"messageId":null,"iphone":"18810379038","qq":null,"mail":null,"wechat":null,"wechatQr":null,"firmId":null,"status":null,"delFlag":0,"createTime":"2018-09-05 00:00:00.0"},"ACCESS_TOKEN":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNjEyODg1Mywic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNjE2NDg1M30.zjp56kPb23u00GzGGDVWSHEw5xXva3fPzpRvenIqKMo","imUserInfo":{"id":"0d4fbd3293854028b9529af5b51319d8","userName":"18810379038","password":"123456","nickName":"18810379038","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}}
      */
 
     private int code;
@@ -41,9 +42,9 @@ public class LoginBeanCode {
 
     public static class DataBean {
         /**
-         * userInfo : {"id":"c714cf2c528f40d5b4108a3ca52b21db","account":"tianma","password":"e10adc3949ba59abbe56e057f20f883e","username":"天马恒基","nickname":"tianma","viaUrl":"https://jkytest.oss-cn-beijing.aliyuncs.com/img/153198096951057437.png","sex":true,"loginState":null,"postId":1,"postName":null,"messageId":null,"iphone":"17633369350","qq":"12345678901111","mail":"12345678901111","wechat":"1212121212","wechatQr":null,"firmId":"1","status":null,"delFlag":0,"createTime":"2018-08-03 17:06:45.0"}
-         * ACCESS_TOKEN : eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ0aWFubWEiLCJpYXQiOjE1MzU5NDM0NTUsInN1YiI6ImpreS5hZG1pbi51c2VyIiwiaXNzIjoid3d3LmpreS5jb20iLCJleHAiOjE1MzU5Nzk0NTV9.C5_MLnPdSUbI4Vw1Scqe6uxQWaMWLdNq4Sc6BU0Obdc
-         * imUserInfo : {"id":"c714cf2c528f40d5b4108a3ca52b21db","userName":"tianma","password":"123456","nickName":"天马昵称我给改了6不6","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}
+         * userInfo : {"id":"b0c96c7f7970476b9e08c377d721ff27","account":"18810379038","password":"e10adc3949ba59abbe56e057f20f883e","username":"18810379038","nickname":null,"viaUrl":null,"sex":null,"loginState":null,"postId":0,"postName":null,"messageId":null,"iphone":"18810379038","qq":null,"mail":null,"wechat":null,"wechatQr":null,"firmId":null,"status":null,"delFlag":0,"createTime":"2018-09-05 00:00:00.0"}
+         * ACCESS_TOKEN : eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNjEyODg1Mywic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNjE2NDg1M30.zjp56kPb23u00GzGGDVWSHEw5xXva3fPzpRvenIqKMo
+         * imUserInfo : {"id":"0d4fbd3293854028b9529af5b51319d8","userName":"18810379038","password":"123456","nickName":"18810379038","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}
          */
 
         private UserInfoBean userInfo;
@@ -76,45 +77,45 @@ public class LoginBeanCode {
 
         public static class UserInfoBean {
             /**
-             * id : c714cf2c528f40d5b4108a3ca52b21db
-             * account : tianma
+             * id : b0c96c7f7970476b9e08c377d721ff27
+             * account : 18810379038
              * password : e10adc3949ba59abbe56e057f20f883e
-             * username : 天马恒基
-             * nickname : tianma
-             * viaUrl : https://jkytest.oss-cn-beijing.aliyuncs.com/img/153198096951057437.png
-             * sex : true
+             * username : 18810379038
+             * nickname : null
+             * viaUrl : null
+             * sex : null
              * loginState : null
-             * postId : 1
+             * postId : 0
              * postName : null
              * messageId : null
-             * iphone : 17633369350
-             * qq : 12345678901111
-             * mail : 12345678901111
-             * wechat : 1212121212
+             * iphone : 18810379038
+             * qq : null
+             * mail : null
+             * wechat : null
              * wechatQr : null
-             * firmId : 1
+             * firmId : null
              * status : null
              * delFlag : 0
-             * createTime : 2018-08-03 17:06:45.0
+             * createTime : 2018-09-05 00:00:00.0
              */
 
             private String id;
             private String account;
             private String password;
             private String username;
-            private String nickname;
-            private String viaUrl;
-            private boolean sex;
+            private Object nickname;
+            private Object viaUrl;
+            private Object sex;
             private Object loginState;
             private int postId;
             private Object postName;
             private Object messageId;
             private String iphone;
-            private String qq;
-            private String mail;
-            private String wechat;
+            private Object qq;
+            private Object mail;
+            private Object wechat;
             private Object wechatQr;
-            private String firmId;
+            private Object firmId;
             private Object status;
             private int delFlag;
             private String createTime;
@@ -151,27 +152,27 @@ public class LoginBeanCode {
                 this.username = username;
             }
 
-            public String getNickname() {
+            public Object getNickname() {
                 return nickname;
             }
 
-            public void setNickname(String nickname) {
+            public void setNickname(Object nickname) {
                 this.nickname = nickname;
             }
 
-            public String getViaUrl() {
+            public Object getViaUrl() {
                 return viaUrl;
             }
 
-            public void setViaUrl(String viaUrl) {
+            public void setViaUrl(Object viaUrl) {
                 this.viaUrl = viaUrl;
             }
 
-            public boolean isSex() {
+            public Object getSex() {
                 return sex;
             }
 
-            public void setSex(boolean sex) {
+            public void setSex(Object sex) {
                 this.sex = sex;
             }
 
@@ -215,27 +216,27 @@ public class LoginBeanCode {
                 this.iphone = iphone;
             }
 
-            public String getQq() {
+            public Object getQq() {
                 return qq;
             }
 
-            public void setQq(String qq) {
+            public void setQq(Object qq) {
                 this.qq = qq;
             }
 
-            public String getMail() {
+            public Object getMail() {
                 return mail;
             }
 
-            public void setMail(String mail) {
+            public void setMail(Object mail) {
                 this.mail = mail;
             }
 
-            public String getWechat() {
+            public Object getWechat() {
                 return wechat;
             }
 
-            public void setWechat(String wechat) {
+            public void setWechat(Object wechat) {
                 this.wechat = wechat;
             }
 
@@ -247,11 +248,11 @@ public class LoginBeanCode {
                 this.wechatQr = wechatQr;
             }
 
-            public String getFirmId() {
+            public Object getFirmId() {
                 return firmId;
             }
 
-            public void setFirmId(String firmId) {
+            public void setFirmId(Object firmId) {
                 this.firmId = firmId;
             }
 
@@ -282,10 +283,10 @@ public class LoginBeanCode {
 
         public static class ImUserInfoBean {
             /**
-             * id : c714cf2c528f40d5b4108a3ca52b21db
-             * userName : tianma
+             * id : 0d4fbd3293854028b9529af5b51319d8
+             * userName : 18810379038
              * password : 123456
-             * nickName : 天马昵称我给改了6不6
+             * nickName : 18810379038
              * icon : https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg
              * imType : null
              * imStatus : null

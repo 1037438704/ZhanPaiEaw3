@@ -45,6 +45,7 @@ import zpe.jiakeyi.com.zhanpaieaw.activity.massage.ChatActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectFragmentAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.bean.HuanXinUsers;
+import zpe.jiakeyi.com.zhanpaieaw.bean.friendBean;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.FriendFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.SystemFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.UserFragment;
@@ -143,10 +144,19 @@ public class MassageFragment extends BaseFragment {
             super.run();
             try {
                 usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
+            } catch (HyphenateException e) {
+                e.printStackTrace();
+            } finally {
                 Log.d("usernames", "initDatas: " + usernames);
-                final Gson gson = new Gson();
+                Gson gson = new Gson();
                 String s = gson.toJson(usernames);
+                Log.i("字符串", "run: " + s + "");
+                Log.i("手机号", "run: " + RequestUtlis.UserPhone);
+                Log.i("字符串", "run: " + RequestUtlis.Token);
                 OkHttpUtils.post().url(RequestUtlis.getImUserInfo)
+                        .addHeader("Content-Type", "application/json")
+                        .addHeader("Accept", "application/json")
+                        .addHeader("loginType", "1")
                         .addHeader("ACCESS_TOKEN", RequestUtlis.Token)
                         .addParams("userList", s)
                         .build()
@@ -158,16 +168,21 @@ public class MassageFragment extends BaseFragment {
 
                             @Override
                             public void onResponse(String response, int id) {
+                                Log.i("列表?", "onResponse: " + response);
+                                Gson gson = new Gson();
                                 HuanXinUsers huanXinUsers = gson.fromJson(response, HuanXinUsers.class);
                                 userInfoList = huanXinUsers.getData().getUserInfoList();
                                 Map<String, EaseUser> contacts = getContacts(userInfoList);
+//                                Log.i("列表", "onResponse: " + response);
+//                                friendBean v = gson.fromJson(response, friendBean.class);
+//                                List<friendBean.DataBean.FriendListBean> friendList = v.getData().getFriendList();
+//                                Map<String, EaseUser> contacts = getContacts(friendList);
+//                                Log.i("列表?", "onResponse: " + friendList);
                                 contactListFragment.setContactsMap(contacts);
                             }
                         });
-            } catch (HyphenateException e) {
-                e.printStackTrace();
-                Log.d("usernames", "initDatas: " + e);
             }
+
         }
     }
 

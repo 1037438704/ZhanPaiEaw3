@@ -74,12 +74,14 @@ public class MainActivity extends BaseAty implements RadioGroup.OnCheckedChangeL
     public void initDatas(JumpParameter paramer) {
         if (Preferences.getInstance().getString(me, "UseUser", "UseUser") != "") {
             String string = Preferences.getInstance().getString(me, "UseUser", "UseUser");
+            RequestUtlis.UserMassage = string;
             Gson gson = new Gson();
             LoginBeanCode loginBeanCode = gson.fromJson(string, LoginBeanCode.class);
+            RequestUtlis.UserPhone = loginBeanCode.getData().getUserInfo().getIphone();
             RequestUtlis.Token = loginBeanCode.getData().getACCESS_TOKEN();
             RequestUtlis.ID = loginBeanCode.getData().getUserInfo().getId();
             Log.i("登录", "initDatas: " + loginBeanCode);
-            EMClient.getInstance().login(loginBeanCode.getData().getUserInfo().getUsername(), loginBeanCode.getData().getImUserInfo().getPassword(), new EMCallBack() {//回调
+            EMClient.getInstance().login(loginBeanCode.getData().getImUserInfo().getUserName(), loginBeanCode.getData().getImUserInfo().getPassword(), new EMCallBack() {//回调
                 @Override
                 public void onSuccess() {
                     runOnUiThread(new Runnable() {
