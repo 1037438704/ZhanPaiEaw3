@@ -10,11 +10,11 @@ import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
  */
 public class RequestUtlis {
     //锋哥
-    public final static String HttpUrl = "http://192.168.1.250";
+//    public final static String HttpUrl = "http://192.168.1.111";
     //龙哥
     //    public final static String HttpUrl = "http://192.168.1.182";
     //线上
-//    public final static String HttpUrl = "http://39.105.24.238:8080/zp";
+    public final static String HttpUrl = "http://39.105.24.238:8080/zp";
     //    public static String Token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxODgxMDM3OTAzOCIsImlhdCI6MTUzNDQwODYxOCwic3ViIjoiamt5LmFkbWluLnVzZXIiLCJpc3MiOiJ3d3cuamt5LmNvbSIsImV4cCI6MTUzNDQxMjIxOH0.A1uYnuQZtBXaCC4Zpe4JGESF3DJMtRAxfBNVyBb90Ac";
     public static String Token = null;
 

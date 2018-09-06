@@ -8,6 +8,7 @@ import android.util.Log;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.easeui.EaseUI;
+import com.hyphenate.easeui.domain.EaseUser;
 
 import java.util.Iterator;
 import java.util.List;
@@ -22,7 +23,7 @@ public class MyApplication extends Application {
         EMOptions options = new EMOptions();
 // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAutoLogin(false);
-        options.setAcceptInvitationAlways(true);
+        options.setAcceptInvitationAlways(false);
         MyApplication myApplication = this;
         int pid = android.os.Process.myPid();
         String processAppName = getAppName(pid);

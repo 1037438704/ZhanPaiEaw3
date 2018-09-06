@@ -63,6 +63,7 @@
                 android:layout_weight="1" />
 
             <ImageView
+                android:id="@+id/person_icon"
                 android:layout_width="112px"
                 android:layout_height="112px"
                 android:src="@mipmap/my_img_person" />
@@ -98,6 +99,7 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/person_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -137,6 +139,7 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/person_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -176,7 +179,7 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/phone_set_tv"
+                android:id="@+id/person_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

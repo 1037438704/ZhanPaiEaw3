@@ -12,13 +12,13 @@ import com.hyphenate.easeui.EaseUI.EaseUserProfileProvider;
 import com.hyphenate.easeui.domain.EaseUser;
 
 public class EaseUserUtils {
-    
+
     static EaseUserProfileProvider userProvider;
-    
+
     static {
         userProvider = EaseUI.getInstance().getUserProfileProvider();
     }
-    
+
     /**
      * get EaseUser according username
      * @param username
@@ -27,10 +27,10 @@ public class EaseUserUtils {
     public static EaseUser getUserInfo(String username){
         if(userProvider != null)
             return userProvider.getUser(username);
-        
+
         return null;
     }
-    
+
     /**
      * set user avatar
      * @param username
@@ -49,7 +49,7 @@ public class EaseUserUtils {
             Glide.with(context).load(R.drawable.ease_default_avatar).into(imageView);
         }
     }
-    
+
     /**
      * set user's nickname
      */
@@ -63,5 +63,5 @@ public class EaseUserUtils {
         	}
         }
     }
-    
+
 }

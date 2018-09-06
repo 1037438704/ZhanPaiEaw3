@@ -77,7 +77,7 @@ public class PersonalActivity extends BaseActivity {
         personal_imag_finish = findViewById(R.id.personal_imag_finish);
         image_setting = findViewById(R.id.image_setting);
         sex_setting = findViewById(R.id.sex_setting);
-        phone_set_tv = findViewById(R.id.phone_set_tv);
+//        phone_set_tv = findViewById(R.id.phone_set_tv);
         phone_setting = findViewById(R.id.phone_setting);
         is_checked_wx = findViewById(R.id.is_checked_wx);
         wencht_setting = findViewById(R.id.wencht_setting);

@@ -7,10 +7,11 @@ import java.util.List;
  */
 
 public class HuanXinUsers {
+
     /**
      * code : 1
      * msg : success
-     * data : {"userInfoList":[{"id":"8e486a21fd284b7384864ca4fef86c1b","userName":"youxin","password":null,"nickName":"youxin","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null},{"id":"c714cf2c528f40d5b4108a3ca52b21db","userName":"tianma","password":null,"nickName":"天马昵称我给改了6不6","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}]}
+     * data : {"userInfoList":[{"id":"4d767260e2194259a4c4be0542fd4f20","userName":"15226678936","password":null,"nickName":"个人用户","icon":"https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg","imType":null,"imStatus":null,"createTime":null}]}
      */
 
     private int code;
@@ -54,10 +55,10 @@ public class HuanXinUsers {
 
         public static class UserInfoListBean {
             /**
-             * id : 8e486a21fd284b7384864ca4fef86c1b
-             * userName : youxin
+             * id : 4d767260e2194259a4c4be0542fd4f20
+             * userName : 15226678936
              * password : null
-             * nickName : youxin
+             * nickName : 个人用户
              * icon : https://jkytest.oss-cn-beijing.aliyuncs.com/staticimg/00touxiang_handou.jpg
              * imType : null
              * imStatus : null
