@@ -137,9 +137,9 @@ public class MassageFragment extends BaseFragment {
     private Map<String, EaseUser> getContacts(List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList) {
         Map<String, EaseUser> contacts = new HashMap<>();
         for (int i = 0; i <= userInfoList.size() - 1; i++) {
-            EaseUser user = new EaseUser(userInfoList.get(i).getUserName());
+            EaseUser user = new EaseUser(userInfoList.get(i).getNickName());
             user.setAvatar(userInfoList.get(i).getIcon());
-            contacts.put(userInfoList.get(i).getNickName(), user);
+            contacts.put(userInfoList.get(i).getUserName(), user);
         }
         Log.i("json", "getContacts: " + contacts);
         return contacts;
@@ -159,13 +159,10 @@ public class MassageFragment extends BaseFragment {
             } catch (HyphenateException e) {
                 e.printStackTrace();
             } finally {
-                if (usernames != null)
-                    Log.d("usernames", "initDatas: " + usernames);
-                Gson gson = new Gson();
-                String s = gson.toJson(usernames);
-                PostThread postThread = new PostThread();
-                postThread.start();
-
+                if (usernames != null) {
+                    PostThread postThread = new PostThread();
+                    postThread.start();
+                }
             }
 
         }
@@ -178,17 +175,20 @@ public class MassageFragment extends BaseFragment {
             super.run();
             try {
                 usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
-                if (usernames != null)
+                if (usernames != null) {
                     Log.d("usernames", "initDatas: " + usernames);
-                Gson gson = new Gson();
-                String s = gson.toJson(usernames);
-                String post = post(RequestUtlis.getImUserInfo, s, RequestUtlis.Token);
-                Log.i("返回值", "run: " + post);
-                HuanXinUsers huanXinUsers = gson.fromJson(post, HuanXinUsers.class);
-                userInfoList = huanXinUsers.getData().getUserInfoList();
-                Map<String, EaseUser> contacts = getContacts(userInfoList);
-                Log.i("返回值", "run: " + contacts);
-                contactListFragment.setContactsMap(contacts);
+                    Gson gson = new Gson();
+                    String s = gson.toJson(usernames);
+                    String post = post(RequestUtlis.getImUserInfo, s, RequestUtlis.Token);
+                    Log.i("返回值", "run: " + post);
+                    HuanXinUsers huanXinUsers = gson.fromJson(post, HuanXinUsers.class);
+                    userInfoList = huanXinUsers.getData().getUserInfoList();
+                    Map<String, EaseUser> contacts = getContacts(userInfoList);
+                    Log.i("返回值", "run: " + contacts);
+                    contactListFragment.setContactsMap(contacts);
+                }
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (HyphenateException e) {
@@ -224,11 +224,11 @@ public class MassageFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.conversationId()));
             }
         });
-        EMClient.getInstance().contactManager().setContactListener(new EMContactListener() {
+        EMContactListener emContactListener = new EMContactListener() {
 
             public void onContactAgreed(String username) {
                 Toast.makeText(me, username + "同意了您的好友请求", Toast.LENGTH_SHORT).show();
-                contactListFragment.notifyAll();
+                contactListFragment.refresh();
                 //好友请求被同意
             }
 
@@ -240,6 +240,7 @@ public class MassageFragment extends BaseFragment {
 
             @Override
             public void onContactInvited(final String username, String reason) {
+                Log.i("123", "onContactInvited: " + username + "," + reason);
                 //收到好友邀请
                 AlertDialog.Builder builder = new AlertDialog.Builder(me);
                 //    设置Title的图标
@@ -294,10 +295,11 @@ public class MassageFragment extends BaseFragment {
 
             @Override
             public void onContactAdded(String username) {
-                contactListFragment.notifyAll();
+                contactListFragment.refresh();
                 //增加了联系人时回调此方法
             }
-        });
+        };
+        EMClient.getInstance().contactManager().setContactListener(emContactListener);
         EMMessageListener msgListener = new EMMessageListener() {
 
             @Override

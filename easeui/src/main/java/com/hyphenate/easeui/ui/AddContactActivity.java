@@ -16,6 +16,7 @@ package com.hyphenate.easeui.ui;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +55,7 @@ public class AddContactActivity extends BaseActivity {
 
     /**
      * search contact
+     *
      * @param v
      */
     public void searchContact(View v) {
@@ -77,7 +79,8 @@ public class AddContactActivity extends BaseActivity {
     }
 
     /**
-     *  add contact
+     * add contact
+     *
      * @param view
      */
     public void addContact(View view) {
