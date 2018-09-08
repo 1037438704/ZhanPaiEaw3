@@ -9,6 +9,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -95,16 +97,9 @@ public class MassageFragment extends BaseFragment {
 
     @Override
     public void initDatas() {
-        auto_ll.setY(me.getStatusBarHeight());
-        lists.add("互动消息");
-        lists.add("系统信息");
-        lists.add("我的好友");
-        easeConversationListFragment = new EaseConversationListFragment();
-        contactListFragment = new EaseContactListFragment();
 //需要设置联系人列表才能启动fragment
-
+        MyThread myThread = new MyThread();
         if (RequestUtlis.ID != null) {
-            MyThread myThread = new MyThread();
             myThread.start();
             if (usernames != null) {
                 myThread.stop();
@@ -112,6 +107,13 @@ public class MassageFragment extends BaseFragment {
         } else {
             jump(LoginActivity.class);
         }
+        easeConversationListFragment = new EaseConversationListFragment();
+        contactListFragment = new EaseContactListFragment();
+        lists.add("系统信息");
+        auto_ll.setY(me.getStatusBarHeight());
+        lists.add("互动消息");
+        lists.add("我的好友");
+
 
 
 //设置item点击事件
@@ -132,6 +134,92 @@ public class MassageFragment extends BaseFragment {
         tablayout_xiaoxi.addTab(tablayout_xiaoxi.newTab().setText(lists.get(0)));
         tablayout_xiaoxi.addTab(tablayout_xiaoxi.newTab().setText(lists.get(1)));
         tablayout_xiaoxi.setupWithViewPager(viewpager);//把tablayout和viewpage绑定在一起
+        EMContactListener emContactListener = new EMContactListener() {
+
+            public void onContactAgreed(String username) {
+                Toast.makeText(me, username + "同意了您的好友请求", Toast.LENGTH_SHORT).show();
+                //好友请求被同意
+            }
+
+            public void onContactRefused(String username) {
+                //好友请求被拒绝
+                Toast.makeText(me, username + "拒绝了您的好友请求!", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onContactInvited(final String username, final String reason) {
+                Log.i("123", "onContactInvited: " + username + "," + reason);
+
+
+
+
+                me.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //收到好友邀请
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(me);
+                        //    设置Title的内容
+                        builder.setTitle("好友请求");
+                        //    设置Content来显示一个信息
+                        builder.setMessage(username + ":" + reason);
+                        //    设置一个PositiveButton
+                        builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                try {
+                                    EMClient.getInstance().contactManager().acceptInvitation(username);
+                                } catch (HyphenateException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        //    设置一个NegativeButton
+                        builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                try {
+                                    EMClient.getInstance().contactManager().declineInvitation(username);
+                                } catch (HyphenateException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        //    显示出该对话框
+                        builder.show();
+                        Toast.makeText(me, "对话框你出来", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onFriendRequestAccepted(String s) {
+                Log.i("好友", "onFriendRequestAccepted: " + s);
+            }
+
+            @Override
+            public void onFriendRequestDeclined(String s) {
+                Log.i("好友", "onFriendRequestDeclined: " + s);
+            }
+
+            @Override
+            public void onContactDeleted(String username) {
+                //被删除时回调此方法
+            }
+
+
+            @Override
+            public void onContactAdded(String username) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        MyThread myThread = new MyThread();
+                        myThread.start();
+                    }
+                }).start();
+            }
+        };
+        EMClient.getInstance().contactManager().setContactListener(emContactListener);
     }
 
     private Map<String, EaseUser> getContacts(List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList) {
@@ -224,88 +312,12 @@ public class MassageFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.conversationId()));
             }
         });
-        EMContactListener emContactListener = new EMContactListener() {
 
-            public void onContactAgreed(String username) {
-                Toast.makeText(me, username + "同意了您的好友请求", Toast.LENGTH_SHORT).show();
-                contactListFragment.refresh();
-                //好友请求被同意
-            }
-
-            public void onContactRefused(String username) {
-                //好友请求被拒绝
-                Toast.makeText(me, username + "拒绝了您的好友请求!", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onContactInvited(final String username, String reason) {
-                Log.i("123", "onContactInvited: " + username + "," + reason);
-                //收到好友邀请
-                AlertDialog.Builder builder = new AlertDialog.Builder(me);
-                //    设置Title的图标
-                builder.setIcon(R.drawable.ic_launcher);
-                //    设置Title的内容
-                builder.setTitle("好友请求");
-                //    设置Content来显示一个信息
-                builder.setMessage(username + "请求添加您为好友");
-                //    设置一个PositiveButton
-                builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        try {
-                            EMClient.getInstance().contactManager().acceptInvitation(username);
-                            contactListFragment.notifyAll();
-
-                        } catch (HyphenateException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-                //    设置一个NegativeButton
-                builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        try {
-                            EMClient.getInstance().contactManager().declineInvitation(username);
-                        } catch (HyphenateException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-                //    显示出该对话框
-                builder.show();
-            }
-
-            @Override
-            public void onFriendRequestAccepted(String s) {
-
-            }
-
-            @Override
-            public void onFriendRequestDeclined(String s) {
-
-            }
-
-            @Override
-            public void onContactDeleted(String username) {
-                //被删除时回调此方法
-            }
-
-
-            @Override
-            public void onContactAdded(String username) {
-                contactListFragment.refresh();
-                //增加了联系人时回调此方法
-            }
-        };
-        EMClient.getInstance().contactManager().setContactListener(emContactListener);
         EMMessageListener msgListener = new EMMessageListener() {
 
             @Override
             public void onMessageReceived(List<EMMessage> messages) {
-                easeConversationListFragment
-                        .refresh();
+                easeConversationListFragment.refresh();
                 //收到消息
             }
 

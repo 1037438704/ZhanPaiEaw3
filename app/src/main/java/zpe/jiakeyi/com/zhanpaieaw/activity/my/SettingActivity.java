@@ -1,5 +1,6 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.my;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -85,6 +86,11 @@ public class SettingActivity extends BaseActivity {
                 EMClient.getInstance().logout(true);
                 //此方法为同步方法
                 finish();
+                SharedPreferences sp = getSharedPreferences("UseUser", MODE_PRIVATE);
+                if (sp != null) {
+                    sp.edit().clear().commit();
+                    Toast.makeText(me, "数据已清空", Toast.LENGTH_LONG).show();
+                }
                 Toast.makeText(me, "您已退出登录", Toast.LENGTH_SHORT).show();
             }
         });

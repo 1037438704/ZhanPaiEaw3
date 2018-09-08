@@ -21,6 +21,7 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -102,6 +103,7 @@ public class EaseContactListFragment extends EaseBaseFragment {
 
     @Override
     protected void setUpView() {
+        Log.d("aaaaa","setUpView");
         EMClient.getInstance().addConnectionListener(connectionListener);
 
         contactList = new ArrayList<EaseUser>();

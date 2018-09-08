@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import com.google.gson.Gson;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -76,7 +77,7 @@ public class MainActivity extends BaseAty implements RadioGroup.OnCheckedChangeL
             String string = Preferences.getInstance().getString(me, "UseUser", "UseUser");
             RequestUtlis.UserMassage = string;
             Gson gson = new Gson();
-            LoginBeanCode loginBeanCode = gson.fromJson(string, LoginBeanCode.class);
+            final LoginBeanCode loginBeanCode = gson.fromJson(string, LoginBeanCode.class);
             RequestUtlis.UserPhone = loginBeanCode.getData().getUserInfo().getIphone();
             RequestUtlis.Token = loginBeanCode.getData().getACCESS_TOKEN();
             RequestUtlis.ID = loginBeanCode.getData().getUserInfo().getId();
@@ -88,6 +89,11 @@ public class MainActivity extends BaseAty implements RadioGroup.OnCheckedChangeL
                         public void run() {
                             EMClient.getInstance().groupManager().loadAllGroups();
                             EMClient.getInstance().chatManager().loadAllConversations();
+                            EMMessage message = EMMessage.createTxtSendMessage("user", loginBeanCode.getData().getImUserInfo().getUserName());
+                            // 增加自己特定的属性
+                            message.setAttribute("icon", loginBeanCode.getData().getImUserInfo().getIcon());
+                            EMClient.getInstance().chatManager().sendMessage(message);
+
                             Log.d("main", "登录聊天服务器成功！");
                         }
                     });
