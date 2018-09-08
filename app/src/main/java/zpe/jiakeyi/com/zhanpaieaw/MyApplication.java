@@ -3,7 +3,6 @@ package zpe.jiakeyi.com.zhanpaieaw;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.pm.PackageManager;
-import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.hyphenate.chat.EMClient;
