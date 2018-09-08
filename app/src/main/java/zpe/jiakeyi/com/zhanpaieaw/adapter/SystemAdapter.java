@@ -1,7 +1,6 @@
 package zpe.jiakeyi.com.zhanpaieaw.adapter;
 
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +11,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.SystemMassageBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.SystemMassageBean;
 
 /**
  * Created by Administrator on 2018/8/16.

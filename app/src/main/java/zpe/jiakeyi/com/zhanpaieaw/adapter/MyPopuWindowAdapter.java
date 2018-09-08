@@ -12,7 +12,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.ShowTypeBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.ShowTypeBean;
 
 
 /**

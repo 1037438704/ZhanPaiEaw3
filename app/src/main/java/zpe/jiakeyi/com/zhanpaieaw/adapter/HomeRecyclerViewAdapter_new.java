@@ -11,7 +11,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.HomeBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HomeBean;
 
 /**
  * 创建人： 郭健福

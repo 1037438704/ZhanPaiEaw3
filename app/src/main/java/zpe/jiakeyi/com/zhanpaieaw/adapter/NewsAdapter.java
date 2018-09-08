@@ -12,7 +12,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.NewsListBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.NewsListBean;
 
 /**
  * 创建人： 郭健福

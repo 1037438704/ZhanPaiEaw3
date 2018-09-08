@@ -1,16 +1,8 @@
 package zpe.jiakeyi.com.zhanpaieaw.fragment;
 
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -19,50 +11,39 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.hyphenate.EMContactListener;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
-import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.domain.EaseUser;
-import com.hyphenate.easeui.ui.EaseChatFragment;
+
 import com.hyphenate.easeui.ui.EaseContactListFragment;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
-import com.hyphenate.easeui.utils.EaseCommonUtils;
+
 import com.hyphenate.exceptions.HyphenateException;
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.zhy.autolayout.AutoLinearLayout;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.massage.ChatActivity;
-import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectFragmentAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.HuanXinUsers;
-import zpe.jiakeyi.com.zhanpaieaw.bean.friendBean;
-import zpe.jiakeyi.com.zhanpaieaw.fragment.message.FriendFragment;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HuanXinUsers;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.SystemFragment;
-import zpe.jiakeyi.com.zhanpaieaw.fragment.message.UserFragment;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 /**
  * 创建人： 郭健福
@@ -134,92 +115,6 @@ public class MassageFragment extends BaseFragment {
         tablayout_xiaoxi.addTab(tablayout_xiaoxi.newTab().setText(lists.get(0)));
         tablayout_xiaoxi.addTab(tablayout_xiaoxi.newTab().setText(lists.get(1)));
         tablayout_xiaoxi.setupWithViewPager(viewpager);//把tablayout和viewpage绑定在一起
-        EMContactListener emContactListener = new EMContactListener() {
-
-            public void onContactAgreed(String username) {
-                Toast.makeText(me, username + "同意了您的好友请求", Toast.LENGTH_SHORT).show();
-                //好友请求被同意
-            }
-
-            public void onContactRefused(String username) {
-                //好友请求被拒绝
-                Toast.makeText(me, username + "拒绝了您的好友请求!", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onContactInvited(final String username, final String reason) {
-                Log.i("123", "onContactInvited: " + username + "," + reason);
-
-
-
-
-                me.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //收到好友邀请
-                        final AlertDialog.Builder builder = new AlertDialog.Builder(me);
-                        //    设置Title的内容
-                        builder.setTitle("好友请求");
-                        //    设置Content来显示一个信息
-                        builder.setMessage(username + ":" + reason);
-                        //    设置一个PositiveButton
-                        builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                try {
-                                    EMClient.getInstance().contactManager().acceptInvitation(username);
-                                } catch (HyphenateException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-                        //    设置一个NegativeButton
-                        builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                try {
-                                    EMClient.getInstance().contactManager().declineInvitation(username);
-                                } catch (HyphenateException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-                        //    显示出该对话框
-                        builder.show();
-                        Toast.makeText(me, "对话框你出来", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-            @Override
-            public void onFriendRequestAccepted(String s) {
-                Log.i("好友", "onFriendRequestAccepted: " + s);
-            }
-
-            @Override
-            public void onFriendRequestDeclined(String s) {
-                Log.i("好友", "onFriendRequestDeclined: " + s);
-            }
-
-            @Override
-            public void onContactDeleted(String username) {
-                //被删除时回调此方法
-            }
-
-
-            @Override
-            public void onContactAdded(String username) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        MyThread myThread = new MyThread();
-                        myThread.start();
-                    }
-                }).start();
-            }
-        };
-        EMClient.getInstance().contactManager().setContactListener(emContactListener);
     }
 
     private Map<String, EaseUser> getContacts(List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList) {
@@ -243,7 +138,8 @@ public class MassageFragment extends BaseFragment {
         public void run() {
             super.run();
             try {
-                usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
+                usernames.clear();
+                usernames.addAll(EMClient.getInstance().contactManager().getAllContactsFromServer());
             } catch (HyphenateException e) {
                 e.printStackTrace();
             } finally {
@@ -255,6 +151,7 @@ public class MassageFragment extends BaseFragment {
 
         }
     }
+
 
     public class PostThread extends Thread {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)

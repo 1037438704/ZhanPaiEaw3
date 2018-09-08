@@ -1,7 +1,5 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.login;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -18,7 +16,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.base.BaseAty;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 @Layout(R.layout.activity_register2)
 @DarkStatusBarTheme(false) //开启顶部状态栏图标、文字暗色模式

@@ -10,24 +10,19 @@ import com.google.gson.Gson;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
-import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
-import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.kongzue.baseframework.util.Preferences;
 import com.zhy.autolayout.AutoFrameLayout;
 
-import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.base.BaseAty;
-import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.LoginBeanCode;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.BuyFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.ExhibitionFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.HomeFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.MassageFragment;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.MyFragment;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 /**
  * 创建人： 郭健福

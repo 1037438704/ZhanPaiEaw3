@@ -21,9 +21,8 @@ import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.BeanXAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.CityAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.ListAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.CityBean;
-import zpe.jiakeyi.com.zhanpaieaw.bean.CityDataBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.CityBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.CityDataBean;
 
 /**
  * @author Gjianfu

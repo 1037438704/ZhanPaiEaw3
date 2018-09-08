@@ -16,9 +16,11 @@ package com.hyphenate.easeui.ui;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
+import android.support.annotation.RequiresApi;
+import okhttp3.MediaType;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -36,7 +38,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.hyphenate.EMConnectionListener;
+import com.hyphenate.EMContactListener;
 import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.R;
@@ -45,15 +49,23 @@ import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.widget.EaseContactList;
 import com.hyphenate.easeui.widget.EaseTitleBar;
 import com.hyphenate.exceptions.HyphenateException;
-import com.hyphenate.util.NetUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HuanXinUsers;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 /**
  * contact list
@@ -73,7 +85,8 @@ public class EaseContactListFragment extends EaseBaseFragment {
     protected FrameLayout contentContainer;
     private EaseTitleBar titleBar;
     private Map<String, EaseUser> contactsMap;
-
+    private List<String> usernames = new ArrayList<>();
+    private static List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -161,8 +174,152 @@ public class EaseContactListFragment extends EaseBaseFragment {
             }
         });
 
+
+
+        EMClient.getInstance().contactManager().setContactListener(new EMContactListener(){
+
+            public void onContactAgreed(String username){
+                Toast.makeText(getContext(), username + "同意了您的好友请求", Toast.LENGTH_SHORT).show();
+                //好友请求被同意
+            }
+
+            public void onContactRefused(String username){
+                //好友请求被拒绝
+                Toast.makeText(getContext(), username + "拒绝了您的好友请求!", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onContactInvited(final String username, final String reason){
+                Log.i("123", "onContactInvited: " + username + "," + reason);
+                getActivity().runOnUiThread(new Runnable(){
+                    @Override
+                    public void run(){
+                        //收到好友邀请
+                        final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getContext());
+                        //    设置Title的内容
+                        builder.setTitle("好友请求");
+                        //    设置Content来显示一个信息
+                        builder.setMessage(username + ":" + reason);
+                        //    设置一个PositiveButton
+                        builder.setPositiveButton("同意", new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialog, int which){
+                                try{
+                                    EMClient.getInstance().contactManager().acceptInvitation(username);
+                                    refresh();
+                                }catch(HyphenateException e){
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        //    设置一个NegativeButton
+                        builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialog, int which){
+                                try{
+                                    EMClient.getInstance().contactManager().declineInvitation(username);
+                                }catch(HyphenateException e){
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        //    显示出该对话框
+                        builder.show();
+                        Toast.makeText(getContext(), "对话框你出来", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onFriendRequestAccepted(String s){
+                Log.i("好友", "onFriendRequestAccepted: " + s);
+            }
+
+            @Override
+            public void onFriendRequestDeclined(String s){
+                Log.i("好友", "onFriendRequestDeclined: " + s);
+            }
+
+            @Override
+            public void onContactDeleted(String username){
+                //被删除时回调此方法
+            }
+
+
+            @Override
+            public void onContactAdded(String username){
+                new Thread(new Runnable(){
+                    @Override
+                    public void run(){
+                        MyThread myThread = new MyThread();
+                        myThread.start();
+                    }
+                }).start();
+            }
+        });
     }
 
+    public class MyThread extends Thread {
+        @Override
+        public void run() {
+            super.run();
+            try {
+                usernames.clear();
+                usernames.addAll(EMClient.getInstance().contactManager().getAllContactsFromServer());
+            } catch (HyphenateException e) {
+                e.printStackTrace();
+            } finally {
+                if (usernames != null) {
+                    PostThread postThread = new PostThread();
+                    postThread.start();
+                }
+            }
+
+        }
+    }
+
+
+    public class PostThread extends Thread {
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void run() {
+            super.run();
+            try {
+                usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
+                if (usernames != null) {
+                    Log.d("usernames", "initDatas: " + usernames);
+                    Gson gson = new Gson();
+                    String s = gson.toJson(usernames);
+                    String post = getRequest(RequestUtlis.getImUserInfo, s, RequestUtlis.Token);
+                    Log.i("返回值", "run: " + post);
+                    HuanXinUsers huanXinUsers = gson.fromJson(post, HuanXinUsers.class);
+                    userInfoList.clear();
+                    userInfoList.addAll(huanXinUsers.getData().getUserInfoList());
+                    Map<String, EaseUser> contacts = getContacts(userInfoList);
+                    Log.i("返回值", "run: " + contacts);
+                    setContactsMap(contacts);
+                }
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (HyphenateException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private Map<String, EaseUser> getContacts(List<HuanXinUsers.DataBean.UserInfoListBean> userInfoList) {
+        Map<String, EaseUser> contacts = new HashMap<>();
+        for (int i = 0; i <= userInfoList.size() - 1; i++) {
+            EaseUser user = new EaseUser(userInfoList.get(i).getNickName());
+            user.setAvatar(userInfoList.get(i).getIcon());
+            contacts.put(userInfoList.get(i).getUserName(), user);
+        }
+        Log.i("json", "getContacts: " + contacts);
+        return contacts;
+    }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
@@ -349,4 +506,20 @@ public class EaseContactListFragment extends EaseBaseFragment {
         this.listItemClickListener = listItemClickListener;
     }
 
+    public static final MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+    OkHttpClient client = new OkHttpClient();
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public String getRequest(String url, String json, String token) throws IOException {//post请求，返回String类型
+        RequestBody body = RequestBody.create(mediaType, json);
+        Request request = new Request.Builder()
+                .addHeader("Content-Type", "application/json")//添加头部
+                .addHeader("ACCESS_TOKEN", token)
+                .url(url)
+                .post(body)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            return response.body().string();
+        }
+    }
 }

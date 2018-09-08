@@ -26,9 +26,8 @@ import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.PasswordActivity;
-import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.LoginBeanCode;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 /**
  * 创建人： 郭健福
  * 创建时间： 2018/7/23 21:44

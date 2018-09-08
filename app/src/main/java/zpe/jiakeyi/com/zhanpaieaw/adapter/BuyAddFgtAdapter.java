@@ -7,18 +7,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.google.gson.Gson;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
-import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.BuyListAllBean;
-import zpe.jiakeyi.com.zhanpaieaw.bean.PersonBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.BuyListAllBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 /**
  * 功能描述: 求购界面适配器
  *

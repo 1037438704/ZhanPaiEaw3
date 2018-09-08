@@ -2,8 +2,6 @@ package zpe.jiakeyi.com.zhanpaieaw.activity.home;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.Gravity;
@@ -17,22 +15,18 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.android.flexbox.FlexboxLayout;
 import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.List;
 
-import mlxy.utils.L;
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.HotSeekBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HotSeekBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 /**
  * 创建人： 郭健福
  * 创建时间： 2018/7/23 21:44

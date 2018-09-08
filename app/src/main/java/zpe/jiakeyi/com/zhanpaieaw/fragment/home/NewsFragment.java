@@ -20,9 +20,8 @@ import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.home.NewsDetailsAty;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.NewsAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.NewsListBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.NewsListBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 /**
  * 创建人： 郭健福
  * 创建时间： 2018/7/23 21:44

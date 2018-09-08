@@ -19,16 +19,13 @@ import com.stx.xhb.xbanner.XBanner;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import java.net.IDN;
 import java.util.List;
 
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
-import zpe.jiakeyi.com.zhanpaieaw.activity.login.RegisterActivity;
-import zpe.jiakeyi.com.zhanpaieaw.activity.my.PersonalActivity;
-import zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.prodictBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 /**
  * @author dell-pc
@@ -54,7 +51,7 @@ public class ProductActivity extends BaseActivity {
     private ImageView rt_top;
     private ScrollView sc_id;
     public static String mid;
-    private List<zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean.DataBean.ImgListBean> list;
+    private List<prodictBean.DataBean.ImgListBean> list;
 
     @Override
     public void initViews() {
@@ -94,7 +91,7 @@ public class ProductActivity extends BaseActivity {
                         public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             prodictBean prodictBean = gson.fromJson(response, prodictBean.class);
-                            zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
+                            zpe.jiakeyi.com.zhanpaieaw.library.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
                             list = prodictBean.getData().getImgList();
                             xbanner.setData(list, null);
                             // XBanner适配数据
@@ -136,7 +133,7 @@ public class ProductActivity extends BaseActivity {
                         public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             prodictBean prodictBean = gson.fromJson(response, prodictBean.class);
-                            zpe.jiakeyi.com.zhanpaieaw.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
+                            zpe.jiakeyi.com.zhanpaieaw.library.bean.prodictBean.DataBean.InfoBean info = prodictBean.getData().getInfo();
                             list = prodictBean.getData().getImgList();
                             xbanner.setData(list, null);
                             // XBanner适配数据

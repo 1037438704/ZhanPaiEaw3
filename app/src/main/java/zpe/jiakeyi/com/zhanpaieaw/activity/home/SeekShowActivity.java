@@ -1,17 +1,14 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.home;
 
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
@@ -25,8 +22,8 @@ import java.util.List;
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.SeekShowAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.SeekShowBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.SeekShowBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 @Layout(R.layout.activity_seek_show)
 @DarkStatusBarTheme(true)

@@ -1,19 +1,16 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.massage;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.baidu.platform.comapi.map.C;
-import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseChatFragment;
 import com.hyphenate.util.EasyUtils;
 
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 public class ChatActivity extends AppCompatActivity {
     public static ChatActivity activityInstance;

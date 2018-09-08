@@ -1,23 +1,19 @@
 package zpe.jiakeyi.com.zhanpaieaw.activity.my;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.hyphenate.chat.EMChatManager;
 import com.hyphenate.chat.EMClient;
 import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 @Layout(R.layout.activity_setting)
 @DarkStatusBarTheme(true)

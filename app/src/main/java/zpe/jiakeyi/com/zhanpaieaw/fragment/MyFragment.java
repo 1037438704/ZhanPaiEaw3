@@ -1,11 +1,7 @@
 package zpe.jiakeyi.com.zhanpaieaw.fragment;
 
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -23,9 +19,8 @@ import zpe.jiakeyi.com.zhanpaieaw.activity.my.HellpActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.MyBuyActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.PersonalActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.my.SettingActivity;
-import zpe.jiakeyi.com.zhanpaieaw.bean.LoginBeanCode;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.LoginBeanCode;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 /**
  * 创建人： 郭健福
  * 创建时间： 2018/7/23 21:44

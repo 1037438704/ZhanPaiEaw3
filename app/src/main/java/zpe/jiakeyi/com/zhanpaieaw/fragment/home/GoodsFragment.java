@@ -9,12 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
 
-import java.io.Serializable;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.GoodsRecyclerViewAdapte_First;
-import zpe.jiakeyi.com.zhanpaieaw.bean.sysBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.sysBean;
 
 /**
  * 创建人： 郭健福

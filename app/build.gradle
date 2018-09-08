@@ -1,18 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
     defaultConfig {
         applicationId "zpe.jiakeyi.com.zhanpaieaw"
         minSdkVersion 18
-        targetSdkVersion 27
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         useLibrary 'org.apache.http.legacy'
         ndk {
             abiFilters 'x86', 'armeabi-v7a'
         }
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -26,45 +29,18 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //鸿洋大神屏幕适配包
-    compile 'com.zhy:autolayout:1.4.5'
-    //轮播
-    compile 'com.xhb:xbanner:1.2.9'
-    //跑马灯
-    compile 'com.sunfusheng:marqueeview:1.3.3'
-//    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    //流式布局
-    implementation 'com.google.android:flexbox:1.0.0'
-    //Glide 网络加载框架
-    //图片加载框架
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
-    compile 'jp.wasabeef:glide-transformations:1.0.6'
-    //AllBase
-    implementation 'com.kongzue.baseframework:baseframework:6.5.3'
-    //RecyclerView适配器
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    //对话框
-    implementation 'com.kongzue.dialog:dialog:2.2.9'
-    //网络请求
-    compile 'com.zhy:okhttputils:2.6.2'
-    //xrecycler
-    compile 'com.jcodecraeer:xrecyclerview:1.5.9'
-    //城市选择器
-    compile 'com.github.chihane:JDAddressSelector:1.1.4'
-    implementation 'com.google.code.gson:gson:2.2.4'
-    implementation files('libs/unity-classes.jar')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/unity-classes.jar')
     //环信
 //    compile 'com.google.android.gms:play-services-gcm:9.4.0'
-    implementation project(':easeui')
+    compile project(':easeui')
+//    compile project(':zhanpaieawlibrary')
 //    compile 'com.hyphenate:hyphenate-sdk-lite:3.3.0';
 }

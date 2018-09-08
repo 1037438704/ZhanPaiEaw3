@@ -1,8 +1,6 @@
 package zpe.jiakeyi.com.zhanpaieaw.adapter;
 
 import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -10,7 +8,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.CityBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.CityBean;
 
 /**
  * Created by dell-pc on 2018/8/16.

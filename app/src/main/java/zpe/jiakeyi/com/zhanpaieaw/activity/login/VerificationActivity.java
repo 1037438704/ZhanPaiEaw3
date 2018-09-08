@@ -5,25 +5,19 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kongzue.baseframework.BaseActivity;
-import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
 import com.kongzue.baseframework.util.JumpParameter;
-import com.kongzue.dialog.listener.OnMenuItemClickListener;
-import com.kongzue.dialog.v2.BottomMenu;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.utils.ToastUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.ToastUtlis;
 
 /**
  * @author Gjianfu

@@ -22,9 +22,9 @@ import java.util.regex.PatternSyntaxException;
 
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.CodeBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-import zpe.jiakeyi.com.zhanpaieaw.utils.VerificationTime;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.CodeBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.VerificationTime;
 
 /**
  * 创建人： 郭健福

@@ -2,7 +2,6 @@ package zpe.jiakeyi.com.zhanpaieaw.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import com.kongzue.baseframework.BaseActivity;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.sysBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.sysBean;
 
 /**
  * 创建人： 郭健福

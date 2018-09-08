@@ -3,6 +3,7 @@ package zpe.jiakeyi.com.zhanpaieaw;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.pm.PackageManager;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.hyphenate.chat.EMClient;
@@ -20,6 +21,7 @@ import java.util.List;
 public class MyApplication extends Application {
     @Override
     public void onCreate() {
+        super.onCreate();
         EMOptions options = new EMOptions();
 // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAutoLogin(false);
@@ -43,7 +45,6 @@ public class MyApplication extends Application {
  * 在做代码混淆的时候需要设置成false
  */
         EMClient.getInstance().setDebugMode(true);//在做打包混淆时，要关闭debug模式，避免消耗不必要的资源
-        super.onCreate();
     }
 
     private String getAppName(int pID) {

@@ -7,7 +7,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-import zpe.jiakeyi.com.zhanpaieaw.bean.SeekShowBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.SeekShowBean;
 
 /**
  * Created by Administrator on 2018/8/20.

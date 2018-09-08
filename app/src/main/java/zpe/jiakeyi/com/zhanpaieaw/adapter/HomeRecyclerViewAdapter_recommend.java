@@ -1,11 +1,7 @@
 package zpe.jiakeyi.com.zhanpaieaw.adapter;
 
-import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +13,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.HomeBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HomeBean;
 
 
 /**

@@ -22,9 +22,9 @@ import java.util.List;
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.CategoryListAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.sysBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.sysBean;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.home.GoodsFragment;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.view.MainViewPager;
 
 /**

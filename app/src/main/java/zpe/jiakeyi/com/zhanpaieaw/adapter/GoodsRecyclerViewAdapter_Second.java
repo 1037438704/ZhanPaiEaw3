@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.bean.sysBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.sysBean;
 
 /**
  * 创建人： 郭健福

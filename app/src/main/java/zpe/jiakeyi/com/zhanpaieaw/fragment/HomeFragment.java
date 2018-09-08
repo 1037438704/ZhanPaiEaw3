@@ -1,9 +1,7 @@
 package zpe.jiakeyi.com.zhanpaieaw.fragment;
 
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -43,9 +41,8 @@ import zpe.jiakeyi.com.zhanpaieaw.activity.home.SeekActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.home.ShowActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.HomeRecyclerViewAdapter_new;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.HomeRecyclerViewAdapter_recommend;
-import zpe.jiakeyi.com.zhanpaieaw.bean.HomeBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-import zpe.jiakeyi.com.zhanpaieaw.view.ObservableScrollView;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HomeBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 import zpe.jiakeyi.com.zhanpaieaw.view.RecyclerScrollView;
 
 /**

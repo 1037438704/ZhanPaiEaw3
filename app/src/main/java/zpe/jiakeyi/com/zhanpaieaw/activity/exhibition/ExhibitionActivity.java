@@ -9,8 +9,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.EaseConstant;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
@@ -19,9 +17,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.MainActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.home.SeekActivity;
-import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.massage.ChatActivity;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
 
 /**
  * 创建人： Nine tails fox

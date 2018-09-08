@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,9 +37,9 @@ import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.buy.CitySelectionActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyPopuWindowAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.ShowRecyclerAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.CityBean;
-import zpe.jiakeyi.com.zhanpaieaw.bean.ShowTypeBean;
-import zpe.jiakeyi.com.zhanpaieaw.bean.TextBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.CityBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.ShowTypeBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.TextBean;
 
 /**
  * 创建人： 郭健福

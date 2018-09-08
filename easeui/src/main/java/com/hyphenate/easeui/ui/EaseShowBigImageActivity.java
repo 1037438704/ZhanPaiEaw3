@@ -14,8 +14,6 @@
 package com.hyphenate.easeui.ui;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 
 import com.hyphenate.EMCallBack;
@@ -34,7 +32,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;

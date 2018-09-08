@@ -21,8 +21,8 @@ import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.buy.ParticularsActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.BuyAddFgtAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.BuyListAllBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.BuyListAllBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 /**
  * A simple {@link Fragment} subclass.

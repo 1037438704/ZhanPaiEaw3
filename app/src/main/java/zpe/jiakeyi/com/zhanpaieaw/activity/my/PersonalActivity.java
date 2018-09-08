@@ -38,8 +38,8 @@ import java.util.UUID;
 
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RealPathFromUriUtils;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RealPathFromUriUtils;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static android.media.MediaRecorder.VideoSource.CAMERA;

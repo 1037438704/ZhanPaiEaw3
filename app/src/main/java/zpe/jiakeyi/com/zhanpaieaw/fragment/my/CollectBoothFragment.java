@@ -3,17 +3,9 @@ package zpe.jiakeyi.com.zhanpaieaw.fragment.my;
 import com.google.gson.Gson;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
@@ -24,13 +16,10 @@ import java.util.List;
 
 import okhttp3.Call;
 import zpe.jiakeyi.com.zhanpaieaw.R;
-import zpe.jiakeyi.com.zhanpaieaw.adapter.showpinAdapter;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.unslovedAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.bean.ShowBean;
-import zpe.jiakeyi.com.zhanpaieaw.bean.solveBean;
-import zpe.jiakeyi.com.zhanpaieaw.bean.unsolvedBean;
-import zpe.jiakeyi.com.zhanpaieaw.utils.RequestUtlis;
-
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.solveBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.unsolvedBean;
+import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -96,7 +85,7 @@ public class CollectBoothFragment extends BaseFragment {
                         public void onResponse(String response, int id) {
                             Gson gson = new Gson();
                             unsolvedBean unsolvedBean = gson.fromJson(response, unsolvedBean.class);
-                            List<zpe.jiakeyi.com.zhanpaieaw.bean.unsolvedBean.DataBean.ListBeanX.ListBean> list = unsolvedBean.getData().getList().getList();
+                            List<zpe.jiakeyi.com.zhanpaieaw.library.bean.unsolvedBean.DataBean.ListBeanX.ListBean> list = unsolvedBean.getData().getList().getList();
                             unslovedAdapter unslovedAdapter = new unslovedAdapter(R.layout.item_jiejue_adapter2, list);
                             recy_collect_fm.setAdapter(unslovedAdapter);
                         }
