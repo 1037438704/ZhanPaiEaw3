@@ -81,14 +81,10 @@ public class MainActivity extends BaseAty implements RadioGroup.OnCheckedChangeL
                 @Override
                 public void onSuccess() {
                     runOnUiThread(new Runnable() {
+                        @Override
                         public void run() {
                             EMClient.getInstance().groupManager().loadAllGroups();
                             EMClient.getInstance().chatManager().loadAllConversations();
-                            EMMessage message = EMMessage.createTxtSendMessage("user", loginBeanCode.getData().getImUserInfo().getUserName());
-                            // 增加自己特定的属性
-                            message.setAttribute("icon", loginBeanCode.getData().getImUserInfo().getIcon());
-                            EMClient.getInstance().chatManager().sendMessage(message);
-
                             Log.d("main", "登录聊天服务器成功！");
                         }
                     });

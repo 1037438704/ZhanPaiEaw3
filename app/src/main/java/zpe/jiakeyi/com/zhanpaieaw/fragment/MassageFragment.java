@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.Response;
 import com.google.gson.Gson;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
@@ -24,6 +25,7 @@ import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.hyphenate.exceptions.HyphenateException;
 import com.kongzue.baseframework.BaseFragment;
 import com.kongzue.baseframework.interfaces.Layout;
+import com.kongzue.baseframework.util.Preferences;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import java.io.IOException;
@@ -36,13 +38,13 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 import zpe.jiakeyi.com.zhanpaieaw.R;
 import zpe.jiakeyi.com.zhanpaieaw.activity.login.LoginActivity;
 import zpe.jiakeyi.com.zhanpaieaw.activity.massage.ChatActivity;
 import zpe.jiakeyi.com.zhanpaieaw.adapter.MyCollectFragmentAdapter;
-import zpe.jiakeyi.com.zhanpaieaw.library.bean.HuanXinUsers;
 import zpe.jiakeyi.com.zhanpaieaw.fragment.message.SystemFragment;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.HuanXinUsers;
+import zpe.jiakeyi.com.zhanpaieaw.library.bean.LoginBeanCode;
 import zpe.jiakeyi.com.zhanpaieaw.library.utils.RequestUtlis;
 
 /**
@@ -96,7 +98,6 @@ public class MassageFragment extends BaseFragment {
         lists.add("我的好友");
 
 
-
 //设置item点击事件
         contactListFragment.setContactListItemClickListener(new EaseContactListFragment.EaseContactListItemClickListener() {
 
@@ -138,8 +139,10 @@ public class MassageFragment extends BaseFragment {
         public void run() {
             super.run();
             try {
-                usernames.clear();
-                usernames.addAll(EMClient.getInstance().contactManager().getAllContactsFromServer());
+                if (usernames != null) {
+                    usernames.clear();
+                    usernames.addAll(EMClient.getInstance().contactManager().getAllContactsFromServer());
+                }
             } catch (HyphenateException e) {
                 e.printStackTrace();
             } finally {
@@ -195,7 +198,7 @@ public class MassageFragment extends BaseFragment {
                 .url(url)
                 .post(body)
                 .build();
-        try (Response response = client.newCall(request).execute()) {
+        try (okhttp3.Response response = client.newCall(request).execute()) {
             return response.body().string();
         }
     }
@@ -206,6 +209,16 @@ public class MassageFragment extends BaseFragment {
             @Override
             public void onListItemClicked(EMConversation conversation) {
                 Toast.makeText(me, "" + conversation.conversationId(), Toast.LENGTH_SHORT).show();
+                String string = Preferences.getInstance().getString(me, "UseUser", "UseUser");
+                RequestUtlis.UserMassage = string;
+                Gson gson = new Gson();
+                final LoginBeanCode loginBeanCode = gson.fromJson(string, LoginBeanCode.class);
+                EMMessage message = EMMessage.createTxtSendMessage("user", loginBeanCode.getData().getImUserInfo().getUserName());
+                // 增加自己特定的属性
+                message.setAttribute("icon", loginBeanCode.getData().getImUserInfo().getIcon());
+                EMClient.getInstance().chatManager().sendMessage(message);
+                String icon = message.getStringAttribute("icon", "http://www.ghost64.com/qqtupian/zixunImg/local/2018/09/07/15363017762367.jpeg");
+                log(icon);
                 startActivity(new Intent(getActivity(), ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.conversationId()));
             }
         });
@@ -216,6 +229,7 @@ public class MassageFragment extends BaseFragment {
             public void onMessageReceived(List<EMMessage> messages) {
                 easeConversationListFragment.refresh();
                 //收到消息
+
             }
 
             @Override
@@ -244,5 +258,6 @@ public class MassageFragment extends BaseFragment {
             }
         };
         EMClient.getInstance().chatManager().addMessageListener(msgListener);
+
     }
 }
