@@ -10,6 +10,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,6 +64,7 @@ public class ShowActivity extends BaseActivity {
     private CityBean.ListBeanXX sheng;
     private CityBean.ListBeanXX.ListBeanX shi;
     private CityBean.ListBeanXX.ListBeanX.ListBean qu;
+    private TextView area;
     /**
      * PoupWindow 中的列表
      */
@@ -105,6 +107,7 @@ public class ShowActivity extends BaseActivity {
         listjyms = new ArrayList<>();
         strings = new ArrayList<>();
         search_title = findViewById(R.id.search_title);
+        area = findViewById(R.id.area);
     }
 
 
@@ -114,10 +117,10 @@ public class ShowActivity extends BaseActivity {
         if (paramer != null) {
             boolean o = (boolean) paramer.get("是否显示分类栏");
             if (o) {
-                classify_title.setVisibility(View.VISIBLE);
+//                classify_title.setVisibility(View.VISIBLE);
                 seek_title_layout.setVisibility(View.VISIBLE);
             } else {
-                classify_title.setVisibility(View.GONE);
+//                classify_title.setVisibility(View.GONE);
 
             }
         }
@@ -148,7 +151,7 @@ public class ShowActivity extends BaseActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        classify_title.setVisibility(View.GONE);
+//        classify_title.setVisibility(View.GONE);
         fileList();
     }
 
@@ -200,11 +203,13 @@ public class ShowActivity extends BaseActivity {
                     @Override
                     public void OnResponse(JumpParameter jumpParameter) {
                         if (jumpParameter == null) {
-
+                            area.setText("地区");
                         } else {
                             sheng = (CityBean.ListBeanXX) jumpParameter.get("省");
                             shi = (CityBean.ListBeanXX.ListBeanX) jumpParameter.get("市");
                             qu = (CityBean.ListBeanXX.ListBeanX.ListBean) jumpParameter.get("区");
+                            Log.d("aaa", sheng + "-" + shi + "-" + qu);
+                            area.setText(qu.getAreaName());
                         }
                     }
                 });

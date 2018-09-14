@@ -15,6 +15,7 @@ import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.util.JumpParameter;
 import com.kongzue.baseframework.util.Preferences;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import zpe.jiakeyi.com.zhanpaieaw.R;
@@ -38,9 +39,9 @@ public class CitySelectionActivity extends BaseActivity {
     private RecyclerView rtll_rv_qu;
     private CityAdapter cityAdapter;
     private ImageView fh_city;
-    private List<CityBean.ListBeanXX> list;
-    private List<CityBean.ListBeanXX.ListBeanX> list2;
-    private List<CityBean.ListBeanXX.ListBeanX.ListBean> list3;
+    private List<CityBean.ListBeanXX> list = new ArrayList<>();
+    private List<CityBean.ListBeanXX.ListBeanX> list2 = new ArrayList<>();
+    private List<CityBean.ListBeanXX.ListBeanX.ListBean> list3 = new ArrayList<>();
     private TextView chongzhi;
     private TextView queren;
     private String shengshi;
